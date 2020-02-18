@@ -1,0 +1,15 @@
+Miembros:
+
+Manuel Mesaqs Gutiérrez		75171238-Q
+Rafael Ruiz Ramírez			77175286-M
+
+Informe:
+
+En pgm.cpp:
+	En leerPGMTexto hemos escrito en el bucle for i<filas*columnas
+	Porque si escribíamos max=filas*columnas y en el bucle i<max
+	daba un error que no comprendíamos.
+	En esa misma función hemos tomado exito=true porque no sabemos
+	de qué parámetros depende la función.
+	
+Imágenes de entrada en carpeta imágens. Imágenes de salida en directorio Practica4

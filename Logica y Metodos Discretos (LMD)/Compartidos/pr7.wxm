@@ -1,0 +1,53 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.4 ] */
+
+/* [wxMaxima: comment start ]
+Práctica 7:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+load("C:/Documents and Settings/bigbang/Mis documentos/Descargas/practica_7_LMD_10-11/logic.lisp")$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector(not x and y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector(((a implies b) and not b) implies not a);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+zhegalkin_form (x or y );
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv (x and y,x or y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv (x eq not y,x implies x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+e:((x or y) xor z) and u;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+zhegalkin_form (e);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv (%o15,%o16);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is (characteristic_vector(%o15)= characteristic_vector(%o16));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv (x and y eq x, x implies y);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

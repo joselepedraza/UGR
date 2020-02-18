@@ -1,0 +1,8 @@
+manzana:rojo
+kiwi:amarillo
+piña:verde
+melocoton:naranja
+higo:morado
+ciruela:morado
+pera:amarillo
+

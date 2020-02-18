@@ -1,0 +1,11 @@
+#!/bin/bash
+
+x=0
+y=10
+for i in `seq 1 $1`
+do
+	ex=$(($x/$y))
+	x=`expr $x + 1`
+done
+echo "El valor de la variable es: " $x
+echo "El valor de la expresion aritmetica es: " $ex

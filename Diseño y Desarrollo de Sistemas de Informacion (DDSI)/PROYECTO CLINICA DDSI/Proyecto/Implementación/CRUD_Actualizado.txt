@@ -1,0 +1,62 @@
+/******************** Tabla Cliente ********************/
+
+INSERT INTO `Cliente` (`DNI`, `Nombre`, `Contrasenia`, `Direccion`, `Email`, `Telefono`, `Fecha de nacimiento`) VALUES ('12345678C', 'Paco2', '1234', 'una', 'uno', '987654321', '2020-01-05');
+
+SELECT * FROM `Cliente` WHERE `Cliente`.`DNI` = '12345678A'
+
+UPDATE `Cliente` SET `Contrasenia` = 'paco1234' WHERE `Cliente`.`DNI` = '12345678A'
+UPDATE `Cliente` SET `Email` = 'ejemplo@correo.ex' WHERE `Cliente`.`DNI` = '12345678A'
+UPDATE `Cliente` SET `Telefono` = '987654321' WHERE `Cliente`.`DNI` = '12345678A'
+UPDATE `Cliente` SET `Direccion` = 'Nueva Direccion' WHERE `Cliente`.`DNI` = '12345678A'
+
+DELETE FROM `Cliente` WHERE `Cliente`.`DNI` = '12345678A'
+
+
+/******************** Tabla Servicio ********************/
+
+INSERT INTO `Servicio` (`Nombre Servicio`, `Descripcion`) VALUES ('Revisión', 'Realizar una revisión al cliente');
+
+SELECT * FROM `Servicio` WHERE `Nombre Servicio` = 'Revision'
+
+UPDATE `Servicio` SET `Nombre Servicio` = 'Revision2' WHERE `Servicio`.`Nombre Servicio` = 'Revision'
+UPDATE `Servicio` SET `Descripcion` = 'Realizar una revisión' WHERE `Servicio`.`Nombre Servicio` = 'Revision'
+
+DELETE FROM `Servicio` WHERE `Servicio`.`Nombre Servicio` = 'Revision'
+
+
+/******************** Tabla Profesional ********************/
+
+INSERT INTO `Profesional` (`DNI`, `Nombre`, `Contrasenia`, `Email`, `Telefono`, `Nomina`, `Direccion`, `Nombre Servicio`) VALUES ('12345678Z', 'Paco3', '1234', 'un_email', '123123123', '1500', 'Una_direccion', 'Revision');
+
+SELECT * FROM `Profesional` WHERE `Profesional`.`DNI` = '12345678Z'
+
+//Para buscar un profesional según el servicio
+SELECT * FROM `Profesional` WHERE `Nombre Servicio` = 'prueba'
+
+UPDATE `Profesional` SET `Contrasenia` = '12345' WHERE `Profesional`.`DNI` = '12345678Z'
+UPDATE `Profesional` SET `Email` = 'un_email2' WHERE `Profesional`.`DNI` = '12345678Z'
+UPDATE `Profesional` SET `Telefono` = '123123124' WHERE `Profesional`.`DNI` = '12345678Z'
+UPDATE `Profesional` SET `Nomina` = '1503' WHERE `Profesional`.`DNI` = '12345678Z'
+UPDATE `Profesional` SET `Direccion` = 'Una_direccion2' WHERE `Profesional`.`DNI` = '12345678Z'
+UPDATE `Profesional` SET `Nombre Servicio` = 'prueba' WHERE `Profesional`.`DNI` = '12345678Z'
+
+DELETE FROM `Profesional` WHERE `Profesional`.`DNI` = '12345678Y'
+
+
+/******************** Tabla Agenda ********************/
+
+INSERT INTO `Agenda` (`Fecha`, `DNI_Profesional`, `DNI_Cliente`) VALUES ('2020-01-24 12:20:00', '12312312A', '12345678B');
+
+//Busqueda para saber qué citas tiene un profesional
+SELECT * FROM `Agenda` WHERE `Agenda`.`DNI_Profesional` = '12345678Z'
+
+//Busqueda para saber qué citas tiene un cliente
+SELECT * FROM `Agenda` WHERE `Agenda`.`DNI_Cliente` = '12345678B'
+
+//Profesionales libres a una fecha, hora y servicio dados
+SELECT `Nombre`,`DNI`,`Nombre Servicio` FROM `Profesional` WHERE `Profesional`.`DNI` NOT IN( SELECT `Agenda`.`DNI_Profesional` FROM `Agenda`,`Profesional` WHERE DATE(`Fecha`) = '2020-01-01' AND ABS(TIMESTAMPDIFF(HOUR,`Fecha`, '2020-01-01 13:00:00')) < '1' AND `Agenda`.`DNI_Profesional` = `Profesional`.`DNI`) AND `Profesional`.`Nombre Servicio` = 'Revision'
+//Número de profesionales libres a una fecha, hora y servicio dados
+SELECT COUNT(`DNI`) FROM `Profesional` WHERE `Profesional`.`DNI` NOT IN( SELECT `Agenda`.`DNI_Profesional` FROM `Agenda`,`Profesional` WHERE DATE(`Fecha`) = '2020-01-01' AND ABS(TIMESTAMPDIFF(HOUR,`Fecha`, '2020-01-01 13:00:00')) < '1' AND `Agenda`.`DNI_Profesional` = `Profesional`.`DNI`) AND `Profesional`.`Nombre Servicio` = 'Revision'
+
+//Actualizar fecha cita
+UPDATE `Agenda` SET `Fecha` = '2020-01-21 17:00:00' WHERE `Agenda`.`Fecha` = '2020-01-21 15:00:00' AND `Agenda`.`DNI_Profesional` = '12345678Z'

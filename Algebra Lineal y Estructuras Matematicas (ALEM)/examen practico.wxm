@@ -1,0 +1,87 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.7 ] */
+
+/* [wxMaxima: input   start ] */
+stirling2(30,8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+modulus:31$ contexto:x^5+x^3+4x+9$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cong(49,1,7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cong(a,b,m):=block(d:gcd(a,m),
+if mod(b,d)=0
+then [mod(b/d*inv_mod(a/d,m/d),m/d), m/d]
+else [0,0]
+)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+cong(49,1,7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Cong(49,1,57,Cong(48,2,83,cong(78,3,89)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Cong(49,1,57,Cong(48,2,83,[24,89]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cong(a,b,m):=block(d:gcd(a,m),
+if mod(b,d)=0
+then [mod(b/d*inv_mod(a/d,m/d),m/d), m/d]
+else "No tiene solución"
+)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Cong(49,1,57,Cong(48,2,83,cong(78,3,89)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Cong(48,2,83,cong(78,3,89));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cong(49,1,57);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Cong(49,1,57,Cong(48,2,83,cong(78,3,89)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Cong(49,1,57,Cong(48,2,83,[24,89]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cong(49,1,57,cong(48,2,83,[24,89]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+modulus:31$ contexto:x^5+x^3+4*x+19$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+suma(p1,p2):=remainder(p1+p2,contexto)$
+producto(p2,p3):=remainder(p2*p3,contexto)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+p1:(x^3+6*x^2+2)^50$ p2:(x^3+6*x^2+2)^-50$ p3:(x^4+8*x^3+21)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+suma(p1,(producto(p2,p3)));
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

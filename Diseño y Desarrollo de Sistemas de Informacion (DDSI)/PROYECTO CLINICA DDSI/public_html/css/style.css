@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body, html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    background-color: #fff4ff;
+}
+
+header {
+    width: 280px;
+    background: white;
+    border-right: 1px solid #dedede;
+}
+
+#helloworld{
+    margin: 10px 10px;
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid #dedede;
+}
+
+header > nav{
+    margin: 50px 20px;
+}
+
+header > nav > figure{
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > nav > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header > nav > ul > li{
+    margin-bottom: 10px;
+}
+
+header > nav > ul > li > a{
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    display: block;
+    padding: 10px 20px;
+    background-color: #0cc97b;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+header > nav > ul > li.logout > a{
+    text-align: center;
+    background: #c64747;
+}
+
+header > nav > ul > li.inicio > a{
+    text-align: center;
+    background: #4773c6;
+}
+
+header > nav > ul > li > a:hover{
+    background-color: #228e62;
+}
+
+
+header > nav > ul > li.logout > a:hover{
+    background-color: #9b3131;
+}
+
+
+header > nav > ul > li.inicio > a:hover{
+    background-color: #31569d;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main > nav {
+    width: 80%;
+}
+
+main > nav > ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 50%;
+    flex-wrap: wrap;
+}
+
+main > nav > ul > li{
+    margin-bottom: 20px;
+    width: 180px;
+    height: 180px;
+    padding: 10px;
+    display: flex;
+}
+
+main > nav > ul > li > a{
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fbacf8;
+    color: #111;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+main > nav > ul > li > a:hover{
+    background-color: #c69ec4;
+}
+
+main > nav > ul > li > a > figure{
+    text-align: center;
+}
+
+main > nav > ul > li > a > figure > figcaption{
+    margin-top: 15px;
+}
+
+form{
+    width: 300px;
+    padding: 20px 30px;
+    background-color: white;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+form > label{
+    display: block;
+    margin: 10px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #dedede;
+    text-align: left;
+}
+
+form > label.date-label {
+    display: flex;
+    
+    border: 1px solid #dedede;
+    border-radius: 5px;
+}
+
+form > label.date-label > span {
+    display: flex;
+    flex: 1;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+form > label.date-label > input {
+    margin: 0 10px;
+    width: auto;
+}
+
+form > p{
+    font-size: 14px;
+    text-align: justify;
+}
+
+form input, form select, form textarea{
+    display: block;
+    box-sizing : border-box;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+form input[type="submit"], form div.buttons > a{
+    cursor: pointer;
+    background-color: #13c77a;
+    font-size: 14px;
+    padding: 10px 0;
+    color: white;
+    border: 0;
+    text-transform: uppercase;
+}
+
+form input[type="submit"]:hover{
+    background-color: #20a46b;
+}
+
+form input[type="submit"]:focus{
+    box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+form .buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+form div.buttons > a {
+    width: 40%;
+    display: block;
+    color: #444;
+    padding: 10px;
+    text-decoration: none;
+}
+
+form div.buttons > a.remove{
+    background: #ec5858;
+}
+
+form div.buttons > a.remove:hover{
+    background: #cc5151;
+}
+
+form div.buttons > a.add{
+    background: #a5a9df;
+}
+
+form div.buttons > a.add:hover{
+    background: #8488bb;
+}
+
+.error {
+    background: #eeb3b3;
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.ok {
+    background: #ddffce;
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+}

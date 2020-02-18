@@ -1,0 +1,3 @@
+TRABAJAR EN LOS ARCHIVOS DE LA CARPETA CLASES, UNA VEZ HECHO TODO PASARLO A LIMPIO
+-hacer ejercicios sesion 7 derivacion y taylor
+-mirar y hacer ejercicios sesion 8 integración

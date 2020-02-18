@@ -1,0 +1,93 @@
+/*
+	Alumno: Raul Del Pozo Moreno
+	NIF:	75171051J
+	Asignatura: Modelos de Computacion
+	Grupo: C - C2
+	Entrega2 LEX
+*/
+	
+//*********************************//
+
+Instrucciones para su uso:
+	1. lex Ejercicio
+	2. g++ -c -x c++ lex.yy.c
+	3. g++ -o prog lex.yy.o -ll
+	4. ./prog Makefile
+
+//*********************************//
+
+Este programa busca errores en un fichero Makefile y los arregla, creando un archivo en el mismo directorio llamado MakeCorregido.
+
+Debido a que hay varios tipos de Makefiles, este programa se ha diseñado para Makefiles del siguiente estilo:
+
+Compilacion en carpetas separadas.
+Compilacion sin bibliotecas.
+Compilacion con archivos fuente .cc
+Compilacion con archivos include .h
+Compilacion con archivos objeto .o
+Compilacion con archivos binario
+Compilacion con banderas
+
+Reglas del makefile, pueden ser multiples:
+
+$(BIN)/binario: $(OBJ)/objeto.o 
+	$(CXX) -o $@ $(CXXFLAGS) $(OBJ)/objeto.o 
+
+$(OBJ)/objeto.o: $(SRC)/fuente.cc $(INC)/include.h
+	$(CXX) $(CXXFLAGS) -c -o $@ $(SRC)/fuente.cc
+
+Las reglas se pueden contruir con varios fuentes, varios objetos y varios includes.
+
+Se adjunta archivo Makefile como ejemplo.
+
+//*********************************//
+
+El programa arregla los siguientes errores:
+	- Falta la extension 'cc' para archivos fuente.
+		Ej: $(SRC)/fuente. -> $(SRC)/fuente.cc
+
+	- Falta la extension '.cc' para archivos fuente.
+		Ej: $(SRC)/fuente  -> $(SRC)/fuente.cc
+
+	- Falta la extension 'o' para archivos objeto.
+		Ej: $(OBJ)/objeto. -> $(OBJ)/objeto.o
+ 
+	- Falta la extension '.o' para archivos objeto.
+		Ej: $(OBJ)/objeto  -> $(OBJ)/objeto.o
+
+	- Falta la extension 'h' para archivos cabecera.
+		Ej: $(INC)/cabece. -> $(INC)/cabece.h
+
+	- Falta la extension '.h' para archivos cabecera.
+		Ej: $(INC)/cabece  -> $(INC)/cabece.h
+
+	- Falta la bandera fuente para archivos fuente.
+		Ej: fuente.cc -> $(SRC)/fuente.cc
+
+	- Falta la bandera objeto para archivos objeto.
+		Ej: objeto.o  -> $(OBJ)/objeto.o
+
+	- Falta la bandera include para arhivos include.
+		Ej: cabece.h  -> $(INC)/cabece.h
+
+	- Falta ':' en la regla de creacion de objeto o binario
+		Ej: $(OBJ)/objeto.o -> $(OBJ)/objeto.o:
+		Ej: $(BIN)/binario  -> $(BIN)/binario:
+	
+	- Falta bandera de ruta en la regla de creacion de objeto o binario
+		Ej: objeto.o: -> $(OBJ)/objeto.o
+		Ej: binario:  -> $(BIN)/binario:
+
+El programa comprueba si falta alguna bandera que indique donde estan los archivos fuente, objeto, cabeceras y ejecutable. Si falta alguna, los crea con las siguientes rutas:
+	SRC = src
+	INC = include
+	OBJ = obj
+	BIN = bin
+
+El programa comprueba si falta la bandera que indica el compilador a usar, si falta, se añade el compilador por defecto 'g++':
+	CXX = g++
+
+El programa comprueba si falta la bandera que indica las opciones a usar al compilar, si falta, se añaden por defecto las siguientes:
+	CXXFLAGS = -I$(INC) -std=c++11
+
+

@@ -1,0 +1,90 @@
+
+load ("functs")$
+
+/* mcd  de un número y una lista  */
+
+mcd(a,li):=if li=[] then a else gcd(a,mcd(li[1],rest(li)))$
+
+/* Ínfimo de un conjunto de enteros positivos ordenados por divisibilidad */
+
+mcm(l):= if l=[] then 1 else lcm(l[1],mcm(rest(l)))$
+
+
+infimo(A):=block([li:listify(A)], mcd(li[1],rest(li)))$
+
+/* Supremo de un conjunto de enteros positivos ordenados por divisibilidad */
+
+supremo(A):=mcm(listify(A))$
+
+/* ------------------------------------------------------------------- */
+
+/*Dado un conjunto finito de enteros positivos, decide si es o no un retículo respecto a la relación de divisibilidad */
+
+esSubretDiv(A):=block([lis,long,i,j,seguir,mensaje], lis:listify(A),long:length(lis),seguir:true,
+for i:2 while ((i<=long) and seguir) do
+  for j:1 while ((j<=i-1) and seguir) do
+    ( if not(elementp(lcm(lis[i],lis[j]),A)) then
+       (seguir:false,mensaje:simplode(["El conjunto no es un subretículo. El supremo de ",lis[i]," y ",lis[j]," no pertenece al conjunto."]))
+     else
+       if not(elementp(gcd(lis[i],lis[j]),A)) then
+          (seguir:false,mensaje:simplode(["El conjunto no es un subretículo. El ínfimo de ",lis[i]," y ",lis[j]," no pertenece al conjunto."]))),
+ if seguir then "El conjunto es un subretículo." else mensaje
+)$
+
+/*Dado un conjunto finito de subconjuntos, decide si es o no un retículo respecto a la relación de inclusión */
+
+esSubretCon(A):=block([lis,long,i,j,seguir,mensaje], lis:listify(A),long:length(lis),seguir:true,
+for i:2 while ((i<=long) and seguir) do
+  for j:1 while ((j<=i-1) and seguir) do
+    ( if not(elementp(union(lis[i],lis[j]),A)) then
+       (seguir:false,mensaje:simplode(["El conjunto no es un subretículo. El supremo de ",lis[i]," y ",lis[j]," no pertenece al conjunto."]))
+     else
+       if not(elementp(intersection(lis[i],lis[j]),A)) then
+          (seguir:false,mensaje:simplode(["El conjunto no es un subretículo. El ínfimo de ",lis[i]," y ",lis[j]," no pertenece al conjunto."]))),
+ if seguir then "El conjunto es un subretículo." else mensaje
+)$
+
+/* Calcula el conjunto de todos los elementos complementados del retículo de divisores D(n) */
+
+complementados(n):=subset(divisors(n),lambda([d], is(gcd(d,quotient(n,d))=1)))$
+
+/* Dado un elemento un conjunto A que es retículo para la divisibilidad y dado un elemento a de A, 
+comprueba si a tiene complemento en A y en tal caso devuelve su complemento. */
+
+complemento(a,A):=block([eluno,elcero,B],eluno:supremo(A), elcero:infimo(A),
+B:subset(A,lambda([x],is(lcm(a,x)=eluno) and (gcd(a,x)=elcero))),
+if is(B={}) then simplode(["El elemento ",a," carece de complemento."])
+else simplode(["El complemento de ",a," es ",listify(B)[1],"."])
+)$
+
+/* Dado n, devuelve true sii D(n) es álgebra de Boole */
+
+esAB(n):=block([lisf,i,long], lisf:ifactors(n),long:length(lisf),if is(apply("*",makelist(lisf[i][2],i,1,long))=1) then true else false)$
+
+/* Dado n, distinto de 1, el cual es un producto de primos distintos, devuelve el conjunto de los átomos 
+del álgebra de Boole D(n) */
+
+atomos(d):=block([lis,long],lis:ifactors(d),long:length(lis),setify(makelist(lis[i][1],i,1,long)))$
+
+/* Dado n tal que D(n) es álgebra de Boole y d un divisor de n, distinto de n, devuelve el conjunto 
+de los coátomos a partir de los cuales se obtiene  */
+
+coatomos(d,n):=block([lis,long],lis:ifactors(quotient(n,d)),long:length(lis),setify(makelist(quotient(n,lis[i][1]),i,1,long)))$
+
+
+/* ------------------------------------------------------------------- */
+
+load(graphs)$
+
+lado(l):=is (mod(l[2],l[1])=0 and primep(quotient(l[2],l[1])))$
+
+Hasse(n):=block([Vn,Ln,Ladosn,hasse],Vn:divisors(n),Ln:cartesian_product(Vn,Vn),
+Ladosn:listify(subset(Ln,lado)),
+hasse:create_graph(listify(Vn),Ladosn),draw_graph(hasse,show_id=true))$
+
+/* ------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+

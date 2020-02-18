@@ -1,0 +1,4 @@
+#!/bin/bash 
+tail -n 10 /tmp/listacores > /tmp/temporal1
+rm /tmp/listacores
+mv /tmp/temporal1 /tmp/listacores

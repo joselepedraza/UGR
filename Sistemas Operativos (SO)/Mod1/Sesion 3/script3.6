@@ -1,0 +1,15 @@
+#!/bin/bash
+vmstat >> actSyst.txt
+n_procss=`cat "actSyst.txt"|tail -1|tr -s " " " "|cut -d " " -f2`
+n_procss_swap=`cat "actSyst.txt"|tail -1|tr -s " " " "|cut -d " " -f17`
+mas_swap=`cat "actSyst.txt"|tail -1|tr -s " " " "|cut -d " " -f9`
+mem_libre=`cat "actSyst.txt"|tail -1|tr -s " " " "|cut -d " " -f5`
+echo "En cola de ejecución hay " $n_procss " procesos"
+echo "En el área de intercambio hay " $n_procss_swap " procesos ejecutándose"
+if [ $mas_swap -eq 0 ]
+then
+echo "No hay mas procesos pasandose al area de la memoria de intercambio"
+else
+echo "Hay" $mas_swap "pocesos que van a la memoria de intercambio"
+fi
+echo "Memoria libre: " $mem_libre "KB"

@@ -1,0 +1,19 @@
+﻿Miembros:
+
+
+Manuel Mesas Gutiérrez 	75171238-Q
+
+Rafael Ruiz Ramírez	77175286-M
+
+
+
+Grupo: E1
+
+Informe:
+
+
+ En el archivo estegaografia.cpp hemos usado un string para la imagen de entrada
+ para poder añadir “imagenes/” sin que el usuario tenga que preocuparse de ello.
+ Luego hemos usado la función c_str() para llamar a leerImagen(char c[]).
+ También hemos creado la función lee_linea(char c[], int tam) para poder usar
+ correctamente cin.getline(c,tam.’\n’).

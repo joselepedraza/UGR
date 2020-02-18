@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+
+<!--Regla para pensar fruta-->
+
+<category>
+<pattern> Piensa una fruta ^ </pattern>
+<template>
+    <think>
+        <set name = "fruta"><random>
+            <li>fresa</li>
+            <li>manzana</li>
+            <li>naranja</li>
+            <li>kiwi</li>
+            <li>mandarina</li>
+            <li>piña</li>
+            <li>mango</li>
+            <li>melocoton</li>
+            <li>higo</li>
+            <li>ciruela</li>
+            <li>pera</li>
+            <li>platano</li>
+            <li>coco</li>
+            <li>aguacate</li>
+            <li>nuez</li>
+            <li>cereza</li>
+        </random></set>
+    </think>
+    Ya he <set name="topic">pensado</set> una fruta, ahora preguntame para averiguarla!! jejeje
+</template>
+</category>
+
+<topic name="pensado">
+
+<!--Regla para devolver si has acertado la fruta o no-->
+
+<category>
+<pattern> ^ es la * </pattern>
+<template>
+    <think>
+        <set name="intro"><star index="2"/></set>
+    </think>
+    <condition name="intro">
+        <li><value><get name="fruta"/></value> Has acertado, muy bien!
+            Ahora dime, qué modo de juego quieres jugar:
+                 -Piensa una fruta cualquiera
+                 -Adivina la fruta que estoy pensando
+        </li>
+        <li>No estaba pensando en esa fruta, sigue preguntando.</li>
+    </condition>
+</template>
+</category>
+
+
+<category>
+    <pattern> ^ es el * </pattern>
+    <template>
+    <think>
+        <set name="intro"><star index="2"/></set>
+    </think>
+    <condition name="intro">
+        <li><value><get name="fruta"/></value> Has acertado, muy bien!
+            Ahora dime, qué modo de juego quieres jugar:
+                 -Piensa una fruta cualquiera
+                 -Adivina la fruta que estoy pensando
+        </li>
+        <li>No estaba pensando en esa fruta, sigue preguntando.</li>
+    </condition>
+</template>
+</category>
+
+
+
+<!-- Regla para preguntar que fruta habia pensado-->
+
+<category>
+<pattern> * fruta ^ </pattern>
+<template>
+        <get name="fruta"/> era la fruta que estaba pensando, eres realmente malo!!
+</template>
+</category>
+
+
+<!-- Regla para preguntar FCOLOR-->
+<!--prueba con varios maps-->
+
+<!--ROJO-->
+<category>
+<pattern> * roja ^ </pattern>
+<template>
+    <think>
+        <set var="color">rojo</set>
+        <set var="numfcol"> <!-- pienso cuantos colores tiene la fruta -->
+            <map name="numfcolor"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="numfcol">
+        <li value="1">  <!-- si solo tiene un color, lo cogemos del map de los primeros colores -->
+            <think>
+            <set var="col1">    <!-- guardamos el unico primer color en fcol -->
+            		<map name="fcolor1"><get name="fruta"/></map>
+        	</set>
+        	</think>
+        	<condition var="col1">
+        	   <!-- <li value="rojo">Si.</li> -->
+                <li><value><get name="color"/></value>Si.</li>
+        	    <li>No.</li>
+            </condition>
+        </li>
+        <li value="2">    <!-- Si tiene 2 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+        <li value="3">    <!-- Si tiene 3 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            <set var="col3">    <!-- guardamos en col3 el segundo color del map de los segundos colores -->
+                <map name="fcolor3"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li><value><get var="col3"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+    </condition>
+</template>
+</category>
+
+<category>
+    <pattern> * rojo ^</pattern>
+    <template><srai> * roja ^ </srai></template>
+</category>
+
+<!--AMARILLO-->
+
+<category>
+<pattern> * amarilla ^ </pattern>
+<template>
+    <think>
+        <set var="color">amarillo</set>
+        <set var="numfcol"> <!-- pienso cuantos colores tiene la fruta -->
+            <map name="numfcolor"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="numfcol">
+        <li value="1">  <!-- si solo tiene un color, lo cogemos del map de los primeros colores -->
+            <think>
+            <set var="col1">    <!-- guardamos el unico primer color en fcol -->
+            		<map name="fcolor1"><get name="fruta"/></map>
+        	</set>
+        	</think>
+        	<condition var="col1">
+        	   <!-- <li value="rojo">Si.</li> -->
+                <li><value><get var="color"/></value>Si.</li>
+        	    <li>No.</li>
+            </condition>
+        </li>
+        <li value="2">    <!-- Si tiene 2 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+        <li value="3">    <!-- Si tiene 3 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            <set var="col3">    <!-- guardamos en col3 el segundo color del map de los segundos colores -->
+                <map name="fcolor3"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li><value><get var="col3"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+    </condition>
+</template>
+</category>
+
+
+<category>
+    <pattern> * amarillo ^</pattern>
+    <template><srai> * amarilla ^ </srai></template>
+</category>
+
+<!--VERDE-->
+
+<category>
+<pattern> * verde ^ </pattern>
+<template>
+    <think>
+        <set var="color">verde</set>
+        <set var="numfcol"> <!-- pienso cuantos colores tiene la fruta -->
+            <map name="numfcolor"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="numfcol">
+        <li value="1">  <!-- si solo tiene un color, lo cogemos del map de los primeros colores -->
+            <think>
+            <set var="col1">    <!-- guardamos el unico primer color en fcol -->
+            		<map name="fcolor1"><get name="fruta"/></map>
+        	</set>
+        	</think>
+        	<condition var="col1">
+        	   <!-- <li value="rojo">Si.</li> -->
+                <li><value><get var="color"/></value>Si.</li>
+        	    <li>No.</li>
+            </condition>
+        </li>
+        <li value="2">    <!-- Si tiene 2 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+        <li value="3">    <!-- Si tiene 3 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            <set var="col3">    <!-- guardamos en col3 el segundo color del map de los segundos colores -->
+                <map name="fcolor3"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li><value><get var="col3"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+    </condition>
+</template>
+</category>
+
+<!--NARANJA-->
+
+<category>
+<pattern> * naranja ^ </pattern>
+<template>
+    <think>
+        <set var="color">naranja</set>
+        <set var="numfcol"> <!-- pienso cuantos colores tiene la fruta -->
+            <map name="numfcolor"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="numfcol">
+        <li value="1">  <!-- si solo tiene un color, lo cogemos del map de los primeros colores -->
+            <think>
+            <set var="col1">    <!-- guardamos el unico primer color en fcol -->
+            		<map name="fcolor1"><get name="fruta"/></map>
+        	</set>
+        	</think>
+        	<condition var="col1">
+        	   <!-- <li value="rojo">Si.</li> -->
+                <li><value><get var="color"/></value>Si.</li>
+        	    <li>No.</li>
+            </condition>
+        </li>
+        <li value="2">    <!-- Si tiene 2 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+        <li value="3">    <!-- Si tiene 3 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            <set var="col3">    <!-- guardamos en col3 el segundo color del map de los segundos colores -->
+                <map name="fcolor3"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li><value><get var="col3"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+    </condition>
+</template>
+</category>
+
+<!--MORADO-->
+
+<category>
+<pattern> * morada ^ </pattern>
+<template>
+    <think>
+        <set var="color">morado</set>
+        <set var="numfcol"> <!-- pienso cuantos colores tiene la fruta -->
+            <map name="numfcolor"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="numfcol">
+        <li value="1">  <!-- si solo tiene un color, lo cogemos del map de los primeros colores -->
+            <think>
+            <set var="col1">    <!-- guardamos el unico primer color en fcol -->
+            		<map name="fcolor1"><get name="fruta"/></map>
+        	</set>
+        	</think>
+        	<condition var="col1">
+        	   <!-- <li value="rojo">Si.</li> -->
+                <li><value><get var="color"/></value>Si.</li>
+        	    <li>No.</li>
+            </condition>
+        </li>
+        <li value="2">    <!-- Si tiene 2 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+        <li value="3">    <!-- Si tiene 3 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            <set var="col3">    <!-- guardamos en col3 el segundo color del map de los segundos colores -->
+                <map name="fcolor3"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li><value><get var="col3"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+    </condition>
+</template>
+</category>
+
+
+<category>
+    <pattern> * morado ^</pattern>
+    <template><srai> * morada ^ </srai></template>
+</category>
+
+<!--MARRON-->
+
+<category>
+<pattern> * marron ^ </pattern>
+<template>
+    <think>
+        <set var="color">marron</set>
+        <set var="numfcol"> <!-- pienso cuantos colores tiene la fruta -->
+            <map name="numfcolor"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="numfcol">
+        <li value="1">  <!-- si solo tiene un color, lo cogemos del map de los primeros colores -->
+            <think>
+            <set var="col1">    <!-- guardamos el unico primer color en fcol -->
+            		<map name="fcolor1"><get name="fruta"/></map>
+        	</set>
+        	</think>
+        	<condition var="col1">
+        	   <!-- <li value="rojo">Si.</li> -->
+                <li><value><get var="color"/></value>Si.</li>
+        	    <li>No.</li>
+            </condition>
+        </li>
+        <li value="2">    <!-- Si tiene 2 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+        <li value="3">    <!-- Si tiene 3 colores posibles -->
+            <think>
+            <set var="col1">    <!-- guardamos en col1 el primer color del map de los primeros colores-->
+                <map name="fcolor1"><get name="fruta"/></map>
+            </set>
+            <set var="col2">    <!-- guardamos en col2 el segundo color del map de los segundos colores -->
+                <map name="fcolor2"><get name="fruta"/></map>
+            </set>
+            <set var="col3">    <!-- guardamos en col3 el segundo color del map de los segundos colores -->
+                <map name="fcolor3"><get name="fruta"/></map>
+            </set>
+            </think>
+            <condition var="color">
+                <li><value><get var="col1"/></value>Si.</li> <!-- si el col1 es el rojo -->
+                <li><value><get var="col2"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li><value><get var="col3"/></value>Si.</li> <!-- si el col2 es el rojo -->
+                <li>No.</li>
+            </condition>
+        </li>
+    </condition>
+</template>
+</category>
+
+
+<!-- Regla para preguntar FTAMAÑO-->
+
+<!--PEQUEÑO-->
+<category>
+<pattern> * pequeña ^ </pattern>
+<template>
+    <think>
+        <set var="ftam">
+            <map name="ftamaño"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="ftam">
+        <li value="pequeño">Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+<category>
+    <pattern> * pequeño ^ </pattern>
+    <template><srai> * pequeña ^ </srai></template>
+</category>
+
+<!--MEDIANO-->
+<category>
+<pattern> * mediana ^ </pattern>
+<template>
+    <think>
+        <set var="ftam">
+            <map name="ftamaño"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="ftam">
+        <li value="mediano">Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+<category>
+    <pattern> * mediano ^ </pattern>
+    <template><srai> * mediana ^ </srai></template>
+</category>
+
+<!--GRANDE-->
+<category>
+<pattern> * grande ^ </pattern>
+<template>
+    <think>
+        <set var="ftam">
+            <map name="ftamaño"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="ftam">
+        <li value="grande">Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+
+<!-- Regla para preguntar FSABOR -->
+
+<!--SEMIACIDO-->
+<category>
+<pattern> * semiacida ^ </pattern>
+<template>
+    <think>
+        <set var="fsab">
+            <map name="fsabor"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="fsab">
+        <li value="semiacido">Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+<category>
+    <pattern> * semiacido ^ </pattern>
+    <template><srai> * semiacida ^ </srai></template>
+</category>
+
+<!--ACIDO-->
+<category>
+<pattern> * acida ^ </pattern>
+<template>
+    <think>
+        <set var="fsab">
+            <map name="fsabor"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="fsab">
+        <li value="acido">Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+<category>
+    <pattern> * acido ^ </pattern>
+    <template><srai> * acida ^ </srai></template>
+</category>
+
+
+<!--DULCE-->
+<category>
+<pattern> * dulce ^ </pattern>
+<template>
+    <think>
+        <set var="fsab">
+            <map name="fsabor"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="fsab">
+        <li value="dulce">Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+
+<!--NEUTRO-->
+<category>
+<pattern> * neutra ^ </pattern>
+<template>
+    <think>
+        <set var="fsab">
+            <map name="fsabor"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="fsab">
+        <li value="neutro">Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+<category>
+    <pattern> * neutro ^ </pattern>
+    <template><srai> * neutra ^ </srai></template>
+</category>
+
+<!-- Regla para preguntar FVITAMINAA -->
+
+<category>
+<pattern> * vitamina a ^ </pattern>
+<template>
+    <think>
+        <set var="fvita">
+            <map name="fvitaminaa"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="fvita">
+        <li value="si">Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+<!-- Regla para preguntar FVITAMINAB -->
+
+<category>
+<pattern> * vitamina b ^ </pattern>
+<template>
+    <think>
+        <set var="fvitb">
+            <map name="fvitaminab"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="fvitb">
+        <li value="si">Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+<!-- Regla para preguntar FVITAMINAC -->
+
+<category>
+<pattern> * vitamina c ^ </pattern>
+<template>
+    <think>
+        <set var="fvitc">
+            <map name="fvitaminac"><get name="fruta"/></map>
+        </set>
+    </think>
+    <condition var="fvitc">
+        <li value="si">Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+
+</topic>
+
+</aiml>

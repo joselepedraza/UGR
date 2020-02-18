@@ -1,0 +1,89 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.6 ] */
+
+/* [wxMaxima: input   start ] */
+load("C:/Documents and Settings/araluce/Escritorio/practica_7_LMD_10-11/logic.lisp")$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector(f(x,y,z),x,y,z);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector(true ,x,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector(not x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector( x or y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector( x xor y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector( x and y );
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector( ((a implies b ) and a) implies b);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+ Ej2
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector(x implies y );
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+characteristic_vector( x implies y, y, x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Son diferenes porque x->y no es lo mismo que y->x.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+zhegalkin_form( x xor y );
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+zhegalkin_form(x or y );
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+zhegalkin_form( x or y or z );
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+zhegalkin_form( (x implies y) or z );
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv( x or y, y or x );
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+e:(((x or y) xor z) and u);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+zhegalkin_form(e);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv (%o21,%o22);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv(x and y eq x, x implies y);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

@@ -1,0 +1,93 @@
+ENUNCIADO DEL EJERCICIO:
+
+Existe una nueva regla del juego basada en un nuevo tipo de tesoro, JOKER, que funciona como comodín y que es usado por el jugador para quedar libre de un mal rollo pendiente. 
+Realiza lo cambios necesarios en la interfaz y el modelo Napakalaki creando los métodos que consideres para realizar las siguientes tareas:
+
+1. Añade un nuevo tipo de tesoro denominado JOKER.
+
+2. Crea un nuevo tesoro de tipo JOKER (nombre= “El JOKER”, bonus = 0 y tipo = JOKER) e incorpóralo al mazo de tesoros del CardDealer de manera que sea el primer tesoro que se reparte en el juego*.
+ 
+3. Añade en la interfaz gráfica un botón "Use JOKER" que se habilitará cuando el jugador se equipe (haga visible) el tesoro de tipo JOKER, en caso contrario estará deshabilitado. Para ello, añade una variable y su correspondiente consultor y modificador en la clase que creas conveniente que indique si el jugador tiene un JOKER visible o no.
+
+4. Cuando el jugador pulsa el botón “Use JOKER” y sin necesidad de seleccionar la carta JOKER, se llevará a cabo las siguientes acciones:
+	- el mal rollo pendiente de ese jugador (tenga o no tenga) se modifica a null o a un objeto BadConsequense vacío,
+	- se descarta la carta de tesoro tipo JOKER,
+	- y el botón “Use JOKER” se deshabilita.
+
+5. El CultistPlayer cuando usa el Joker, además de hacer lo que hace el Player, si tiene tesoros visibles  elige uno al azar y se lo devuelve al CardDealer.
+
+
+UNA POSIBLE SOLUCIÓN:
+
+En el enumerado TreasureKind añadir un nuevo tipo: JOKER
+
+En la clase CardDealer
+	En el método  initTreasureCardDeck incluir como primer tesoro del array de tesoros al Joker:
+		unusedTreasures.add(new Treasure("El Joker",0,TreasureKind.JOKER));
+	Comentar la línea de código en la que se baraja el mazo de cartas de tesoros, dónde la tuviereis:
+		//shuffleTreasures();
+
+En la clase PlayerView
+
+    En setPlayer(...) 
+    
+        jBUseJoker.setEnabled(playerModel.hasJoker());
+               
+
+    Un nuevo método
+
+        private void jBUseJokerActionPerformed(java.awt.event.ActionEvent evt) {                                        
+                playerModel.useJoker();
+                setPlayer(playerModel);        
+            }
+
+
+En la clase Player
+
+    Incluir una variable:
+
+    	private boolean hasJoker = false;
+
+
+    Añadir en el método makeTreasureVisible el código:
+
+
+     if (t.getType() == TreasureKind.JOKER)
+                hasJoker = true;  
+
+
+    Incluir dos métodos nuevos:
+
+
+    	public boolean hasJoker(){
+            return hasJoker;
+     	}
+     
+    	public void useJoker() {
+            if (hasJoker)
+                pendingBadConsequence = null;            
+                for (Iterator<Treasure> iterator = visibleTreasures.iterator(); iterator.hasNext() && hasJoker;)
+                {   Treasure next = iterator.next();
+                    if(next.getType() == TreasureKind.JOKER){
+                        iterator.remove(); 
+                        CardDealer.getInstance().giveTreasureBack(next);
+                        hasJoker = false;
+                    }
+                }
+            }
+           
+       	 }
+
+
+En la clase CultistPlayer redefinir el método useJoker
+
+    @Override
+    public void useJoker(){
+            super.useJoker();
+            if(!visibleTreasures.isEmpty()){  
+                int i = (int)(Math.random() * visibleTreasures.size());
+                CardDealer.getInstance().giveTreasureBack(visibleTreasures.remove(i));    
+        }
+    }
+
+

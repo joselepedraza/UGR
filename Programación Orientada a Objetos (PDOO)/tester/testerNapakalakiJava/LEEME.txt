@@ -1,0 +1,7 @@
+
+1. Añadir el fichero   NapakalakiGame/EjemploMain.java   a   tuProyecto/src/NapakalakiGame
+
+2. Añadir la carpeta   Test   y su contenido a   tuProyecto/src/
+
+3. Modificar las propiedades del proyecto para que use como main el contenido en la clase   NapakalakiGame.EjemploMain
+

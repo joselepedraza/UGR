@@ -1,0 +1,316 @@
+/*
+	Alumno: Raul Del Pozo Moreno
+	NIF:	75171051J
+	Asignatura: Modelos de Computacion
+	Grupo: C - C2
+	Entrega2 LEX
+*/
+
+/*--------------------------Sección de Procedimientos-------------------------*/
+
+%{
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+//Estados de error
+bool src, inc, obj, bin;
+bool cxx, cxxflags;
+
+//I-O
+ofstream fs("MakeCorregido");
+
+//Metodos
+void escribirCadena(string cadena);
+string ajustarCadena(char origen[],int inicio);
+string corregir(string origen, int i);
+
+%}
+/*--------------------------Sección de Declaraciones-------------------------*/
+
+separador	[ \n\t]
+
+palabra		[a-zA-Z0-9"_""+""/"]+
+palabra1	[a-zA-Z0-9"_""+"\-"$""("")""="]+
+
+bandera1	{separador}("SRC="|"SRC ="){separador}*{palabra1}{separador}
+bandera11	^("SRC="|"SRC ="){separador}*{palabra1}{separador}
+bandera2	{separador}("INC="|"INC ="){separador}*{palabra1}{separador}
+bandera22 ^("INC="|"INC ="){separador}*{palabra1}{separador}
+bandera3	{separador}("OBJ="|"OBJ ="){separador}*{palabra1}{separador}
+bandera33 ^("OBJ="|"OBJ ="){separador}*{palabra1}{separador}
+bandera4	{separador}("BIN="|"BIN ="){separador}*{palabra1}{separador}
+bandera44 ^("BIN="|"BIN ="){separador}*{palabra1}{separador}
+bandera5	{separador}("CXX="|"CXX ="){separador}*{palabra1}{separador}
+bandera55 ^("CXX="|"CXX ="){separador}*{palabra1}{separador}
+bandera6	{separador}("CXXFLAGS="|"CXXFLAGS =")({separador}*{palabra1})+{separador}
+bandera66 ^("CXXFLAGS="|"CXXFLAGS =")({separador}*{palabra1})+{separador}
+
+includeERR1	{separador}"$(INC)/"{palabra}["."]?{separador}
+sourceERR1	{separador}"$(SRC)/"{palabra}["."]?{separador}
+objectERR1	{separador}"$(OBJ)/"{palabra}["."]?{separador}
+
+includeERR2	{separador}{palabra}".h"{separador}
+sourceERR2	{separador}{palabra}".cc"{separador}
+objectERR2	{separador}{palabra}".o"{separador}
+
+objectERR3	[\n]"$(OBJ)/"{palabra}".o"{separador}
+objectERR4	[\n]{palabra}".o:"{separador}
+
+binERR3		[\n]"$(BIN)/"{palabra}{separador}
+binERR4		[\n]{palabra}":"{separador}
+
+%%
+
+{bandera1}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+		 	if(cadena[i-1] == '=') carp = true;
+		  	if(carp) carpeta.push_back(cadena[i]);
+		  }
+		  if(cadena[0] == 'S' && cadena[1] == 'R' && cadena[2] == 'C'){ src = true; fs << "SRC = " << carpeta << endl; }
+		}
+{bandera11}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,0);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+		 	if(cadena[i-1] == '=') carp = true;
+		  	if(carp) carpeta.push_back(cadena[i]);
+		  }
+		  if(cadena[0] == 'S' && cadena[1] == 'R' && cadena[2] == 'C'){ src = true; fs << "SRC = " << carpeta << endl; }
+		}
+{bandera2}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+		  	if(cadena[i-1] == '=') carp = true;
+		 	if(carp) carpeta.push_back(cadena[i]);
+		  }
+		  if(cadena[0] == 'I' && cadena[1] == 'N' && cadena[2] == 'C'){ inc = true; fs << "INC = " << carpeta << endl; }
+		}
+{bandera22}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,0);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+		  	if(cadena[i-1] == '=') carp = true;
+		 	if(carp) carpeta.push_back(cadena[i]);
+		  }
+		  if(cadena[0] == 'I' && cadena[1] == 'N' && cadena[2] == 'C'){ inc = true; fs << "INC = " << carpeta << endl; }
+		}
+{bandera3}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+		  	if(cadena[i-1] == '=') carp = true;
+		  	if(carp) carpeta.push_back(cadena[i]);
+		  }
+		  if(cadena[0] == 'O' && cadena[1] == 'B' && cadena[2] == 'J'){ obj = true; fs << "OBJ = " << carpeta << endl; }
+		}
+{bandera33}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,0);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+		  	if(cadena[i-1] == '=') carp = true;
+		  	if(carp) carpeta.push_back(cadena[i]);
+		  }
+		  if(cadena[0] == 'O' && cadena[1] == 'B' && cadena[2] == 'J'){ obj = true; fs << "OBJ = " << carpeta << endl; }
+		}
+{bandera4}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+		  	if(cadena[i-1] == '=') carp = true;
+			if(carp) carpeta.push_back(cadena[i]);
+		  }
+		  if(cadena[0] == 'B' && cadena[1] == 'I' && cadena[2] == 'N'){ bin = true; fs << "BIN = " << carpeta << endl; }
+		}
+{bandera44}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,0);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+		  	if(cadena[i-1] == '=') carp = true;
+			if(carp) carpeta.push_back(cadena[i]);
+		  }
+		  if(cadena[0] == 'B' && cadena[1] == 'I' && cadena[2] == 'N'){ bin = true; fs << "BIN = " << carpeta << endl; }
+		}
+{bandera5}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+			if(cadena[i-1] == '=') carp = true;
+			if(carp) carpeta.push_back(cadena[i]);
+		  }
+		  if(cadena[0] == 'C' && cadena[1] == 'X' && cadena[2] == 'X'){ cxx = true; fs << "CXX = " << carpeta << endl; }
+		}
+{bandera55}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,0);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+			if(cadena[i-1] == '=') carp = true;
+			if(carp) carpeta.push_back(cadena[i]);
+		  }
+		  if(cadena[0] == 'C' && cadena[1] == 'X' && cadena[2] == 'X'){ cxx = true; fs << "CXX = " << carpeta << endl; }
+		}
+{bandera6}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+			if(cadena[i-1] == '=') carp = true;
+			if(carp) carpeta.push_back(cadena[i]);
+		  }
+		if(cadena[0] == 'C' && cadena[1] == 'X' && cadena[2] == 'X' && cadena[3] == 'F'){ cxxflags = true; fs << "CXXFLAGS = " << carpeta << endl; }
+								}
+{bandera66}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,0);
+		  bool carp = false;
+		  string carpeta;
+		  for(int i = 1 ; i < cadena.size() ; i++){
+			if(cadena[i-1] == '=') carp = true;
+			if(carp) carpeta.push_back(cadena[i]);
+		  }
+		if(cadena[0] == 'C' && cadena[1] == 'X' && cadena[2] == 'X' && cadena[3] == 'F'){ cxxflags = true; fs << "CXXFLAGS = " << carpeta << endl; }
+								}
+
+{includeERR1}	{ yyless(yyleng-1);
+		  string cadena = corregir(yytext,1);
+		  fs << cadena;
+		}
+{includeERR2}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  string cadena1 = corregir(cadena,4);
+		  fs << cadena1;
+		}
+
+{sourceERR1}	{ yyless(yyleng-1);
+		  string cadena = corregir(yytext,2);
+		  fs << cadena;
+		}
+{sourceERR2}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  string cadena1 = corregir(cadena,5);
+		  fs << cadena1;
+		}
+
+{objectERR1}	{ yyless(yyleng-1);
+		  string cadena = corregir(yytext,3);
+		  fs << cadena;
+		}
+{objectERR2}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  string cadena1 = corregir(cadena,6);
+		  fs << cadena1;
+		}
+{objectERR3}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  string cadena1 = corregir(cadena,7);
+		  fs << cadena1;
+		}
+{objectERR4}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  string cadena1 = corregir(cadena,8);
+		  fs << cadena1;
+		}
+
+{binERR3}	{ yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  string cadena1 = corregir(cadena,7);
+		  fs << cadena1;
+		}
+{binERR4} { yyless(yyleng-1);
+		  string cadena = ajustarCadena(yytext,1);
+		  string cadena1 = corregir(cadena,9);
+		  fs << cadena1;
+		}
+
+\n		{ fs << '\n'; }
+\t		{ fs << "\t"; }
+[ ]		{ fs << " ";  }
+.		{ fs << yytext;	}
+
+
+%%
+/*-------------------------Sección de Procedimientos-------------------------*/
+
+int main(int argc, char *argv[]){
+
+	if(argc == 2){
+		yyin = fopen(argv[1], "rt");
+		if(yyin == NULL){
+			cout << "El fichero " << argv[1] << " no se puede abrir" << endl;
+			return 0;
+		}
+
+	}
+	else{
+		cout << "Inicio en modo terminal" << endl;
+		yyin = stdin;
+	}
+	src = inc = obj = bin = false;
+	cxx = cxxflags = false;
+	yylex();
+
+	//Si no encuentra alguna flag en el fichero, la añade
+	if(!src) fs << "SRC = src" << endl;
+	if(!inc) fs << "INC = include" << endl;
+	if(!obj) fs << "OBJ = obj" << endl;
+	if(!bin) fs << "BIN = bin" << endl;
+	if(!cxx) fs << "CXX = g++" << endl;
+	if(!cxxflags) fs << "CXXFLAGS = -I$(INC) -std=c++11" << endl;
+
+	return 0;
+}
+
+string corregir(string origen, int i){
+	switch (i) {
+		case 1: if(origen[origen.size()-1] == '.') origen.push_back('h');
+						else{ origen.push_back('.'); origen.push_back('h'); }
+						break;
+		case 2: if(origen[origen.size()-1] == '.'){ origen.push_back('c'); origen.push_back('c'); }
+			      else{ origen.push_back('.'); origen.push_back('c'); origen.push_back('c'); }
+						break;
+		case 3: if(origen[origen.size()-1] == '.') origen.push_back('o');
+						else{ origen.push_back('.'); origen.push_back('o'); }
+						break;
+		case 4:	return " $(INC)/" + origen;
+						break;
+		case 5:	return " $(SRC)/" + origen;
+						break;
+		case 6: return " $(OBJ)/" + origen;
+						break;
+		case 7:	return "\n" + origen + ":";
+						break;
+		case 8: return "\n$(OBJ)/" + origen;
+						break;
+		case 9: return "\n$(BIN)/" + origen;
+						break;
+	}
+	return origen;
+}
+
+void escribirCadena(string cadena){
+	for(int i = 0 ; i < cadena.size() ; i++){
+		cout << cadena[i];
+	}
+}
+
+string ajustarCadena(char origen[], int inicio){
+	string temp;
+	for(int i = inicio ; i < yyleng ; i++){
+		temp.push_back(origen[i]);
+	}
+	return temp;
+}

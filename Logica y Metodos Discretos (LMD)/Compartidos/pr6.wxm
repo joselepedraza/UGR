@@ -1,0 +1,228 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.4 ] */
+
+/* [wxMaxima: comment start ]
+Práctica 6:Carlota Plantada García
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+load(graphs)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+K3:create_graph([1,2,3],[[1,2],[1,3],[2,3]]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+print_graph(K3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+T3:create_graph([1,2,3],[[1,2],[2,3],[3,1]],directed=true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+print_graph(T3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+K6:complete_graph(6)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(K6);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+K34:complete_bipartite_graph(4,3)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(K34);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+CK34:complement_graph(K34)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(CK34);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+print_graph(K6); print_graph(K34); print_graph(CK34);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+C7:cycle_graph(7)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(C7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cycle_digraph(7)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Cm5:path_graph(5)$ path_digraph(5)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(Cm5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Cb4:cube_graph(4)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(Cb4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+A:matrix([0,1,1,1],[1,0,1,1],[1,1,0,1],[1,1,1,0])$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+K4:from_adjacency_matrix(A)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(K4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is_isomorphic(K4,complete_graph(4));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+degree_sequence(K34);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+B:adjacency_matrix(CK34)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(CK34);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+B^^5;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ch:hamilton_cycle(K6);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(K6,show_edges=vertices_to_cycle(ch));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(K6,show_id=true,show_edges=vertices_to_cycle(ch));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is_planar(K4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(K4,redraw=true,program=planar_embedding);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+K5:complete_graph(5)$ is_planar(K5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+edges(K5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+remove_edge([0,1],K5)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw_graph(K5,redraw=true,program=planar_embedding);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ajedrez:create_graph(makelist(i,i,0,15),[[0,6],[0,9],[1,7],[1,8],[1,10],[2,4],
+[2,9],[2,11],[3,5],[3,10],[4,10],[4,13],[5,11],[5,12],[5,14],[6,8],[6,13],[6,15],[7,9],
+[7,14],[8,14],[9,15],[10,12],[11,13]]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+chromatic_number(ajedrez);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+vertex_coloring(ajedrez);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is_bipartite(ajedrez);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+bipartition(ajedrez);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+[x,y]:bipartition(ajedrez)$ draw_graph(ajedrez, show_vertices=x, show_id=true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Otro ejemplo:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+[x,y]:bipartition(cube_graph(3))$ draw_graph(cube_graph(3), show_vertices=x, show_id=true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+El cube_graph sólo funciona con 3.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+shortest_path(0,12,ajedrez);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+diameter(ajedrez);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+gr(x):=is(vertex_degree(x,ajedrez)=a)$ V:setify(vertices(ajedrez))$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+a:2$ Gr2:subset(V,gr); a:3$ Gr3:subset(V,gr); a:4$ Gr4:subset(V,gr);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+hamilton_cycle(ajedrez);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+girth(ajedrez);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+odd_girth(ajedrez);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x,y):=is(mod(x+y,3)=0)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+grafo:make_graph(makelist(i,i,0,30),f);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

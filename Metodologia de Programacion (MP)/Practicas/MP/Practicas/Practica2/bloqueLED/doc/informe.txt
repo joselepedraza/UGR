@@ -1,0 +1,11 @@
+INFORME:
+
+Para hacer la animación del segundo ejemplo hemos
+optado por usar un contador y una estructura if(...)
+para saltarnos una iteración del bucle for(...) y 
+así no se apagan todos los LEDs a mitad de la animación.
+
+GRUPO:
+
+Rafael Ruiz Ramírez		77175286-M
+Manuel Mesas Gutiérrez	75171238-Q

@@ -1,0 +1,1 @@
+g++ -oSalida Bot.cpp GameState.cpp main.cpp SimulatorLink.cpp JosBot.cpp -I./ -lm -std=c++11

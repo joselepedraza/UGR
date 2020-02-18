@@ -1,0 +1,117 @@
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6552068  44740 719784    0    0    90    12   66  165  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6551820  44748 719796    0    0    90    12   66  165  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6551880  44748 719740    0    0    90    12   66  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6552440  44756 719728    0    0    90    12   66  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6552300  44756 719740    0    0    89    12   66  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6551836  44764 719740    0    0    89    12   66  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6539856  45008 719988    0    0    87    12   66  166  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  1      0 6539624  45016 719976    0    0    87    12   66  165  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6540152  45016 719988    0    0    87    12   66  165  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6539904  45024 720016    0    0    87    12   66  165  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6550804  45276 720060    0    0    78    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6550648  45276 719932    0    0    78    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6553408  45348 719936    0    0    78    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6553456  45348 719940    0    0    78    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6553176  45348 719948    0    0    78    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6553580  45348 719952    0    0    78    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6553456  45348 719956    0    0    78    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6553580  45356 719940    0    0    77    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6553828  45356 719940    0    0    77    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6553208  45356 719960    0    0    77    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6553208  45356 719968    0    0    77    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6552928  45356 719968    0    0    77    11   65  162  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  1      0 6552960  45364 719944    0    0    77    11   65  163  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6552960  45364 719948    0    0    77    11   65  163  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6553332  45364 719936    0    0    77    11   65  163  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6553424  45364 719948    0    0    77    11   65  163  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6551704  45388 719960    0    0    76    11   65  163  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6551844  45388 719956    0    0    76    11   65  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 3  0      0 6551672  45388 719976    0    0    76    11   65  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6551796  45388 720000    0    0    76    11   65  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6552076  45388 720000    0    0    76    11   65  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  1      0 6551640  45396 720000    0    0    76    11   65  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6551828  45396 719996    0    0    76    11   65  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6552076  45396 719988    0    0    76    11   65  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6552044  45396 719992    0    0    76    11   65  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6552200  45396 719992    0    0    76    11   65  164  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 6551828  45404 719988    0    0    76    11   65  165  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6551828  45404 719992    0    0    76    11   65  165  1  0 97  2  0
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd  libre búfer caché   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 6538176  45772 720348    0    0    71    11   67  168  1  0 97  2  0

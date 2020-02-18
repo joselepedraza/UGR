@@ -1,0 +1,278 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: comment start ]
+Practica 3
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: comment start ]
+3.1 ARITMETICA ENTERA 
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+quotient(27,5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+mod(27,5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+quotient(605,31);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+mod(605,31);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+quotient(23,7); mod(23,7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+quotient(-23,7); mod(-23,7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+quotient(23,-7); mod(23,-7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+quotient(-23,-7); mod(-23,-7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cociente(23,-5); modulo(23,-5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cociente(-23,-5); modulo(-23,-5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+gcd(4,6); lcm(4,6);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+gcd(45,123); lcm(45,123);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+lcm(4,6,8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+gcd(-4,10); gcd(4,-10); gcd(-4,-10); gcd(-4,0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+lcm(4,10); lcm(4,-10); lcm(-4,10); lcm(-4,-10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+gcdex(45,123);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+d:gcd(2475,7548); mod(114,d);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+gcdex(2475,7548);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+x0:-491*114/3; y0:161*114/3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+diofantica(2475,7548,114);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+diofantica(2465,7548,49);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+diofantica(2,15,7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+diofantica(6,10,2*(-49));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+factor(24);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+factor(60984);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ifactors(256);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ifactors(30);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ifactors(60984);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+divisors(24);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+divisors(256);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+div_primos(n):=makelist(ifactors(n)[i][1],i,1,length(ifactors(n)))$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+div_primos(60984);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+div_primos(256);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+div_primos2(n):=subset(divisors(n),primep)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+div_primos2(60984);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+div_primos2(256);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+next_prime(2); next_prime(4); next_prime(20);
+next_prime(12345); next_prime(-10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+prev_prime(10); prev_prime(20); prev_prime(12345);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+3.2 ARITMETICA MODULAR
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+mod(6*9-4*(5-2),11);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+mod(12^31,47);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+power_mod(12,31,47);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+power_mod(13579,123456789,987654321);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+power_mod(5,-1,9);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+power_mod(5,-2,9);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+power_mod(6,-1,9);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+inv_mod(11,23);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+inv_mod(7,1000001);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+modulus:11$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+rat(6+7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+rat(7*8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+(x^2-1)/(x+1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+rat((x^2-1)/(x+1));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+rat(8+9);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+makelist(rat(i),i,0,20);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+modulus:10$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+makelist(rat(i),i,0,20);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+gcd(6,27);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+modulus:false$ gcd(6,27);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Z28:setify(makelist(i,i,0,27));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+UZ28:subset(Z28, lambda([x],is(gcd(x,28)=1)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+UZ(30);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+totient(28); totient(30);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(totient(28)=cardinality(UZ(28)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(totient(30)=cardinality(UZ(30)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(totient(500)=cardinality(UZ(500)));
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

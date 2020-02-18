@@ -1,0 +1,14 @@
+Con el montaje de la PRACTICA 3, se obtuvo un CSV
+para un diodo de GERMANIO:    GE_13.CSV
+
+Ese fichero GE_13.CSV tiene 3 columnas:
+Tiempo (segundos)
+Voltaje del Canal 1 del Osciloscopio (Voltios)  (=Vi=V_Ch1)
+Voltaje del Canal 2 del Osciloscopio (Voltios)  (=Vo=V_Ch2)
+
+Obtendremos (con una hoja de cálculo):
+ Vd (Tension en el diodo) = Vi - Vo = V_Ch1 - V_Ch2
+ Id (Intensidad por el diodo) = Vo /R = V_Ch2 / R
+ donde R es la resistencia usada en el laboratorio (en kilo-Ohmios)
+
+Y finalmente hacemos una gráfica que represente Id frente a Vd.

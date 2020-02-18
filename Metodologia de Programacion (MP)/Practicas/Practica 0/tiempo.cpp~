@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+
+struct Tiempo{ls
+int h_intro, min_intro, seg_intro;
+};
+Tiempo tiempo1;
+Tiempo tiempo2;
+
+int convertirASegundos(int horas, int minutos, int segundos){
+	int seg_return;
+	
+	seg_return = segundos + minutos * 60 + horas * 3600;
+	return seg_return;
+}
+
+bool esPosterior(int instante1, int instante2){
+	bool esposterior = true;
+	int seg_inst1, seg_inst2;
+	seg_inst1 = convertirASegundos(tiempo1.h_intro, tiempo1.min_intro, tiempo1.seg_intro);
+
+
+}
+
+
+int main(){
+
+Tiempo tiempo1;
+Tiempo tiempo2;
+bool esPosterior = true;
+
+//entrada
+do{
+	cout << "Introduzca el valor de los segundos en el instante inicial: ";
+	cin >> tiempo1.seg_intro;
+}while(seg_intro < 0 && seg_intro > 59);
+
+do{
+	cout << "Introduzca el valor de los minutos en el instante inicial: ";
+	cin >> tiempo1.min_intro;
+}while(min_intro < 0 && min_intro > 59);
+
+do{
+	cout << "Introduzca el valor de las horas en el instante inicial: ";
+	cin >> tiempo1.h_intro;
+}while(h_intro < 0 && h_intro > 23)
+
+do{	
+	cout << "Introduzca el valor de los segundos en el instante final: ";
+	cin >> tiempo2.seg_intro2;
+}while(seg_intro2 < 0 && seg_intro2 > 59);
+
+do{
+	cout << "Introduzca el valor de los minutos en el instante final: ";
+	cin >> tiempo2.min_intro2;
+}while(min_intro2 < 0 && min_intro2 > 59);
+
+do{
+	cout << "Introduzca el valor de las horas en el instante final: ";
+	cin >> tiempo2.h_intro2;
+}while(h_intro2 < 0 && h_intro2 > 23);
+
+//salida
+
+
+	
+
+
+
+}

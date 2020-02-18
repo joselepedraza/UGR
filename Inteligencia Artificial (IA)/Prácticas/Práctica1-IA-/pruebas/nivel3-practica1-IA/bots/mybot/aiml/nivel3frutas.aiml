@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!--Reglas para adivinar la fruta-->
+
+<category>
+<pattern> Adivina la fruta ^ </pattern>
+<template>
+    Es pequeña
+</template>
+</category>
+
+
+<category>
+    <pattern>SI ES</pattern>
+    <that>Es *</that>
+    <template> Te acerté la fruta hehehe
+        Quieres volver a jugar
+    </template>
+</category>
+
+<category>
+    <pattern>NO, ES * </pattern>
+    <that>Es *</that>
+    <template>
+        <!--Guardamos en attact atributos de la fruta que dice el usuario-->
+        <think>
+            <set var="tamañoact"><map name="ftamaño"><star/></map></set>
+            <set var="saboract"><map name="fsabor"><star/></map></set>
+            <set var="vitaact"><map name="fvitaminaa"><star/></map></set>
+            <set var="vitbact"><map name="fvitaminab"><star/></map></set>
+            <set var="vitcact"><map name="fvitaminac"><star/></map></set>
+            <set var="numcolact"><map name="numfcolor"><star/></map></set>
+        </think>
+
+        <!--Mostramos los atributos attact de la fruta que dice el usuario-->
+            <condition var="numcolact">
+                <li value="1">
+                    <think>
+                        <set var="coloract1"><map name="fcolor1"><star/></map></set>
+                    </think>
+
+                    La fruta: <star/> y sus caracteristicas son:
+                            Su tamaño es: <get var="tamañoact"/>
+                            Su sabor es: <get var="saboract"/>
+                            <get var="vitaact"/> tiene vitamina A
+                            <get var="vitbact"/> tiene vitamina B
+                            <get var="vitcact"/> tiene vitamina C
+                            Y su color es: <get var="coloract1"/>
+
+                </li>
+                <li value="2">
+                    <think>
+                        <set var="coloract1"><map name="fcolor1"><star/></map></set>
+                        <set var="coloract2"><map name="fcolor2"><star/></map></set>
+                    </think>
+
+                        La fruta: <star/> y sus caracteristicas son:
+                            Su tamaño es: <get var="tamañoact"/>
+                            Su sabor es: <get var="saboract"/>
+                            <get var="vitaact"/> tiene vitamina A
+                            <get var="vitbact"/> tiene vitamina B
+                            <get var="vitcact"/> tiene vitamina C
+                            Y puede ser de 2 colores: O <get var="coloract1"/> O <get var="coloract2"/>
+
+                </li>
+                <li value="3">
+                    <think>
+                        <set var="coloract1"><map name="fcolor1"><star/></map></set>
+                        <set var="coloract2"><map name="fcolor2"><star/></map></set>
+                        <set var="coloract3"><map name="fcolor3"><star/></map></set>
+                    </think>
+
+                        La fruta: <star/> y sus caracteristicas son:
+                            Su tamaño es: <get var="tamañoact"/>
+                            Su sabor es: <get var="saboract"/>
+                            <get var="vitaact"/> tiene vitamina A
+                            <get var="vitbact"/> tiene vitamina B
+                            <get var="vitcact"/> tiene vitamina C
+                            Y puede ser de 3 colores: O <get var="coloract1"/> O <get var="coloract2"/> O <get var="coloract3"/>
+
+                </li>
+                <li> numero de colores:<get var="numcolact"/></li>
+            </condition>
+
+            <!--Comparamos con los atributos de la fruta que nos ha dicho que estaba pensando(los attact), cuando no coincida = ENGAÑO -->
+
+                    <!-- Puedo hacer una condicion para cada atributo cuya variable sea "unknown",
+                    lo cual quiere decir que no le he preguntado por ese atributo. -->
+            ME HAS MENTIDO:
+                si que es la que yo pienso: <get name="frutaact"/>
+                y no es la que tu dices <star/>
+            <condition name="tamaño">
+                    <li value="unknown">No me has dicho el tamaño</li>
+                    <li><value><get var="tamañoact"/></value>Coinciden: <get name="tamaño"/></li>
+                    <!--<li value="tamañoact">Coinciden: <get name="tamaño"/></li>    ASI NO SE PUEDEN COMPARAR DOS VARIABLES-->
+                    <li>ENGAÑO EN TAMAÑO: tu contestaste <get name="tamaño"/> y <star/> es <get var="tamañoact"/></li>
+            </condition>
+
+            <condition name="sabor">
+                    <li value="unknown">No me has dicho el sabor</li>
+                    <li><value><get var="saboract"/></value>Coinciden: <get name="sabor"/></li>
+                    <li>ENGAÑO EN SABOR: tu contestaste <get name="sabor"/> y <star/> es <get var="saboract"/></li>
+            </condition>
+
+            <condition name="vita">
+                    <li value="unknown">No me has dicho la vitamina A</li>
+                    <li><value><get var="vitaact"/></value>Coinciden: <get name="vita"/> tiene vitamina A</li>
+                    <li>ENGAÑO EN VITAMINA A: tu contestaste que <get name="vita"/> tiene y <star/> <get var="vitaact"/> tiene</li>
+            </condition>
+
+            <condition name="vitb">
+                    <li value="unknown">No me has dicho la vitamina B</li>
+                    <li><value><get var="vitbact"/></value>Coinciden: <get name="vitb"/> tiene vitamina B</li>
+                    <li>ENGAÑO EN VITAMINA B: tu contestaste que <get name="vitb"/> tiene y <star/> <get var="vitbact"/> tiene</li>
+            </condition>
+
+            <condition name="vitc">
+                    <li value="unknown">No me has dicho la vitamina C</li>
+                    <li><value><get var="vitcact"/></value>Coinciden: <get name="vitc"/> tiene vitamina C</li>
+                    <li>ENGAÑO EN VITAMINA C: tu contestaste que <get name="vitc"/> tiene y <star/> <get var="vitcact"/> tiene</li>
+            </condition>
+
+            <condition name="color">
+                    <li value="unknown">No me has dicho el color</li>
+<li>
+    <condition var="numcolact">
+        <li value="1">
+            <condition name="color">
+                <li><value><get var="coloract1"/></value>Coinciden: <get name="color"/></li>
+                <li>ENGAÑO EN COLOR:tu contestaste <get name="color"/> y <star/> es <get var="coloract1"/></li>
+            </condition>
+        </li>
+        <li value="2">
+            <condition name="color">
+                <li><value><get var="coloract1"/></value>Coinciden: <get name="color"/> y difieren en <get var="coloract2"/> </li>
+                <li><value><get var="coloract2"/></value>Coinciden: <get name="color"/> y difieren en <get var="coloract1"/> </li>
+                <li>ENGAÑO EN COLOR:tu contestaste <get name="color"/> y <star/> es O <get var="coloract1"/> O <get var="coloract2"/></li>
+            </condition>
+        </li>
+        <li value="3">
+            <condition name="color">
+                <li><value><get var="coloract1"/></value>Coinciden: <get name="color"/> <set var="colaux"><get var="coloract1"/></set></li>
+                <li><value><get var="coloract2"/></value>Coinciden: <get name="color"/> <set var="colaux"><get var="coloract2"/></set></li>
+                <li><value><get var="coloract3"/></value>Coinciden: <get name="color"/> <set var="colaux"><get var="coloract3"/></set></li>
+                <li>ENGAÑO EN COLOR:tu contestaste <get name="color"/> y <star/> es O <get var="coloract1"/> O <get var="coloract2"/> O <get var="coloract3"/></li>
+            </condition>
+        </li>
+    </condition>
+</li>
+            </condition>
+
+<!--Podria hacer una condicion, comprobando por si acaso que no ha introducido: no, es "frutaact", en cuyo caso no me estaria engañando..-->
+        Quieres volver a jugar
+
+    </template>
+</category>
+
+<category>
+    <pattern>SI</pattern>
+    <that> * quieres volver a jugar</that>
+    <template>
+        <think> <!--reseteo los valores por los que pregunta el agente-->
+            <set name="frutaact">unknown</set>
+            <set name="tamaño">unknown</set>
+            <set name="sabor">unknown</set>
+            <set name="vita">unknown</set>
+            <set name="vitb">unknown</set>
+            <set name="vitc">unknown</set>
+            <set name="color">unknown</set>
+        </think>
+        <srai>adivina la fruta</srai>
+    </template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+    <that> * quieres volver a jugar</that>
+    <template>
+        HASTA PRONTO!(Pulsa q+enter para salir)
+    </template>
+</category>
+
+
+<!--Pequeña-->
+<category>
+    <pattern>SI</pattern>
+    <that>Es pequeña</that>
+    <template>
+        <think>
+            <set name="tamaño">pequeño</set>
+        </think>
+        Tiene vitamina B
+    </template>
+</category>
+
+
+<!--Si no es pequeña, pregunto si es grande-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es pequeña</that>
+    <template>
+        Es grande
+    </template>
+</category>
+
+
+<!--Pequeña, vitamina b -->
+<category>
+    <pattern>SI</pattern>
+    <that>Tiene vitamina B</that>
+    <template>
+        <think>
+            <set name="vitb">si</set>
+        </think>
+        Tiene vitamina A
+    </template>
+</category>
+
+<!--Pequeña, vitamina b, vitamina a -->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Tiene vitamina A</that>
+    <template>
+        <think>
+            <set name="vita">si</set>
+        </think>
+        Es Ciruela
+        <think>
+            <set name="frutaact">ciruela</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+<!--Pequeña, vitamina b, no vitamina a -->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Tiene vitamina A</that>
+    <template>
+        <think>
+            <set name="vita">no</set>
+        </think>
+        Es neutro
+    </template>
+</category>
+
+<!--Pequeña, vitamina b, no vitamina a, sabor(neutro)-->
+<category>
+    <pattern>SI</pattern>
+    <that>Es neutro</that>
+    <template>
+        <think>
+            <set name="sabor">neutro</set>
+        </think>
+        Es nuez
+        <think>
+            <set name="frutaact">nuez</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+
+<!--Pequeña, vitamina b, no vitamina a, sabor(no neutro)-->
+<category>
+    <pattern>NO</pattern>
+    <that>Es neutro</that>
+    <template>
+        Es de color morado
+    </template>
+</category>
+
+<!--Pequeña, vitamina b, no vitamina a, sabor(no neutro), color(morado)-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Es de color morado</that>
+    <template>
+        <think>
+            <set name="color">morado</set>
+        </think>
+        Es higo
+        <think>
+            <set name="frutaact">higo</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+<!--Pequeña, vitamina b, no vitamina a, sabor(no neutro), color(no morado)-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es de color morado</that>
+    <template>
+        <think>
+            <set name="color">rojo</set>
+        </think>
+        Es fresa
+        <think>
+            <set name="frutaact">fresa</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+<!--Pequeña, no vitamina b-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Tiene vitamina B</that>
+    <template>
+        <think>
+            <set name="vitb">no</set>
+        </think>
+        Es de color naranja
+    </template>
+</category>
+
+
+<!--Pequeña, no vitamina b, color(naranja)-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Es de color naranja</that>
+    <template>
+        <think>
+            <set name="color">naranja</set>
+        </think>
+        Es mandarina
+        <think>
+            <set name="frutaact">mandarina</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+
+<!--Pequeña, no vitamina b, color(no naranja)-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es de color naranja</that>
+    <template>
+        Es de color rojo
+    </template>
+</category>
+
+<!--Pequeña, no vitamina b, color(no naranja), color(rojo)-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Es de color rojo</that>
+    <template>
+        <think>
+            <set name="color">rojo</set>
+        </think>
+        Es cereza
+        <think>
+            <set name="frutaact">cereza</set> <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+
+<!--Pequeña, no vitamina b, color(no naranja), color(no rojo)-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es de color rojo</that>
+    <template>
+        <think>
+          <!--  <set name="color">verde</set>   tb es amarillo, pero cojo por defecto el verde-->
+        </think>
+        Es kiwi
+        <think>
+            <set name="frutaact">kiwi</set> <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+
+
+
+<!--Grande-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Es grande</that>
+    <template>
+        <think>
+            <set name="tamaño">grande</set>
+        </think>
+        Es de color marron
+    </template>
+</category>
+
+<!--Grande, color(marron)-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Es de color marron</that>
+    <template>
+        <think>
+            <set name="color">marron</set>
+        </think>
+        Es Coco
+        <think>
+            <set name="frutaact">coco</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+<!--Grande, no color(marron)-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es de color marron</that>
+    <template>
+        Es de color amarillo
+    </template>
+</category>
+
+<!--Grande, no color(marron), color(amarillo)-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Es de color amarillo</that>
+    <template>
+        <think>
+            <set name="color">amarillo</set>
+        </think>
+        Es Piña
+        <think>
+            <set name="frutaact">piña</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+<!--Grande, no vitamina a, no color(amarillo)-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es de color amarillo</that>
+    <template>
+        <think>
+            <set name="color">verde</set>
+        </think>
+        Es Mango
+        <think>
+            <set name="frutaact">mango</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+
+<!--Si no es grande, es mediana (no lo pregunto)-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es grande</that>
+    <template>
+        <think>
+            <set name="tamaño">mediano</set>
+        </think>
+        Tiene vitamina C
+    </template>
+</category>
+
+<!--Mediana, no vitamina c-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Tiene vitamina C</that>
+    <template>
+        <think>
+            <set name="vitc">no</set>
+        </think>
+        Es Melocoton
+        <think>
+            <set name="frutaact">melocoton</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+
+<!--Mediana, vitamina c-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Tiene vitamina C</that>
+    <template>
+        <think>
+            <set name="vitc">si</set>
+        </think>
+        Es dulce
+    </template>
+</category>
+
+
+<!--Mediana, vitamina c, sabor(dulce)-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Es dulce</that>
+    <template>
+        <think>
+            <set name="sabor">dulce</set>
+        </think>
+        Es de color verde
+    </template>
+</category>
+
+<!--Mediana, vitamina c, sabor(dulce), color(verde)-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Es de color verde</that>
+    <template>
+        <think>
+            <set name="color">verde</set>
+        </think>
+        Es Pera
+        <think>
+            <set name="frutaact">pera</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+<!--Mediana, vitamina c, sabor(dulce), color(no verde)-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es de color verde</that>
+    <template>
+        <think>
+            <set name="color">amarillo</set>
+        </think>
+        Es Platano
+        <think>
+            <set name="frutaact">platano</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+<!--Mediana, vitamina c, sabor(no dulce)-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es dulce</that>
+    <template>
+        Es semiacido
+    </template>
+</category>
+
+<!--Mediana, vitamina c, sabor(no dulce), sabor(semiacido)-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Es semiacido</that>
+    <template>
+        <think>
+            <set name="sabor">semiacido</set>
+        </think>
+        Es Manzana
+        <think>
+            <set name="frutaact">manzana</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+<!--Mediana, vitamina c, sabor(no dulce), sabor(no semiacido)-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es semiacido</that>
+    <template>
+        Es acido
+    </template>
+</category>
+
+
+<!--Mediana, vitamina c, sabor(no dulce), sabor(semiacido), sabor(acido)-->
+
+<category>
+    <pattern>SI</pattern>
+    <that>Es acido</that>
+    <template>
+        <think>
+            <set name="sabor">acido</set>
+        </think>
+        Es Naranja
+        <think>
+            <set name="frutaact">naranja</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+
+<!--Mediana, vitamina c, sabor(no dulce), sabor(semiacido), sabor(no acido)-->
+
+<category>
+    <pattern>NO</pattern>
+    <that>Es acido</that>
+    <template>
+        <think>
+            <set name="sabor">neutro</set>
+        </think>
+        Es Aguacate
+        <think>
+            <set name="frutaact">aguacate</set>  <!--varglobal: la que el agente ha pensado que es la correcta-->
+        </think>
+    </template>
+</category>
+
+
+
+</aiml>

@@ -1,0 +1,5 @@
+francia:Paris
+españa:Madrid
+holanda:Amsterdam
+belgica:Bruselas
+

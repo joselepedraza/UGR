@@ -1,0 +1,24 @@
+bin/central : obj/central.o lib/libformas.a
+	g++ -o bin/central obj/central.o -Llib/ -lformas
+
+lib/libformas.a : obj/punto.o obj/circulo.o 
+	ar rvs lib/libformas.a obj/punto.o obj/circulo.o
+
+obj/central.o : src/central.cpp include/punto.h include/circulo.h
+	g++ -c src/central.cpp -o obj/central.o -Iinclude
+
+obj/circulo.o : src/circulo.cpp include/circulo.h 
+	g++ -c src/circulo.cpp -o obj/circulo.o -Iinclude
+
+obj/punto.o : src/punto.cpp include/punto.h
+	g++ -c src/punto.cpp -o obj/punto.o -Iinclude
+
+clean : 
+	-rm lib/*.a obj/*.o bin/* 
+
+
+
+
+
+
+

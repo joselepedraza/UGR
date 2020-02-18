@@ -1,0 +1,1682 @@
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+josele@josele-VB:~$ cd Escritorio/Practica\ 1\ -\ EC-/
+josele@josele-VB:~/Escritorio/Practica 1 - EC-$ ls -l
+total 556
+drwxrwxr-x 3 josele josele   4096 sep 25 11:53 pccito
+-rw-r--r-- 1 josele josele 565019 sep 21 19:39 practica-01.pdf
+josele@josele-VB:~/Escritorio/Practica 1 - EC-$ cd ppcito
+bash: cd: ppcito: No existe el archivo o el directorio
+josele@josele-VB:~/Escritorio/Practica 1 - EC-$ cd pccito
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito$ ls -l
+total 8
+drwxr-xr-x 2 josele josele 4096 sep 18 13:23 1
+-rw-rw-r-- 1 josele josele 2716 sep 25 11:52 1.txz
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito$ cd 1
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ls -l
+total 72
+-rw-r--r-- 1 josele josele  310 sep 18 10:42 bug.cc
+-rw-r--r-- 1 josele josele  726 sep 18 10:42 hola32p.s
+-rw-r--r-- 1 josele josele  611 sep 18 10:42 hola32.s
+-rw-r--r-- 1 josele josele  371 sep 18 10:42 hola64-c.s
+-rw-r--r-- 1 josele josele  849 sep 18 10:42 hola64p.s
+-rw-r--r-- 1 josele josele  504 sep 18 10:42 hola64.s
+-rw-r--r-- 1 josele josele   75 sep 18 10:42 hola-c.c
+-rw-r--r-- 1 josele josele   93 sep 18 10:42 hola-c++.cc
+lrwxrwxrwx 1 josele josele    8 sep 25 11:55 hola.s -> hola32.s
+-rw-r--r-- 1 josele josele 1903 sep 18 10:42 makefile
+-rw-r--r-- 1 josele josele   14 sep 18 10:42 minimo1.c
+-rw-r--r-- 1 josele josele   25 sep 18 10:42 minimo2.c
+-rw-r--r-- 1 josele josele   44 sep 18 10:42 minimo3.c
+lrwxrwxrwx 1 josele josele    9 sep 25 11:55 minimo-c.c -> minimo1.c
+lrwxrwxrwx 1 josele josele    9 sep 25 11:55 minimo-c++.cc -> minimo1.c
+-rw-r--r-- 1 josele josele  764 sep 18 10:42 printf32e.s
+-rw-r--r-- 1 josele josele  738 sep 18 10:42 printf32.s
+-rw-r--r-- 1 josele josele  623 sep 18 10:42 printf64.s
+-rw-r--r-- 1 josele josele   84 sep 18 10:42 printf-c-1.c
+-rw-r--r-- 1 josele josele  109 sep 18 10:42 printf-c-2.c
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum0.cc -> sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum1.cc -> sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum2.cc -> sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum3.cc -> sum.cc
+-rw-r--r-- 1 josele josele 1046 sep 18 10:42 sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sums.cc -> sum.cc
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ clear 
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ls -l
+total 72
+-rw-r--r-- 1 josele josele  310 sep 18 10:42 bug.cc
+-rw-r--r-- 1 josele josele  726 sep 18 10:42 hola32p.s
+-rw-r--r-- 1 josele josele  611 sep 18 10:42 hola32.s
+-rw-r--r-- 1 josele josele  371 sep 18 10:42 hola64-c.s
+-rw-r--r-- 1 josele josele  849 sep 18 10:42 hola64p.s
+-rw-r--r-- 1 josele josele  504 sep 18 10:42 hola64.s
+-rw-r--r-- 1 josele josele   75 sep 18 10:42 hola-c.c
+-rw-r--r-- 1 josele josele   93 sep 18 10:42 hola-c++.cc
+lrwxrwxrwx 1 josele josele    8 sep 25 11:55 hola.s -> hola32.s
+-rw-r--r-- 1 josele josele 1903 sep 18 10:42 makefile
+-rw-r--r-- 1 josele josele   14 sep 18 10:42 minimo1.c
+-rw-r--r-- 1 josele josele   25 sep 18 10:42 minimo2.c
+-rw-r--r-- 1 josele josele   44 sep 18 10:42 minimo3.c
+lrwxrwxrwx 1 josele josele    9 sep 25 11:55 minimo-c.c -> minimo1.c
+lrwxrwxrwx 1 josele josele    9 sep 25 11:55 minimo-c++.cc -> minimo1.c
+-rw-r--r-- 1 josele josele  764 sep 18 10:42 printf32e.s
+-rw-r--r-- 1 josele josele  738 sep 18 10:42 printf32.s
+-rw-r--r-- 1 josele josele  623 sep 18 10:42 printf64.s
+-rw-r--r-- 1 josele josele   84 sep 18 10:42 printf-c-1.c
+-rw-r--r-- 1 josele josele  109 sep 18 10:42 printf-c-2.c
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum0.cc -> sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum1.cc -> sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum2.cc -> sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum3.cc -> sum.cc
+-rw-r--r-- 1 josele josele 1046 sep 18 10:42 sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sums.cc -> sum.cc
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ gcc minimo1.c -o minimo
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ file ./minimo
+./minimo: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=de0ae1dd69a040fd189315c1bd3b75e9cb9079f7, not stripped
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ls -la minimo1
+ls: no se puede acceder a 'minimo1': No existe el archivo o el directorio
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ls -la minimo
+-rwxrwxr-x 1 josele josele 8552 sep 25 12:13 minimo
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ nm minimo
+0000000000601030 B __bss_start
+0000000000601030 b completed.7585
+0000000000601020 D __data_start
+0000000000601020 W data_start
+0000000000400410 t deregister_tm_clones
+0000000000400490 t __do_global_dtors_aux
+0000000000600e18 t __do_global_dtors_aux_fini_array_entry
+0000000000601028 D __dso_handle
+0000000000600e28 d _DYNAMIC
+0000000000601030 D _edata
+0000000000601038 B _end
+0000000000400564 T _fini
+00000000004004b0 t frame_dummy
+0000000000600e10 t __frame_dummy_init_array_entry
+0000000000400698 r __FRAME_END__
+0000000000601000 d _GLOBAL_OFFSET_TABLE_
+                 w __gmon_start__
+0000000000400574 r __GNU_EH_FRAME_HDR
+0000000000400390 T _init
+0000000000600e18 t __init_array_end
+0000000000600e10 t __init_array_start
+0000000000400570 R _IO_stdin_used
+                 w _ITM_deregisterTMCloneTable
+                 w _ITM_registerTMCloneTable
+0000000000600e20 d __JCR_END__
+0000000000600e20 d __JCR_LIST__
+                 w _Jv_RegisterClasses
+0000000000400560 T __libc_csu_fini
+00000000004004f0 T __libc_csu_init
+                 U __libc_start_main@@GLIBC_2.2.5
+00000000004004d6 T main
+0000000000400450 t register_tm_clones
+00000000004003e0 T _start
+0000000000601030 D __TMC_END__
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ./minimo 
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ strace ./minimo1
+strace: Can't stat './minimo1': No such file or directory
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ strace ./minimo
+execve("./minimo", ["./minimo"], [/* 62 vars */]) = 0
+brk(NULL)                               = 0xb7a000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6f449ac000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=98881, ...}) = 0
+mmap(NULL, 98881, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f6f44993000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\t\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1868984, ...}) = 0
+mmap(NULL, 3971488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6f443bf000
+mprotect(0x7f6f4457f000, 2097152, PROT_NONE) = 0
+mmap(0x7f6f4477f000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x7f6f4477f000
+mmap(0x7f6f44785000, 14752, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6f44785000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6f44992000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6f44991000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6f44990000
+arch_prctl(ARCH_SET_FS, 0x7f6f44991700) = 0
+mprotect(0x7f6f4477f000, 16384, PROT_READ) = 0
+mprotect(0x600000, 4096, PROT_READ)     = 0
+mprotect(0x7f6f449ae000, 4096, PROT_READ) = 0
+munmap(0x7f6f44993000, 98881)           = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ strace ./minimo || wc
+execve("./minimo", ["./minimo"], [/* 62 vars */]) = 0
+brk(NULL)                               = 0x153c000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ff11b4e1000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=98881, ...}) = 0
+mmap(NULL, 98881, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7ff11b4c8000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\t\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1868984, ...}) = 0
+mmap(NULL, 3971488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7ff11aef4000
+mprotect(0x7ff11b0b4000, 2097152, PROT_NONE) = 0
+mmap(0x7ff11b2b4000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x7ff11b2b4000
+mmap(0x7ff11b2ba000, 14752, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7ff11b2ba000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ff11b4c7000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ff11b4c6000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ff11b4c5000
+arch_prctl(ARCH_SET_FS, 0x7ff11b4c6700) = 0
+mprotect(0x7ff11b2b4000, 16384, PROT_READ) = 0
+mprotect(0x600000, 4096, PROT_READ)     = 0
+mprotect(0x7ff11b4e3000, 4096, PROT_READ) = 0
+munmap(0x7ff11b4c8000, 98881)           = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ltrace ./minimo
+__libc_start_main(0x4004d6, 1, 0x7fff8afe5ef8, 0x4004f0 <no return ...>
++++ exited (status 0) +++
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ objdump -d minimo
+
+minimo:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+0000000000400390 <_init>:
+  400390:	48 83 ec 08          	sub    $0x8,%rsp
+  400394:	48 8b 05 5d 0c 20 00 	mov    0x200c5d(%rip),%rax        # 600ff8 <_DYNAMIC+0x1d0>
+  40039b:	48 85 c0             	test   %rax,%rax
+  40039e:	74 05                	je     4003a5 <_init+0x15>
+  4003a0:	e8 2b 00 00 00       	callq  4003d0 <__libc_start_main@plt+0x10>
+  4003a5:	48 83 c4 08          	add    $0x8,%rsp
+  4003a9:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+00000000004003b0 <__libc_start_main@plt-0x10>:
+  4003b0:	ff 35 52 0c 20 00    	pushq  0x200c52(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  4003b6:	ff 25 54 0c 20 00    	jmpq   *0x200c54(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  4003bc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004003c0 <__libc_start_main@plt>:
+  4003c0:	ff 25 52 0c 20 00    	jmpq   *0x200c52(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  4003c6:	68 00 00 00 00       	pushq  $0x0
+  4003cb:	e9 e0 ff ff ff       	jmpq   4003b0 <_init+0x20>
+
+Desensamblado de la sección .plt.got:
+
+00000000004003d0 <.plt.got>:
+  4003d0:	ff 25 22 0c 20 00    	jmpq   *0x200c22(%rip)        # 600ff8 <_DYNAMIC+0x1d0>
+  4003d6:	66 90                	xchg   %ax,%ax
+
+Desensamblado de la sección .text:
+
+00000000004003e0 <_start>:
+  4003e0:	31 ed                	xor    %ebp,%ebp
+  4003e2:	49 89 d1             	mov    %rdx,%r9
+  4003e5:	5e                   	pop    %rsi
+  4003e6:	48 89 e2             	mov    %rsp,%rdx
+  4003e9:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  4003ed:	50                   	push   %rax
+  4003ee:	54                   	push   %rsp
+  4003ef:	49 c7 c0 60 05 40 00 	mov    $0x400560,%r8
+  4003f6:	48 c7 c1 f0 04 40 00 	mov    $0x4004f0,%rcx
+  4003fd:	48 c7 c7 d6 04 40 00 	mov    $0x4004d6,%rdi
+  400404:	e8 b7 ff ff ff       	callq  4003c0 <__libc_start_main@plt>
+  400409:	f4                   	hlt    
+  40040a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400410 <deregister_tm_clones>:
+  400410:	b8 37 10 60 00       	mov    $0x601037,%eax
+  400415:	55                   	push   %rbp
+  400416:	48 2d 30 10 60 00    	sub    $0x601030,%rax
+  40041c:	48 83 f8 0e          	cmp    $0xe,%rax
+  400420:	48 89 e5             	mov    %rsp,%rbp
+  400423:	76 1b                	jbe    400440 <deregister_tm_clones+0x30>
+  400425:	b8 00 00 00 00       	mov    $0x0,%eax
+  40042a:	48 85 c0             	test   %rax,%rax
+  40042d:	74 11                	je     400440 <deregister_tm_clones+0x30>
+  40042f:	5d                   	pop    %rbp
+  400430:	bf 30 10 60 00       	mov    $0x601030,%edi
+  400435:	ff e0                	jmpq   *%rax
+  400437:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  40043e:	00 00 
+  400440:	5d                   	pop    %rbp
+  400441:	c3                   	retq   
+  400442:	0f 1f 40 00          	nopl   0x0(%rax)
+  400446:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  40044d:	00 00 00 
+
+0000000000400450 <register_tm_clones>:
+  400450:	be 30 10 60 00       	mov    $0x601030,%esi
+  400455:	55                   	push   %rbp
+  400456:	48 81 ee 30 10 60 00 	sub    $0x601030,%rsi
+  40045d:	48 c1 fe 03          	sar    $0x3,%rsi
+  400461:	48 89 e5             	mov    %rsp,%rbp
+  400464:	48 89 f0             	mov    %rsi,%rax
+  400467:	48 c1 e8 3f          	shr    $0x3f,%rax
+  40046b:	48 01 c6             	add    %rax,%rsi
+  40046e:	48 d1 fe             	sar    %rsi
+  400471:	74 15                	je     400488 <register_tm_clones+0x38>
+  400473:	b8 00 00 00 00       	mov    $0x0,%eax
+  400478:	48 85 c0             	test   %rax,%rax
+  40047b:	74 0b                	je     400488 <register_tm_clones+0x38>
+  40047d:	5d                   	pop    %rbp
+  40047e:	bf 30 10 60 00       	mov    $0x601030,%edi
+  400483:	ff e0                	jmpq   *%rax
+  400485:	0f 1f 00             	nopl   (%rax)
+  400488:	5d                   	pop    %rbp
+  400489:	c3                   	retq   
+  40048a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400490 <__do_global_dtors_aux>:
+  400490:	80 3d 99 0b 20 00 00 	cmpb   $0x0,0x200b99(%rip)        # 601030 <__TMC_END__>
+  400497:	75 11                	jne    4004aa <__do_global_dtors_aux+0x1a>
+  400499:	55                   	push   %rbp
+  40049a:	48 89 e5             	mov    %rsp,%rbp
+  40049d:	e8 6e ff ff ff       	callq  400410 <deregister_tm_clones>
+  4004a2:	5d                   	pop    %rbp
+  4004a3:	c6 05 86 0b 20 00 01 	movb   $0x1,0x200b86(%rip)        # 601030 <__TMC_END__>
+  4004aa:	f3 c3                	repz retq 
+  4004ac:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004004b0 <frame_dummy>:
+  4004b0:	bf 20 0e 60 00       	mov    $0x600e20,%edi
+  4004b5:	48 83 3f 00          	cmpq   $0x0,(%rdi)
+  4004b9:	75 05                	jne    4004c0 <frame_dummy+0x10>
+  4004bb:	eb 93                	jmp    400450 <register_tm_clones>
+  4004bd:	0f 1f 00             	nopl   (%rax)
+  4004c0:	b8 00 00 00 00       	mov    $0x0,%eax
+  4004c5:	48 85 c0             	test   %rax,%rax
+  4004c8:	74 f1                	je     4004bb <frame_dummy+0xb>
+  4004ca:	55                   	push   %rbp
+  4004cb:	48 89 e5             	mov    %rsp,%rbp
+  4004ce:	ff d0                	callq  *%rax
+  4004d0:	5d                   	pop    %rbp
+  4004d1:	e9 7a ff ff ff       	jmpq   400450 <register_tm_clones>
+
+00000000004004d6 <main>:
+  4004d6:	55                   	push   %rbp
+  4004d7:	48 89 e5             	mov    %rsp,%rbp
+  4004da:	b8 00 00 00 00       	mov    $0x0,%eax
+  4004df:	5d                   	pop    %rbp
+  4004e0:	c3                   	retq   
+  4004e1:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  4004e8:	00 00 00 
+  4004eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000004004f0 <__libc_csu_init>:
+  4004f0:	41 57                	push   %r15
+  4004f2:	41 56                	push   %r14
+  4004f4:	41 89 ff             	mov    %edi,%r15d
+  4004f7:	41 55                	push   %r13
+  4004f9:	41 54                	push   %r12
+  4004fb:	4c 8d 25 0e 09 20 00 	lea    0x20090e(%rip),%r12        # 600e10 <__frame_dummy_init_array_entry>
+  400502:	55                   	push   %rbp
+  400503:	48 8d 2d 0e 09 20 00 	lea    0x20090e(%rip),%rbp        # 600e18 <__init_array_end>
+  40050a:	53                   	push   %rbx
+  40050b:	49 89 f6             	mov    %rsi,%r14
+  40050e:	49 89 d5             	mov    %rdx,%r13
+  400511:	4c 29 e5             	sub    %r12,%rbp
+  400514:	48 83 ec 08          	sub    $0x8,%rsp
+  400518:	48 c1 fd 03          	sar    $0x3,%rbp
+  40051c:	e8 6f fe ff ff       	callq  400390 <_init>
+  400521:	48 85 ed             	test   %rbp,%rbp
+  400524:	74 20                	je     400546 <__libc_csu_init+0x56>
+  400526:	31 db                	xor    %ebx,%ebx
+  400528:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  40052f:	00 
+  400530:	4c 89 ea             	mov    %r13,%rdx
+  400533:	4c 89 f6             	mov    %r14,%rsi
+  400536:	44 89 ff             	mov    %r15d,%edi
+  400539:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  40053d:	48 83 c3 01          	add    $0x1,%rbx
+  400541:	48 39 eb             	cmp    %rbp,%rbx
+  400544:	75 ea                	jne    400530 <__libc_csu_init+0x40>
+  400546:	48 83 c4 08          	add    $0x8,%rsp
+  40054a:	5b                   	pop    %rbx
+  40054b:	5d                   	pop    %rbp
+  40054c:	41 5c                	pop    %r12
+  40054e:	41 5d                	pop    %r13
+  400550:	41 5e                	pop    %r14
+  400552:	41 5f                	pop    %r15
+  400554:	c3                   	retq   
+  400555:	90                   	nop
+  400556:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  40055d:	00 00 00 
+
+0000000000400560 <__libc_csu_fini>:
+  400560:	f3 c3                	repz retq 
+
+Desensamblado de la sección .fini:
+
+0000000000400564 <_fini>:
+  400564:	48 83 ec 08          	sub    $0x8,%rsp
+  400568:	48 83 c4 08          	add    $0x8,%rsp
+  40056c:	c3                   	retq   
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ gcc minimo1.c -o minimo -03
+gcc: error: unrecognized command line option ‘-03’
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ gcc minimo1.c -o minimo -O3
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ objdump -d minimo
+
+minimo:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+0000000000400390 <_init>:
+  400390:	48 83 ec 08          	sub    $0x8,%rsp
+  400394:	48 8b 05 5d 0c 20 00 	mov    0x200c5d(%rip),%rax        # 600ff8 <_DYNAMIC+0x1d0>
+  40039b:	48 85 c0             	test   %rax,%rax
+  40039e:	74 05                	je     4003a5 <_init+0x15>
+  4003a0:	e8 2b 00 00 00       	callq  4003d0 <__libc_start_main@plt+0x10>
+  4003a5:	48 83 c4 08          	add    $0x8,%rsp
+  4003a9:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+00000000004003b0 <__libc_start_main@plt-0x10>:
+  4003b0:	ff 35 52 0c 20 00    	pushq  0x200c52(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  4003b6:	ff 25 54 0c 20 00    	jmpq   *0x200c54(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  4003bc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004003c0 <__libc_start_main@plt>:
+  4003c0:	ff 25 52 0c 20 00    	jmpq   *0x200c52(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  4003c6:	68 00 00 00 00       	pushq  $0x0
+  4003cb:	e9 e0 ff ff ff       	jmpq   4003b0 <_init+0x20>
+
+Desensamblado de la sección .plt.got:
+
+00000000004003d0 <.plt.got>:
+  4003d0:	ff 25 22 0c 20 00    	jmpq   *0x200c22(%rip)        # 600ff8 <_DYNAMIC+0x1d0>
+  4003d6:	66 90                	xchg   %ax,%ax
+
+Desensamblado de la sección .text:
+
+00000000004003e0 <main>:
+  4003e0:	31 c0                	xor    %eax,%eax
+  4003e2:	c3                   	retq   
+  4003e3:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  4003ea:	00 00 00 
+  4003ed:	0f 1f 00             	nopl   (%rax)
+
+00000000004003f0 <_start>:
+  4003f0:	31 ed                	xor    %ebp,%ebp
+  4003f2:	49 89 d1             	mov    %rdx,%r9
+  4003f5:	5e                   	pop    %rsi
+  4003f6:	48 89 e2             	mov    %rsp,%rdx
+  4003f9:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  4003fd:	50                   	push   %rax
+  4003fe:	54                   	push   %rsp
+  4003ff:	49 c7 c0 60 05 40 00 	mov    $0x400560,%r8
+  400406:	48 c7 c1 f0 04 40 00 	mov    $0x4004f0,%rcx
+  40040d:	48 c7 c7 e0 03 40 00 	mov    $0x4003e0,%rdi
+  400414:	e8 a7 ff ff ff       	callq  4003c0 <__libc_start_main@plt>
+  400419:	f4                   	hlt    
+  40041a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400420 <deregister_tm_clones>:
+  400420:	b8 37 10 60 00       	mov    $0x601037,%eax
+  400425:	55                   	push   %rbp
+  400426:	48 2d 30 10 60 00    	sub    $0x601030,%rax
+  40042c:	48 83 f8 0e          	cmp    $0xe,%rax
+  400430:	48 89 e5             	mov    %rsp,%rbp
+  400433:	76 1b                	jbe    400450 <deregister_tm_clones+0x30>
+  400435:	b8 00 00 00 00       	mov    $0x0,%eax
+  40043a:	48 85 c0             	test   %rax,%rax
+  40043d:	74 11                	je     400450 <deregister_tm_clones+0x30>
+  40043f:	5d                   	pop    %rbp
+  400440:	bf 30 10 60 00       	mov    $0x601030,%edi
+  400445:	ff e0                	jmpq   *%rax
+  400447:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  40044e:	00 00 
+  400450:	5d                   	pop    %rbp
+  400451:	c3                   	retq   
+  400452:	0f 1f 40 00          	nopl   0x0(%rax)
+  400456:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  40045d:	00 00 00 
+
+0000000000400460 <register_tm_clones>:
+  400460:	be 30 10 60 00       	mov    $0x601030,%esi
+  400465:	55                   	push   %rbp
+  400466:	48 81 ee 30 10 60 00 	sub    $0x601030,%rsi
+  40046d:	48 c1 fe 03          	sar    $0x3,%rsi
+  400471:	48 89 e5             	mov    %rsp,%rbp
+  400474:	48 89 f0             	mov    %rsi,%rax
+  400477:	48 c1 e8 3f          	shr    $0x3f,%rax
+  40047b:	48 01 c6             	add    %rax,%rsi
+  40047e:	48 d1 fe             	sar    %rsi
+  400481:	74 15                	je     400498 <register_tm_clones+0x38>
+  400483:	b8 00 00 00 00       	mov    $0x0,%eax
+  400488:	48 85 c0             	test   %rax,%rax
+  40048b:	74 0b                	je     400498 <register_tm_clones+0x38>
+  40048d:	5d                   	pop    %rbp
+  40048e:	bf 30 10 60 00       	mov    $0x601030,%edi
+  400493:	ff e0                	jmpq   *%rax
+  400495:	0f 1f 00             	nopl   (%rax)
+  400498:	5d                   	pop    %rbp
+  400499:	c3                   	retq   
+  40049a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000004004a0 <__do_global_dtors_aux>:
+  4004a0:	80 3d 89 0b 20 00 00 	cmpb   $0x0,0x200b89(%rip)        # 601030 <__TMC_END__>
+  4004a7:	75 11                	jne    4004ba <__do_global_dtors_aux+0x1a>
+  4004a9:	55                   	push   %rbp
+  4004aa:	48 89 e5             	mov    %rsp,%rbp
+  4004ad:	e8 6e ff ff ff       	callq  400420 <deregister_tm_clones>
+  4004b2:	5d                   	pop    %rbp
+  4004b3:	c6 05 76 0b 20 00 01 	movb   $0x1,0x200b76(%rip)        # 601030 <__TMC_END__>
+  4004ba:	f3 c3                	repz retq 
+  4004bc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004004c0 <frame_dummy>:
+  4004c0:	bf 20 0e 60 00       	mov    $0x600e20,%edi
+  4004c5:	48 83 3f 00          	cmpq   $0x0,(%rdi)
+  4004c9:	75 05                	jne    4004d0 <frame_dummy+0x10>
+  4004cb:	eb 93                	jmp    400460 <register_tm_clones>
+  4004cd:	0f 1f 00             	nopl   (%rax)
+  4004d0:	b8 00 00 00 00       	mov    $0x0,%eax
+  4004d5:	48 85 c0             	test   %rax,%rax
+  4004d8:	74 f1                	je     4004cb <frame_dummy+0xb>
+  4004da:	55                   	push   %rbp
+  4004db:	48 89 e5             	mov    %rsp,%rbp
+  4004de:	ff d0                	callq  *%rax
+  4004e0:	5d                   	pop    %rbp
+  4004e1:	e9 7a ff ff ff       	jmpq   400460 <register_tm_clones>
+  4004e6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  4004ed:	00 00 00 
+
+00000000004004f0 <__libc_csu_init>:
+  4004f0:	41 57                	push   %r15
+  4004f2:	41 56                	push   %r14
+  4004f4:	41 89 ff             	mov    %edi,%r15d
+  4004f7:	41 55                	push   %r13
+  4004f9:	41 54                	push   %r12
+  4004fb:	4c 8d 25 0e 09 20 00 	lea    0x20090e(%rip),%r12        # 600e10 <__frame_dummy_init_array_entry>
+  400502:	55                   	push   %rbp
+  400503:	48 8d 2d 0e 09 20 00 	lea    0x20090e(%rip),%rbp        # 600e18 <__init_array_end>
+  40050a:	53                   	push   %rbx
+  40050b:	49 89 f6             	mov    %rsi,%r14
+  40050e:	49 89 d5             	mov    %rdx,%r13
+  400511:	4c 29 e5             	sub    %r12,%rbp
+  400514:	48 83 ec 08          	sub    $0x8,%rsp
+  400518:	48 c1 fd 03          	sar    $0x3,%rbp
+  40051c:	e8 6f fe ff ff       	callq  400390 <_init>
+  400521:	48 85 ed             	test   %rbp,%rbp
+  400524:	74 20                	je     400546 <__libc_csu_init+0x56>
+  400526:	31 db                	xor    %ebx,%ebx
+  400528:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  40052f:	00 
+  400530:	4c 89 ea             	mov    %r13,%rdx
+  400533:	4c 89 f6             	mov    %r14,%rsi
+  400536:	44 89 ff             	mov    %r15d,%edi
+  400539:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  40053d:	48 83 c3 01          	add    $0x1,%rbx
+  400541:	48 39 eb             	cmp    %rbp,%rbx
+  400544:	75 ea                	jne    400530 <__libc_csu_init+0x40>
+  400546:	48 83 c4 08          	add    $0x8,%rsp
+  40054a:	5b                   	pop    %rbx
+  40054b:	5d                   	pop    %rbp
+  40054c:	41 5c                	pop    %r12
+  40054e:	41 5d                	pop    %r13
+  400550:	41 5e                	pop    %r14
+  400552:	41 5f                	pop    %r15
+  400554:	c3                   	retq   
+  400555:	90                   	nop
+  400556:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  40055d:	00 00 00 
+
+0000000000400560 <__libc_csu_fini>:
+  400560:	f3 c3                	repz retq 
+
+Desensamblado de la sección .fini:
+
+0000000000400564 <_fini>:
+  400564:	48 83 ec 08          	sub    $0x8,%rsp
+  400568:	48 83 c4 08          	add    $0x8,%rsp
+  40056c:	c3                   	retq   
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ldd minimo
+	linux-vdso.so.1 =>  (0x00007ffd5a78e000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f029830a000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000564849ce0000)
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ as hola.s -o hola.o
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ld hola.o -o hola
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ file hola.s
+hola.s: symbolic link to hola32.s
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ file hola.o
+hola.o: ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), not stripped
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ./hola
+¡hola, mundo!
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ls -l
+total 92
+-rw-r--r-- 1 josele josele  310 sep 18 10:42 bug.cc
+-rwxrwxr-x 1 josele josele 1008 sep 25 12:45 hola
+-rw-r--r-- 1 josele josele  726 sep 18 10:42 hola32p.s
+-rw-r--r-- 1 josele josele  611 sep 18 10:42 hola32.s
+-rw-r--r-- 1 josele josele  371 sep 18 10:42 hola64-c.s
+-rw-r--r-- 1 josele josele  849 sep 18 10:42 hola64p.s
+-rw-r--r-- 1 josele josele  504 sep 18 10:42 hola64.s
+-rw-r--r-- 1 josele josele   75 sep 18 10:42 hola-c.c
+-rw-r--r-- 1 josele josele   93 sep 18 10:42 hola-c++.cc
+-rw-rw-r-- 1 josele josele  992 sep 25 12:45 hola.o
+lrwxrwxrwx 1 josele josele    8 sep 25 11:55 hola.s -> hola32.s
+-rw-r--r-- 1 josele josele 1903 sep 18 10:42 makefile
+-rwxrwxr-x 1 josele josele 8552 sep 25 12:25 minimo
+-rw-r--r-- 1 josele josele   14 sep 18 10:42 minimo1.c
+-rw-r--r-- 1 josele josele   25 sep 18 10:42 minimo2.c
+-rw-r--r-- 1 josele josele   44 sep 18 10:42 minimo3.c
+lrwxrwxrwx 1 josele josele    9 sep 25 11:55 minimo-c.c -> minimo1.c
+lrwxrwxrwx 1 josele josele    9 sep 25 11:55 minimo-c++.cc -> minimo1.c
+-rw-r--r-- 1 josele josele  764 sep 18 10:42 printf32e.s
+-rw-r--r-- 1 josele josele  738 sep 18 10:42 printf32.s
+-rw-r--r-- 1 josele josele  623 sep 18 10:42 printf64.s
+-rw-r--r-- 1 josele josele   84 sep 18 10:42 printf-c-1.c
+-rw-r--r-- 1 josele josele  109 sep 18 10:42 printf-c-2.c
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum0.cc -> sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum1.cc -> sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum2.cc -> sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sum3.cc -> sum.cc
+-rw-r--r-- 1 josele josele 1046 sep 18 10:42 sum.cc
+lrwxrwxrwx 1 josele josele    6 sep 25 11:55 sums.cc -> sum.cc
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ gedit makefile 
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ make makefile
+make: No se hace nada para 'makefile'.
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ gedit makefile 
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ make hola-c++.cc
+make: No se hace nada para 'hola-c++.cc'.
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ make hola-c++
+g++ -g -std=c++11 -Wall hola-c++.cc -o hola-c++
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ltrace ./hola-c++ 
+__libc_start_main(0x400846, 1, 0x7ffebb704ef8, 0x4008c0 <unfinished ...>
+_ZNSt8ios_base4InitC1Ev(0x601171, 0xffff, 0x7ffebb704f08, 160) = 0
+__cxa_atexit(0x400700, 0x601171, 0x601058, 0x7ffebb704cd0)    = 0
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0x601060, 0x400945, 0x7ffebb704f08, 192) = 0x601060
+_ZNSolsEPFRSoS_E(0x601060, 0x400730, 0x7f2bf42c2988, 0xfbad2a84 <unfinished ...>
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_(0x601060, 0x400730, 0x7f2bf42c2988, 0xfbad2a84¡hola, mundo!
+) = 0x601060
+<... _ZNSolsEPFRSoS_E resumed> )                              = 0x601060
+_ZNSt8ios_base4InitD1Ev(0x601171, 0, 0x400700, 0x7f2bf3f44d10) = 0x7f2bf42c7880
++++ exited (status 0) +++
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ltrace ./hola-c++ 2> kk
+¡hola, mundo!
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ cat kk | c++filt
+__libc_start_main(0x400846, 1, 0x7ffcfa4d5378, 0x4008c0 <unfinished ...>
+std::ios_base::Init::Init()(0x601171, 0xffff, 0x7ffcfa4d5388, 160) = 0
+__cxa_atexit(0x400700, 0x601171, 0x601058, 0x7ffcfa4d5150)    = 0
+std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)(0x601060, 0x400945, 0x7ffcfa4d5388, 192) = 0x601060
+std::basic_ostream<char, std::char_traits<char> >::operator<<(std::basic_ostream<char, std::char_traits<char> >& (*)(std::basic_ostream<char, std::char_traits<char> >&))(0x601060, 0x400730, 0x7f9db73d3988, 0xfbad2a84 <unfinished ...>
+std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)(0x601060, 0x400730, 0x7f9db73d3988, 0xfbad2a84) = 0x601060
+<... std::basic_ostream<char, std::char_traits<char> >::operator<<(std::basic_ostream<char, std::char_traits<char> >& (*)(std::basic_ostream<char, std::char_traits<char> >&)) resumed> )                              = 0x601060
+std::ios_base::Init::~Init()(0x601171, 0, 0x400700, 0x7f9db7055d10) = 0x7f9db73d8880
++++ exited (status 0) +++
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ltrace ./hola-c
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ./hola-c
+bash: ./hola-c: No existe el archivo o el directorio
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ make hola-c
+cc -g -std=c11 -Wall hola-c.c -o hola-c
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ltrace ./hola-c
+__libc_start_main(0x400526, 1, 0x7fff49053238, 0x400540 <unfinished ...>
+puts("\302\241hola, mundo!"¡hola, mundo!
+)                                  = 15
++++ exited (status 0) +++
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ltrace hola-c
+Can't execute `hola-c': No such file or directory
+failed to initialize process 2722: No such file or directory
+couldn't open program 'hola-c': No such file or directory
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ltrace hola-c++
+Can't execute `hola-c++': No such file or directory
+failed to initialize process 2724: No such file or directory
+couldn't open program 'hola-c++': No such file or directory
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ c++filt
+^Z
+[1]+  Detenido                c++filt
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ make hola-c.att
+objdump -C -d hola-c > hola-c.att
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ less hola-c.att
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ less hola-c++.att
+hola-c++.att: No existe el archivo o el directorio
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ less hola-c++
+"hola-c++" may be a binary file.  See it anyway? 
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ less hola-c++
+"hola-c++" may be a binary file.  See it anyway? 
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ 
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ make hola-c++
+make: 'hola-c++' está actualizado.
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ less hola-c++
+"hola-c++" may be a binary file.  See it anyway? 
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ objdump hola-c++
+Modo de empleo: objdump <opcion(es)> <fichero(s)>
+ Muestra la información de <fichero(s)> objeto.
+ Se requiere por lo menos una de los siguientes opciones:
+  -a, --archive-headers    Display archive header information
+  -f, --file-headers       Display the contents of the overall file header
+  -p, --private-headers    Display object format specific file header contents
+  -P, --private=OPT,OPT... Display object format specific contents
+  -h, --[section-]headers  Display the contents of the section headers
+  -x, --all-headers        Display the contents of all headers
+  -d, --disassemble        Display assembler contents of executable sections
+  -D, --disassemble-all    Display assembler contents of all sections
+  -S, --source             Intermix source code with disassembly
+  -s, --full-contents      Display the full contents of all sections requested
+  -g, --debugging          Display debug information in object file
+  -e, --debugging-tags     Display debug information using ctags style
+  -G, --stabs              Display (in raw form) any STABS info in the file
+  -W[lLiaprmfFsoRt] or
+  --dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+          =frames-interp,=str,=loc,=Ranges,=pubtypes,
+          =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+          =addr,=cu_index]
+                           Display DWARF info in the file
+  -t, --syms               Display the contents of the symbol table(s)
+  -T, --dynamic-syms       Display the contents of the dynamic symbol table
+  -r, --reloc              Display the relocation entries in the file
+  -R, --dynamic-reloc      Display the dynamic relocation entries in the file
+  @<file>                  Read options from <file>
+  -v, --version            Display this program's version number
+  -i, --info               List object formats and architectures supported
+  -H, --help               Display this information
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ objdump -d hola-c++
+
+hola-c++:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+00000000004006a0 <_init>:
+  4006a0:	48 83 ec 08          	sub    $0x8,%rsp
+  4006a4:	48 8b 05 4d 09 20 00 	mov    0x20094d(%rip),%rax        # 600ff8 <_DYNAMIC+0x1e0>
+  4006ab:	48 85 c0             	test   %rax,%rax
+  4006ae:	74 05                	je     4006b5 <_init+0x15>
+  4006b0:	e8 8b 00 00 00       	callq  400740 <_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@plt+0x10>
+  4006b5:	48 83 c4 08          	add    $0x8,%rsp
+  4006b9:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+00000000004006c0 <_ZNSt8ios_base4InitC1Ev@plt-0x10>:
+  4006c0:	ff 35 42 09 20 00    	pushq  0x200942(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  4006c6:	ff 25 44 09 20 00    	jmpq   *0x200944(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  4006cc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004006d0 <_ZNSt8ios_base4InitC1Ev@plt>:
+  4006d0:	ff 25 42 09 20 00    	jmpq   *0x200942(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  4006d6:	68 00 00 00 00       	pushq  $0x0
+  4006db:	e9 e0 ff ff ff       	jmpq   4006c0 <_init+0x20>
+
+00000000004006e0 <__libc_start_main@plt>:
+  4006e0:	ff 25 3a 09 20 00    	jmpq   *0x20093a(%rip)        # 601020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  4006e6:	68 01 00 00 00       	pushq  $0x1
+  4006eb:	e9 d0 ff ff ff       	jmpq   4006c0 <_init+0x20>
+
+00000000004006f0 <__cxa_atexit@plt>:
+  4006f0:	ff 25 32 09 20 00    	jmpq   *0x200932(%rip)        # 601028 <_GLOBAL_OFFSET_TABLE_+0x28>
+  4006f6:	68 02 00 00 00       	pushq  $0x2
+  4006fb:	e9 c0 ff ff ff       	jmpq   4006c0 <_init+0x20>
+
+0000000000400700 <_ZNSt8ios_base4InitD1Ev@plt>:
+  400700:	ff 25 2a 09 20 00    	jmpq   *0x20092a(%rip)        # 601030 <_GLOBAL_OFFSET_TABLE_+0x30>
+  400706:	68 03 00 00 00       	pushq  $0x3
+  40070b:	e9 b0 ff ff ff       	jmpq   4006c0 <_init+0x20>
+
+0000000000400710 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>:
+  400710:	ff 25 22 09 20 00    	jmpq   *0x200922(%rip)        # 601038 <_GLOBAL_OFFSET_TABLE_+0x38>
+  400716:	68 04 00 00 00       	pushq  $0x4
+  40071b:	e9 a0 ff ff ff       	jmpq   4006c0 <_init+0x20>
+
+0000000000400720 <_ZNSolsEPFRSoS_E@plt>:
+  400720:	ff 25 1a 09 20 00    	jmpq   *0x20091a(%rip)        # 601040 <_GLOBAL_OFFSET_TABLE_+0x40>
+  400726:	68 05 00 00 00       	pushq  $0x5
+  40072b:	e9 90 ff ff ff       	jmpq   4006c0 <_init+0x20>
+
+0000000000400730 <_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@plt>:
+  400730:	ff 25 12 09 20 00    	jmpq   *0x200912(%rip)        # 601048 <_GLOBAL_OFFSET_TABLE_+0x48>
+  400736:	68 06 00 00 00       	pushq  $0x6
+  40073b:	e9 80 ff ff ff       	jmpq   4006c0 <_init+0x20>
+
+Desensamblado de la sección .plt.got:
+
+0000000000400740 <.plt.got>:
+  400740:	ff 25 b2 08 20 00    	jmpq   *0x2008b2(%rip)        # 600ff8 <_DYNAMIC+0x1e0>
+  400746:	66 90                	xchg   %ax,%ax
+
+Desensamblado de la sección .text:
+
+0000000000400750 <_start>:
+  400750:	31 ed                	xor    %ebp,%ebp
+  400752:	49 89 d1             	mov    %rdx,%r9
+  400755:	5e                   	pop    %rsi
+  400756:	48 89 e2             	mov    %rsp,%rdx
+  400759:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  40075d:	50                   	push   %rax
+  40075e:	54                   	push   %rsp
+  40075f:	49 c7 c0 30 09 40 00 	mov    $0x400930,%r8
+  400766:	48 c7 c1 c0 08 40 00 	mov    $0x4008c0,%rcx
+  40076d:	48 c7 c7 46 08 40 00 	mov    $0x400846,%rdi
+  400774:	e8 67 ff ff ff       	callq  4006e0 <__libc_start_main@plt>
+  400779:	f4                   	hlt    
+  40077a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400780 <deregister_tm_clones>:
+  400780:	b8 67 10 60 00       	mov    $0x601067,%eax
+  400785:	55                   	push   %rbp
+  400786:	48 2d 60 10 60 00    	sub    $0x601060,%rax
+  40078c:	48 83 f8 0e          	cmp    $0xe,%rax
+  400790:	48 89 e5             	mov    %rsp,%rbp
+  400793:	76 1b                	jbe    4007b0 <deregister_tm_clones+0x30>
+  400795:	b8 00 00 00 00       	mov    $0x0,%eax
+  40079a:	48 85 c0             	test   %rax,%rax
+  40079d:	74 11                	je     4007b0 <deregister_tm_clones+0x30>
+  40079f:	5d                   	pop    %rbp
+  4007a0:	bf 60 10 60 00       	mov    $0x601060,%edi
+  4007a5:	ff e0                	jmpq   *%rax
+  4007a7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  4007ae:	00 00 
+  4007b0:	5d                   	pop    %rbp
+  4007b1:	c3                   	retq   
+  4007b2:	0f 1f 40 00          	nopl   0x0(%rax)
+  4007b6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  4007bd:	00 00 00 
+
+00000000004007c0 <register_tm_clones>:
+  4007c0:	be 60 10 60 00       	mov    $0x601060,%esi
+  4007c5:	55                   	push   %rbp
+  4007c6:	48 81 ee 60 10 60 00 	sub    $0x601060,%rsi
+  4007cd:	48 c1 fe 03          	sar    $0x3,%rsi
+  4007d1:	48 89 e5             	mov    %rsp,%rbp
+  4007d4:	48 89 f0             	mov    %rsi,%rax
+  4007d7:	48 c1 e8 3f          	shr    $0x3f,%rax
+  4007db:	48 01 c6             	add    %rax,%rsi
+  4007de:	48 d1 fe             	sar    %rsi
+  4007e1:	74 15                	je     4007f8 <register_tm_clones+0x38>
+  4007e3:	b8 00 00 00 00       	mov    $0x0,%eax
+  4007e8:	48 85 c0             	test   %rax,%rax
+  4007eb:	74 0b                	je     4007f8 <register_tm_clones+0x38>
+  4007ed:	5d                   	pop    %rbp
+  4007ee:	bf 60 10 60 00       	mov    $0x601060,%edi
+  4007f3:	ff e0                	jmpq   *%rax
+  4007f5:	0f 1f 00             	nopl   (%rax)
+  4007f8:	5d                   	pop    %rbp
+  4007f9:	c3                   	retq   
+  4007fa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400800 <__do_global_dtors_aux>:
+  400800:	80 3d 69 09 20 00 00 	cmpb   $0x0,0x200969(%rip)        # 601170 <completed.7585>
+  400807:	75 11                	jne    40081a <__do_global_dtors_aux+0x1a>
+  400809:	55                   	push   %rbp
+  40080a:	48 89 e5             	mov    %rsp,%rbp
+  40080d:	e8 6e ff ff ff       	callq  400780 <deregister_tm_clones>
+  400812:	5d                   	pop    %rbp
+  400813:	c6 05 56 09 20 00 01 	movb   $0x1,0x200956(%rip)        # 601170 <completed.7585>
+  40081a:	f3 c3                	repz retq 
+  40081c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400820 <frame_dummy>:
+  400820:	bf 10 0e 60 00       	mov    $0x600e10,%edi
+  400825:	48 83 3f 00          	cmpq   $0x0,(%rdi)
+  400829:	75 05                	jne    400830 <frame_dummy+0x10>
+  40082b:	eb 93                	jmp    4007c0 <register_tm_clones>
+  40082d:	0f 1f 00             	nopl   (%rax)
+  400830:	b8 00 00 00 00       	mov    $0x0,%eax
+  400835:	48 85 c0             	test   %rax,%rax
+  400838:	74 f1                	je     40082b <frame_dummy+0xb>
+  40083a:	55                   	push   %rbp
+  40083b:	48 89 e5             	mov    %rsp,%rbp
+  40083e:	ff d0                	callq  *%rax
+  400840:	5d                   	pop    %rbp
+  400841:	e9 7a ff ff ff       	jmpq   4007c0 <register_tm_clones>
+
+0000000000400846 <main>:
+  400846:	55                   	push   %rbp
+  400847:	48 89 e5             	mov    %rsp,%rbp
+  40084a:	be 45 09 40 00       	mov    $0x400945,%esi
+  40084f:	bf 60 10 60 00       	mov    $0x601060,%edi
+  400854:	e8 b7 fe ff ff       	callq  400710 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  400859:	be 30 07 40 00       	mov    $0x400730,%esi
+  40085e:	48 89 c7             	mov    %rax,%rdi
+  400861:	e8 ba fe ff ff       	callq  400720 <_ZNSolsEPFRSoS_E@plt>
+  400866:	b8 00 00 00 00       	mov    $0x0,%eax
+  40086b:	5d                   	pop    %rbp
+  40086c:	c3                   	retq   
+
+000000000040086d <_Z41__static_initialization_and_destruction_0ii>:
+  40086d:	55                   	push   %rbp
+  40086e:	48 89 e5             	mov    %rsp,%rbp
+  400871:	48 83 ec 10          	sub    $0x10,%rsp
+  400875:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  400878:	89 75 f8             	mov    %esi,-0x8(%rbp)
+  40087b:	83 7d fc 01          	cmpl   $0x1,-0x4(%rbp)
+  40087f:	75 27                	jne    4008a8 <_Z41__static_initialization_and_destruction_0ii+0x3b>
+  400881:	81 7d f8 ff ff 00 00 	cmpl   $0xffff,-0x8(%rbp)
+  400888:	75 1e                	jne    4008a8 <_Z41__static_initialization_and_destruction_0ii+0x3b>
+  40088a:	bf 71 11 60 00       	mov    $0x601171,%edi
+  40088f:	e8 3c fe ff ff       	callq  4006d0 <_ZNSt8ios_base4InitC1Ev@plt>
+  400894:	ba 58 10 60 00       	mov    $0x601058,%edx
+  400899:	be 71 11 60 00       	mov    $0x601171,%esi
+  40089e:	bf 00 07 40 00       	mov    $0x400700,%edi
+  4008a3:	e8 48 fe ff ff       	callq  4006f0 <__cxa_atexit@plt>
+  4008a8:	90                   	nop
+  4008a9:	c9                   	leaveq 
+  4008aa:	c3                   	retq   
+
+00000000004008ab <_GLOBAL__sub_I_main>:
+  4008ab:	55                   	push   %rbp
+  4008ac:	48 89 e5             	mov    %rsp,%rbp
+  4008af:	be ff ff 00 00       	mov    $0xffff,%esi
+  4008b4:	bf 01 00 00 00       	mov    $0x1,%edi
+  4008b9:	e8 af ff ff ff       	callq  40086d <_Z41__static_initialization_and_destruction_0ii>
+  4008be:	5d                   	pop    %rbp
+  4008bf:	c3                   	retq   
+
+00000000004008c0 <__libc_csu_init>:
+  4008c0:	41 57                	push   %r15
+  4008c2:	41 56                	push   %r14
+  4008c4:	41 89 ff             	mov    %edi,%r15d
+  4008c7:	41 55                	push   %r13
+  4008c9:	41 54                	push   %r12
+  4008cb:	4c 8d 25 26 05 20 00 	lea    0x200526(%rip),%r12        # 600df8 <__frame_dummy_init_array_entry>
+  4008d2:	55                   	push   %rbp
+  4008d3:	48 8d 2d 2e 05 20 00 	lea    0x20052e(%rip),%rbp        # 600e08 <__init_array_end>
+  4008da:	53                   	push   %rbx
+  4008db:	49 89 f6             	mov    %rsi,%r14
+  4008de:	49 89 d5             	mov    %rdx,%r13
+  4008e1:	4c 29 e5             	sub    %r12,%rbp
+  4008e4:	48 83 ec 08          	sub    $0x8,%rsp
+  4008e8:	48 c1 fd 03          	sar    $0x3,%rbp
+  4008ec:	e8 af fd ff ff       	callq  4006a0 <_init>
+  4008f1:	48 85 ed             	test   %rbp,%rbp
+  4008f4:	74 20                	je     400916 <__libc_csu_init+0x56>
+  4008f6:	31 db                	xor    %ebx,%ebx
+  4008f8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  4008ff:	00 
+  400900:	4c 89 ea             	mov    %r13,%rdx
+  400903:	4c 89 f6             	mov    %r14,%rsi
+  400906:	44 89 ff             	mov    %r15d,%edi
+  400909:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  40090d:	48 83 c3 01          	add    $0x1,%rbx
+  400911:	48 39 eb             	cmp    %rbp,%rbx
+  400914:	75 ea                	jne    400900 <__libc_csu_init+0x40>
+  400916:	48 83 c4 08          	add    $0x8,%rsp
+  40091a:	5b                   	pop    %rbx
+  40091b:	5d                   	pop    %rbp
+  40091c:	41 5c                	pop    %r12
+  40091e:	41 5d                	pop    %r13
+  400920:	41 5e                	pop    %r14
+  400922:	41 5f                	pop    %r15
+  400924:	c3                   	retq   
+  400925:	90                   	nop
+  400926:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  40092d:	00 00 00 
+
+0000000000400930 <__libc_csu_fini>:
+  400930:	f3 c3                	repz retq 
+
+Desensamblado de la sección .fini:
+
+0000000000400934 <_fini>:
+  400934:	48 83 ec 08          	sub    $0x8,%rsp
+  400938:	48 83 c4 08          	add    $0x8,%rsp
+  40093c:	c3                   	retq   
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ddd hola32.s
+El programa «ddd» no está instalado. Puede instalarlo escribiendo:
+sudo apt install ddd
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ sudo apt install ddd
+[sudo] password for josele: 
+Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias       
+Leyendo la información de estado... Hecho
+Se instalarán los siguientes paquetes adicionales:
+  libmotif-common libxm4
+Paquetes sugeridos:
+  ddd-doc pydb glibc-doc gnuplot
+Se instalarán los siguientes paquetes NUEVOS:
+  ddd libmotif-common libxm4
+0 actualizados, 3 nuevos se instalarán, 0 para eliminar y 137 no actualizados.
+Se necesita descargar 2.162 kB de archivos.
+Se utilizarán 6.937 kB de espacio de disco adicional después de esta operación.
+¿Desea continuar? [S/n] s
+Des:1 http://es.archive.ubuntu.com/ubuntu xenial/universe amd64 libmotif-common all 2.3.4-10 [11,1 kB]
+Des:2 http://es.archive.ubuntu.com/ubuntu xenial/universe amd64 libxm4 amd64 2.3.4-10 [997 kB]
+Des:3 http://es.archive.ubuntu.com/ubuntu xenial/universe amd64 ddd amd64 1:3.3.12-5.1build1 [1.154 kB]
+Descargados 2.162 kB en 0s (3.050 kB/s)
+Seleccionando el paquete libmotif-common previamente no seleccionado.
+(Leyendo la base de datos ... 178569 ficheros o directorios instalados actualmente.)
+Preparando para desempaquetar .../libmotif-common_2.3.4-10_all.deb ...
+Desempaquetando libmotif-common (2.3.4-10) ...
+Seleccionando el paquete libxm4:amd64 previamente no seleccionado.
+Preparando para desempaquetar .../libxm4_2.3.4-10_amd64.deb ...
+Desempaquetando libxm4:amd64 (2.3.4-10) ...
+Seleccionando el paquete ddd previamente no seleccionado.
+Preparando para desempaquetar .../ddd_1%3a3.3.12-5.1build1_amd64.deb ...
+Desempaquetando ddd (1:3.3.12-5.1build1) ...
+Procesando disparadores para libc-bin (2.23-0ubuntu9) ...
+Procesando disparadores para doc-base (0.10.7) ...
+Procesando 2 archivos doc-base añadidos...
+Procesando disparadores para install-info (6.1.0.dfsg.1-5) ...
+Procesando disparadores para gnome-menus (3.13.3-6ubuntu3.1) ...
+Procesando disparadores para desktop-file-utils (0.22-1ubuntu5.1) ...
+Procesando disparadores para bamfdaemon (0.5.3~bzr0+16.04.20160824-0ubuntu1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Procesando disparadores para mime-support (3.59ubuntu1) ...
+Procesando disparadores para man-db (2.7.5-1) ...
+Configurando libmotif-common (2.3.4-10) ...
+Configurando libxm4:amd64 (2.3.4-10) ...
+Configurando ddd (1:3.3.12-5.1build1) ...
+Procesando disparadores para libc-bin (2.23-0ubuntu9) ...
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ddd hola32.s
+Creating "/home/josele/.ddd/"...
+Creating "/home/josele/.ddd/"...done.
+Creating "/home/josele/.ddd/sessions/"...
+Creating "/home/josele/.ddd/sessions/"...done.
+Creating "/home/josele/.ddd/themes/"...
+Creating "/home/josele/.ddd/themes/"...done.
+Warning: Cannot convert string "-*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+(Annoyed?  Try 'Edit->Preferences->General->Suppress X Warnings'!)
+Warning: Cannot convert string "-*-helvetica-medium-r-*-*-*-100-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-lucidatypewriter-medium-r-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-lucidatypewriter-bold-r-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-helvetica-medium-*-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-helvetica-bold-*-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-helvetica-bold-r-*-*-*-180-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-symbol-*-*-*-*-*-120-*-*-*-*-adobe-*" to type FontStruct
+Warning: Could not load font "-*-lucidatypewriter-medium-*-*-*-*-120-*-*-*-*-iso8859-*", using font "fixed" instead
+Warning: Could not load font "-*-lucidatypewriter-medium-r-*-*-*-120-*-*-*-*-iso8859-*", using font "fixed" instead
+Warning: Could not load font "-*-lucidatypewriter-bold-*-*-*-*-120-*-*-*-*-iso8859-*", using font "fixed" instead
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ./hola32
+bash: ./hola32: No existe el archivo o el directorio
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ make hola32
+as --32 -g -nostartfiles  -o hola32.o hola32.s
+ld -dynamic-linker -lc -melf_i386 hola32.o -o hola32
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ objdump -d hola32
+
+hola32:     formato del fichero elf32-i386
+
+
+Desensamblado de la sección .text:
+
+08048074 <write>:
+ 8048074:	b8 04 00 00 00       	mov    $0x4,%eax
+ 8048079:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 804807e:	b9 9f 90 04 08       	mov    $0x804909f,%ecx
+ 8048083:	8b 15 af 90 04 08    	mov    0x80490af,%edx
+ 8048089:	cd 80                	int    $0x80
+ 804808b:	c3                   	ret    
+
+0804808c <exit>:
+ 804808c:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8048091:	31 db                	xor    %ebx,%ebx
+ 8048093:	cd 80                	int    $0x80
+
+08048095 <_start>:
+ 8048095:	e8 da ff ff ff       	call   8048074 <write>
+ 804809a:	e8 ed ff ff ff       	call   804808c <exit>
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ gdb hola32
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+Para las instrucciones de informe de errores, vea:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Leyendo símbolos desde hola32...hecho.
+(gdb) list
+1	.data                     # datos
+2	msg:    .string "¡hola, mundo!\n"
+3	tam:    .int . - msg
+4	
+5	.text                     # código
+6	        .globl _start     # empezar aquí
+7	
+8	write:  movl  $4, %eax    # write
+9	        movl  $1, %ebx    # salida estándar
+10	        movl  $msg, %ecx  # cadena
+(gdb) b hola32.s:8
+Punto de interrupción 1 at 0x8048074: file hola32.s, line 8.
+(gdb) info r
+El programa no tiene registros ahora.
+(gdb) si
+Este programa no está corriendo.
+(gdb) run
+Starting program: /home/josele/Escritorio/Practica 1 - EC-/pccito/1/hola32 
+
+Breakpoint 1, write () at hola32.s:8
+8	write:  movl  $4, %eax    # write
+(gdb) info r
+eax            0x0	0
+ecx            0x0	0
+edx            0x0	0
+ebx            0x0	0
+esp            0xffffd0ac	0xffffd0ac
+ebp            0x0	0x0
+esi            0x0	0
+edi            0x0	0
+eip            0x8048074	0x8048074 <write>
+eflags         0x202	[ IF ]
+cs             0x23	35
+ss             0x2b	43
+ds             0x2b	43
+es             0x2b	43
+fs             0x0	0
+gs             0x0	0
+(gdb) si
+9	        movl  $1, %ebx    # salida estándar
+(gdb) info r
+eax            0x4	4
+ecx            0x0	0
+edx            0x0	0
+ebx            0x0	0
+esp            0xffffd0ac	0xffffd0ac
+ebp            0x0	0x0
+esi            0x0	0
+edi            0x0	0
+eip            0x8048079	0x8048079 <write+5>
+eflags         0x202	[ IF ]
+cs             0x23	35
+ss             0x2b	43
+ds             0x2b	43
+es             0x2b	43
+fs             0x0	0
+gs             0x0	0
+(gdb) si
+10	        movl  $msg, %ecx  # cadena
+(gdb) info r
+eax            0x4	4
+ecx            0x0	0
+edx            0x0	0
+ebx            0x1	1
+esp            0xffffd0ac	0xffffd0ac
+ebp            0x0	0x0
+esi            0x0	0
+edi            0x0	0
+eip            0x804807e	0x804807e <write+10>
+eflags         0x202	[ IF ]
+cs             0x23	35
+ss             0x2b	43
+ds             0x2b	43
+es             0x2b	43
+fs             0x0	0
+gs             0x0	0
+(gdb) si
+11	        movl  tam, %edx   # longitud
+(gdb) info r
+eax            0x4	4
+ecx            0x804909f	134516895
+edx            0x0	0
+ebx            0x1	1
+esp            0xffffd0ac	0xffffd0ac
+ebp            0x0	0x0
+esi            0x0	0
+edi            0x0	0
+eip            0x8048083	0x8048083 <write+15>
+eflags         0x202	[ IF ]
+cs             0x23	35
+ss             0x2b	43
+ds             0x2b	43
+es             0x2b	43
+fs             0x0	0
+gs             0x0	0
+(gdb) q
+Una sesión de depuración está activa.
+
+	Inferior 1 [process 3368] will be killed.
+
+¿Salir de cualquier modo? (y or n) y
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ make
+as --32 -g -nostartfiles  -o hola32p.o hola32p.s
+as --64 -g -nostartfiles  -o printf64.o printf64.s
+as --64 -g -nostartfiles  -o hola64.o hola64.s
+as --64 -g -nostartfiles  -o hola64-c.o hola64-c.s
+as --64 -g -nostartfiles  -o hola64p.o hola64p.s
+ld -dynamic-linker -lc -melf_i386 hola32p.o -o hola32p
+cc -g -std=c11 -Wall -m64 -nostartfiles printf64.s -o printf64
+ld -dynamic-linker -lc -melf_x86_64 hola64.o -o hola64
+cc -g -std=c11 -Wall -m64 -nostartfiles hola64-c.s -o hola64-c
+ld -dynamic-linker -lc -melf_x86_64 hola64p.o -o hola64p
+cc -g -std=c11 -Wall -m32 -nostartfiles printf32.s -o printf32
+/usr/bin/ld: se salta el /usr/lib/gcc/x86_64-linux-gnu/5/libgcc.a incompatible mientras se busca -lgcc
+/usr/bin/ld: no se puede encontrar -lgcc
+/usr/bin/ld: se salta el /usr/lib/gcc/x86_64-linux-gnu/5/libgcc_s.so incompatible mientras se busca -lgcc_s
+/usr/bin/ld: no se puede encontrar -lgcc_s
+/usr/bin/ld: no se puede encontrar -lc
+/usr/bin/ld: se salta el /usr/lib/gcc/x86_64-linux-gnu/5/libgcc.a incompatible mientras se busca -lgcc
+/usr/bin/ld: no se puede encontrar -lgcc
+/usr/bin/ld: se salta el /usr/lib/gcc/x86_64-linux-gnu/5/libgcc_s.so incompatible mientras se busca -lgcc_s
+/usr/bin/ld: no se puede encontrar -lgcc_s
+collect2: error: ld returned 1 exit status
+makefile:36: fallo en las instrucciones para el objetivo 'printf32'
+make: *** [printf32] Error 1
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ make printf-c-1
+cc -g -std=c11 -Wall printf-c-1.c -o printf-c-1
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ make printf-c-2
+cc -g -std=c11 -Wall printf-c-2.c -o printf-c-2
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ./printf-c-1
+i=12345
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ ./printf-c-2
+i=12345
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ objdump -h printf-c-1
+
+printf-c-1:     formato del fichero elf64-x86-64
+
+Secciones:
+Ind Nombre        Tamaño    VMA               LMA               Desp fich Alin
+  0 .interp       0000001c  0000000000400238  0000000000400238  00000238  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .note.ABI-tag 00000020  0000000000400254  0000000000400254  00000254  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .note.gnu.build-id 00000024  0000000000400274  0000000000400274  00000274  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .gnu.hash     0000001c  0000000000400298  0000000000400298  00000298  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .dynsym       00000060  00000000004002b8  00000000004002b8  000002b8  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .dynstr       0000003f  0000000000400318  0000000000400318  00000318  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  6 .gnu.version  00000008  0000000000400358  0000000000400358  00000358  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  7 .gnu.version_r 00000020  0000000000400360  0000000000400360  00000360  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  8 .rela.dyn     00000018  0000000000400380  0000000000400380  00000380  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  9 .rela.plt     00000030  0000000000400398  0000000000400398  00000398  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 10 .init         0000001a  00000000004003c8  00000000004003c8  000003c8  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 11 .plt          00000030  00000000004003f0  00000000004003f0  000003f0  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 12 .plt.got      00000008  0000000000400420  0000000000400420  00000420  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .text         00000192  0000000000400430  0000000000400430  00000430  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 14 .fini         00000009  00000000004005c4  00000000004005c4  000005c4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .rodata       0000000a  00000000004005d0  00000000004005d0  000005d0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 16 .eh_frame_hdr 00000034  00000000004005dc  00000000004005dc  000005dc  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 17 .eh_frame     000000f4  0000000000400610  0000000000400610  00000610  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 18 .init_array   00000008  0000000000600e10  0000000000600e10  00000e10  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 19 .fini_array   00000008  0000000000600e18  0000000000600e18  00000e18  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 20 .jcr          00000008  0000000000600e20  0000000000600e20  00000e20  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 21 .dynamic      000001d0  0000000000600e28  0000000000600e28  00000e28  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 22 .got          00000008  0000000000600ff8  0000000000600ff8  00000ff8  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 23 .got.plt      00000028  0000000000601000  0000000000601000  00001000  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 24 .data         00000010  0000000000601028  0000000000601028  00001028  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 25 .bss          00000008  0000000000601038  0000000000601038  00001038  2**0
+                  ALLOC
+ 26 .comment      00000034  0000000000000000  0000000000000000  00001038  2**0
+                  CONTENTS, READONLY
+ 27 .debug_aranges 00000030  0000000000000000  0000000000000000  0000106c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 28 .debug_info   0000009e  0000000000000000  0000000000000000  0000109c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 29 .debug_abbrev 00000051  0000000000000000  0000000000000000  0000113a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 30 .debug_line   00000043  0000000000000000  0000000000000000  0000118b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 31 .debug_str    000000ec  0000000000000000  0000000000000000  000011ce  2**0
+                  CONTENTS, READONLY, DEBUGGING
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ objdump -h printf-c-2
+
+printf-c-2:     formato del fichero elf64-x86-64
+
+Secciones:
+Ind Nombre        Tamaño    VMA               LMA               Desp fich Alin
+  0 .interp       0000001c  0000000000400238  0000000000400238  00000238  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .note.ABI-tag 00000020  0000000000400254  0000000000400254  00000254  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .note.gnu.build-id 00000024  0000000000400274  0000000000400274  00000274  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .gnu.hash     0000001c  0000000000400298  0000000000400298  00000298  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .dynsym       00000060  00000000004002b8  00000000004002b8  000002b8  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .dynstr       0000003f  0000000000400318  0000000000400318  00000318  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  6 .gnu.version  00000008  0000000000400358  0000000000400358  00000358  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  7 .gnu.version_r 00000020  0000000000400360  0000000000400360  00000360  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  8 .rela.dyn     00000018  0000000000400380  0000000000400380  00000380  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  9 .rela.plt     00000030  0000000000400398  0000000000400398  00000398  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 10 .init         0000001a  00000000004003c8  00000000004003c8  000003c8  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 11 .plt          00000030  00000000004003f0  00000000004003f0  000003f0  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 12 .plt.got      00000008  0000000000400420  0000000000400420  00000420  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .text         00000192  0000000000400430  0000000000400430  00000430  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 14 .fini         00000009  00000000004005c4  00000000004005c4  000005c4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .rodata       0000000a  00000000004005d0  00000000004005d0  000005d0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 16 .eh_frame_hdr 00000034  00000000004005dc  00000000004005dc  000005dc  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 17 .eh_frame     000000f4  0000000000400610  0000000000400610  00000610  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 18 .init_array   00000008  0000000000600e10  0000000000600e10  00000e10  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 19 .fini_array   00000008  0000000000600e18  0000000000600e18  00000e18  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 20 .jcr          00000008  0000000000600e20  0000000000600e20  00000e20  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 21 .dynamic      000001d0  0000000000600e28  0000000000600e28  00000e28  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 22 .got          00000008  0000000000600ff8  0000000000600ff8  00000ff8  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 23 .got.plt      00000028  0000000000601000  0000000000601000  00001000  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 24 .data         00000020  0000000000601028  0000000000601028  00001028  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 25 .bss          00000008  0000000000601048  0000000000601048  00001048  2**0
+                  ALLOC
+ 26 .comment      00000034  0000000000000000  0000000000000000  00001048  2**0
+                  CONTENTS, READONLY
+ 27 .debug_aranges 00000030  0000000000000000  0000000000000000  0000107c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 28 .debug_info   000000bf  0000000000000000  0000000000000000  000010ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 29 .debug_abbrev 0000006d  0000000000000000  0000000000000000  0000116b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 30 .debug_line   00000042  0000000000000000  0000000000000000  000011d8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 31 .debug_str    000000f4  0000000000000000  0000000000000000  0000121a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ objdump -d printf-c-1
+
+printf-c-1:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+00000000004003c8 <_init>:
+  4003c8:	48 83 ec 08          	sub    $0x8,%rsp
+  4003cc:	48 8b 05 25 0c 20 00 	mov    0x200c25(%rip),%rax        # 600ff8 <_DYNAMIC+0x1d0>
+  4003d3:	48 85 c0             	test   %rax,%rax
+  4003d6:	74 05                	je     4003dd <_init+0x15>
+  4003d8:	e8 43 00 00 00       	callq  400420 <__libc_start_main@plt+0x10>
+  4003dd:	48 83 c4 08          	add    $0x8,%rsp
+  4003e1:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+00000000004003f0 <printf@plt-0x10>:
+  4003f0:	ff 35 12 0c 20 00    	pushq  0x200c12(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  4003f6:	ff 25 14 0c 20 00    	jmpq   *0x200c14(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  4003fc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400400 <printf@plt>:
+  400400:	ff 25 12 0c 20 00    	jmpq   *0x200c12(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400406:	68 00 00 00 00       	pushq  $0x0
+  40040b:	e9 e0 ff ff ff       	jmpq   4003f0 <_init+0x28>
+
+0000000000400410 <__libc_start_main@plt>:
+  400410:	ff 25 0a 0c 20 00    	jmpq   *0x200c0a(%rip)        # 601020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  400416:	68 01 00 00 00       	pushq  $0x1
+  40041b:	e9 d0 ff ff ff       	jmpq   4003f0 <_init+0x28>
+
+Desensamblado de la sección .plt.got:
+
+0000000000400420 <.plt.got>:
+  400420:	ff 25 d2 0b 20 00    	jmpq   *0x200bd2(%rip)        # 600ff8 <_DYNAMIC+0x1d0>
+  400426:	66 90                	xchg   %ax,%ax
+
+Desensamblado de la sección .text:
+
+0000000000400430 <_start>:
+  400430:	31 ed                	xor    %ebp,%ebp
+  400432:	49 89 d1             	mov    %rdx,%r9
+  400435:	5e                   	pop    %rsi
+  400436:	48 89 e2             	mov    %rsp,%rdx
+  400439:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  40043d:	50                   	push   %rax
+  40043e:	54                   	push   %rsp
+  40043f:	49 c7 c0 c0 05 40 00 	mov    $0x4005c0,%r8
+  400446:	48 c7 c1 50 05 40 00 	mov    $0x400550,%rcx
+  40044d:	48 c7 c7 26 05 40 00 	mov    $0x400526,%rdi
+  400454:	e8 b7 ff ff ff       	callq  400410 <__libc_start_main@plt>
+  400459:	f4                   	hlt    
+  40045a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400460 <deregister_tm_clones>:
+  400460:	b8 3f 10 60 00       	mov    $0x60103f,%eax
+  400465:	55                   	push   %rbp
+  400466:	48 2d 38 10 60 00    	sub    $0x601038,%rax
+  40046c:	48 83 f8 0e          	cmp    $0xe,%rax
+  400470:	48 89 e5             	mov    %rsp,%rbp
+  400473:	76 1b                	jbe    400490 <deregister_tm_clones+0x30>
+  400475:	b8 00 00 00 00       	mov    $0x0,%eax
+  40047a:	48 85 c0             	test   %rax,%rax
+  40047d:	74 11                	je     400490 <deregister_tm_clones+0x30>
+  40047f:	5d                   	pop    %rbp
+  400480:	bf 38 10 60 00       	mov    $0x601038,%edi
+  400485:	ff e0                	jmpq   *%rax
+  400487:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  40048e:	00 00 
+  400490:	5d                   	pop    %rbp
+  400491:	c3                   	retq   
+  400492:	0f 1f 40 00          	nopl   0x0(%rax)
+  400496:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  40049d:	00 00 00 
+
+00000000004004a0 <register_tm_clones>:
+  4004a0:	be 38 10 60 00       	mov    $0x601038,%esi
+  4004a5:	55                   	push   %rbp
+  4004a6:	48 81 ee 38 10 60 00 	sub    $0x601038,%rsi
+  4004ad:	48 c1 fe 03          	sar    $0x3,%rsi
+  4004b1:	48 89 e5             	mov    %rsp,%rbp
+  4004b4:	48 89 f0             	mov    %rsi,%rax
+  4004b7:	48 c1 e8 3f          	shr    $0x3f,%rax
+  4004bb:	48 01 c6             	add    %rax,%rsi
+  4004be:	48 d1 fe             	sar    %rsi
+  4004c1:	74 15                	je     4004d8 <register_tm_clones+0x38>
+  4004c3:	b8 00 00 00 00       	mov    $0x0,%eax
+  4004c8:	48 85 c0             	test   %rax,%rax
+  4004cb:	74 0b                	je     4004d8 <register_tm_clones+0x38>
+  4004cd:	5d                   	pop    %rbp
+  4004ce:	bf 38 10 60 00       	mov    $0x601038,%edi
+  4004d3:	ff e0                	jmpq   *%rax
+  4004d5:	0f 1f 00             	nopl   (%rax)
+  4004d8:	5d                   	pop    %rbp
+  4004d9:	c3                   	retq   
+  4004da:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000004004e0 <__do_global_dtors_aux>:
+  4004e0:	80 3d 51 0b 20 00 00 	cmpb   $0x0,0x200b51(%rip)        # 601038 <__TMC_END__>
+  4004e7:	75 11                	jne    4004fa <__do_global_dtors_aux+0x1a>
+  4004e9:	55                   	push   %rbp
+  4004ea:	48 89 e5             	mov    %rsp,%rbp
+  4004ed:	e8 6e ff ff ff       	callq  400460 <deregister_tm_clones>
+  4004f2:	5d                   	pop    %rbp
+  4004f3:	c6 05 3e 0b 20 00 01 	movb   $0x1,0x200b3e(%rip)        # 601038 <__TMC_END__>
+  4004fa:	f3 c3                	repz retq 
+  4004fc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400500 <frame_dummy>:
+  400500:	bf 20 0e 60 00       	mov    $0x600e20,%edi
+  400505:	48 83 3f 00          	cmpq   $0x0,(%rdi)
+  400509:	75 05                	jne    400510 <frame_dummy+0x10>
+  40050b:	eb 93                	jmp    4004a0 <register_tm_clones>
+  40050d:	0f 1f 00             	nopl   (%rax)
+  400510:	b8 00 00 00 00       	mov    $0x0,%eax
+  400515:	48 85 c0             	test   %rax,%rax
+  400518:	74 f1                	je     40050b <frame_dummy+0xb>
+  40051a:	55                   	push   %rbp
+  40051b:	48 89 e5             	mov    %rsp,%rbp
+  40051e:	ff d0                	callq  *%rax
+  400520:	5d                   	pop    %rbp
+  400521:	e9 7a ff ff ff       	jmpq   4004a0 <register_tm_clones>
+
+0000000000400526 <main>:
+  400526:	55                   	push   %rbp
+  400527:	48 89 e5             	mov    %rsp,%rbp
+  40052a:	48 83 ec 10          	sub    $0x10,%rsp
+  40052e:	c7 45 fc 39 30 00 00 	movl   $0x3039,-0x4(%rbp)
+  400535:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  400538:	89 c6                	mov    %eax,%esi
+  40053a:	bf d4 05 40 00       	mov    $0x4005d4,%edi
+  40053f:	b8 00 00 00 00       	mov    $0x0,%eax
+  400544:	e8 b7 fe ff ff       	callq  400400 <printf@plt>
+  400549:	b8 00 00 00 00       	mov    $0x0,%eax
+  40054e:	c9                   	leaveq 
+  40054f:	c3                   	retq   
+
+0000000000400550 <__libc_csu_init>:
+  400550:	41 57                	push   %r15
+  400552:	41 56                	push   %r14
+  400554:	41 89 ff             	mov    %edi,%r15d
+  400557:	41 55                	push   %r13
+  400559:	41 54                	push   %r12
+  40055b:	4c 8d 25 ae 08 20 00 	lea    0x2008ae(%rip),%r12        # 600e10 <__frame_dummy_init_array_entry>
+  400562:	55                   	push   %rbp
+  400563:	48 8d 2d ae 08 20 00 	lea    0x2008ae(%rip),%rbp        # 600e18 <__init_array_end>
+  40056a:	53                   	push   %rbx
+  40056b:	49 89 f6             	mov    %rsi,%r14
+  40056e:	49 89 d5             	mov    %rdx,%r13
+  400571:	4c 29 e5             	sub    %r12,%rbp
+  400574:	48 83 ec 08          	sub    $0x8,%rsp
+  400578:	48 c1 fd 03          	sar    $0x3,%rbp
+  40057c:	e8 47 fe ff ff       	callq  4003c8 <_init>
+  400581:	48 85 ed             	test   %rbp,%rbp
+  400584:	74 20                	je     4005a6 <__libc_csu_init+0x56>
+  400586:	31 db                	xor    %ebx,%ebx
+  400588:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  40058f:	00 
+  400590:	4c 89 ea             	mov    %r13,%rdx
+  400593:	4c 89 f6             	mov    %r14,%rsi
+  400596:	44 89 ff             	mov    %r15d,%edi
+  400599:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  40059d:	48 83 c3 01          	add    $0x1,%rbx
+  4005a1:	48 39 eb             	cmp    %rbp,%rbx
+  4005a4:	75 ea                	jne    400590 <__libc_csu_init+0x40>
+  4005a6:	48 83 c4 08          	add    $0x8,%rsp
+  4005aa:	5b                   	pop    %rbx
+  4005ab:	5d                   	pop    %rbp
+  4005ac:	41 5c                	pop    %r12
+  4005ae:	41 5d                	pop    %r13
+  4005b0:	41 5e                	pop    %r14
+  4005b2:	41 5f                	pop    %r15
+  4005b4:	c3                   	retq   
+  4005b5:	90                   	nop
+  4005b6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  4005bd:	00 00 00 
+
+00000000004005c0 <__libc_csu_fini>:
+  4005c0:	f3 c3                	repz retq 
+
+Desensamblado de la sección .fini:
+
+00000000004005c4 <_fini>:
+  4005c4:	48 83 ec 08          	sub    $0x8,%rsp
+  4005c8:	48 83 c4 08          	add    $0x8,%rsp
+  4005cc:	c3                   	retq   
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ objdump -d printf-c-2
+
+printf-c-2:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+00000000004003c8 <_init>:
+  4003c8:	48 83 ec 08          	sub    $0x8,%rsp
+  4003cc:	48 8b 05 25 0c 20 00 	mov    0x200c25(%rip),%rax        # 600ff8 <_DYNAMIC+0x1d0>
+  4003d3:	48 85 c0             	test   %rax,%rax
+  4003d6:	74 05                	je     4003dd <_init+0x15>
+  4003d8:	e8 43 00 00 00       	callq  400420 <__libc_start_main@plt+0x10>
+  4003dd:	48 83 c4 08          	add    $0x8,%rsp
+  4003e1:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+00000000004003f0 <printf@plt-0x10>:
+  4003f0:	ff 35 12 0c 20 00    	pushq  0x200c12(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  4003f6:	ff 25 14 0c 20 00    	jmpq   *0x200c14(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  4003fc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400400 <printf@plt>:
+  400400:	ff 25 12 0c 20 00    	jmpq   *0x200c12(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400406:	68 00 00 00 00       	pushq  $0x0
+  40040b:	e9 e0 ff ff ff       	jmpq   4003f0 <_init+0x28>
+
+0000000000400410 <__libc_start_main@plt>:
+  400410:	ff 25 0a 0c 20 00    	jmpq   *0x200c0a(%rip)        # 601020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  400416:	68 01 00 00 00       	pushq  $0x1
+  40041b:	e9 d0 ff ff ff       	jmpq   4003f0 <_init+0x28>
+
+Desensamblado de la sección .plt.got:
+
+0000000000400420 <.plt.got>:
+  400420:	ff 25 d2 0b 20 00    	jmpq   *0x200bd2(%rip)        # 600ff8 <_DYNAMIC+0x1d0>
+  400426:	66 90                	xchg   %ax,%ax
+
+Desensamblado de la sección .text:
+
+0000000000400430 <_start>:
+  400430:	31 ed                	xor    %ebp,%ebp
+  400432:	49 89 d1             	mov    %rdx,%r9
+  400435:	5e                   	pop    %rsi
+  400436:	48 89 e2             	mov    %rsp,%rdx
+  400439:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  40043d:	50                   	push   %rax
+  40043e:	54                   	push   %rsp
+  40043f:	49 c7 c0 c0 05 40 00 	mov    $0x4005c0,%r8
+  400446:	48 c7 c1 50 05 40 00 	mov    $0x400550,%rcx
+  40044d:	48 c7 c7 26 05 40 00 	mov    $0x400526,%rdi
+  400454:	e8 b7 ff ff ff       	callq  400410 <__libc_start_main@plt>
+  400459:	f4                   	hlt    
+  40045a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400460 <deregister_tm_clones>:
+  400460:	b8 4f 10 60 00       	mov    $0x60104f,%eax
+  400465:	55                   	push   %rbp
+  400466:	48 2d 48 10 60 00    	sub    $0x601048,%rax
+  40046c:	48 83 f8 0e          	cmp    $0xe,%rax
+  400470:	48 89 e5             	mov    %rsp,%rbp
+  400473:	76 1b                	jbe    400490 <deregister_tm_clones+0x30>
+  400475:	b8 00 00 00 00       	mov    $0x0,%eax
+  40047a:	48 85 c0             	test   %rax,%rax
+  40047d:	74 11                	je     400490 <deregister_tm_clones+0x30>
+  40047f:	5d                   	pop    %rbp
+  400480:	bf 48 10 60 00       	mov    $0x601048,%edi
+  400485:	ff e0                	jmpq   *%rax
+  400487:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  40048e:	00 00 
+  400490:	5d                   	pop    %rbp
+  400491:	c3                   	retq   
+  400492:	0f 1f 40 00          	nopl   0x0(%rax)
+  400496:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  40049d:	00 00 00 
+
+00000000004004a0 <register_tm_clones>:
+  4004a0:	be 48 10 60 00       	mov    $0x601048,%esi
+  4004a5:	55                   	push   %rbp
+  4004a6:	48 81 ee 48 10 60 00 	sub    $0x601048,%rsi
+  4004ad:	48 c1 fe 03          	sar    $0x3,%rsi
+  4004b1:	48 89 e5             	mov    %rsp,%rbp
+  4004b4:	48 89 f0             	mov    %rsi,%rax
+  4004b7:	48 c1 e8 3f          	shr    $0x3f,%rax
+  4004bb:	48 01 c6             	add    %rax,%rsi
+  4004be:	48 d1 fe             	sar    %rsi
+  4004c1:	74 15                	je     4004d8 <register_tm_clones+0x38>
+  4004c3:	b8 00 00 00 00       	mov    $0x0,%eax
+  4004c8:	48 85 c0             	test   %rax,%rax
+  4004cb:	74 0b                	je     4004d8 <register_tm_clones+0x38>
+  4004cd:	5d                   	pop    %rbp
+  4004ce:	bf 48 10 60 00       	mov    $0x601048,%edi
+  4004d3:	ff e0                	jmpq   *%rax
+  4004d5:	0f 1f 00             	nopl   (%rax)
+  4004d8:	5d                   	pop    %rbp
+  4004d9:	c3                   	retq   
+  4004da:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000004004e0 <__do_global_dtors_aux>:
+  4004e0:	80 3d 61 0b 20 00 00 	cmpb   $0x0,0x200b61(%rip)        # 601048 <__TMC_END__>
+  4004e7:	75 11                	jne    4004fa <__do_global_dtors_aux+0x1a>
+  4004e9:	55                   	push   %rbp
+  4004ea:	48 89 e5             	mov    %rsp,%rbp
+  4004ed:	e8 6e ff ff ff       	callq  400460 <deregister_tm_clones>
+  4004f2:	5d                   	pop    %rbp
+  4004f3:	c6 05 4e 0b 20 00 01 	movb   $0x1,0x200b4e(%rip)        # 601048 <__TMC_END__>
+  4004fa:	f3 c3                	repz retq 
+  4004fc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400500 <frame_dummy>:
+  400500:	bf 20 0e 60 00       	mov    $0x600e20,%edi
+  400505:	48 83 3f 00          	cmpq   $0x0,(%rdi)
+  400509:	75 05                	jne    400510 <frame_dummy+0x10>
+  40050b:	eb 93                	jmp    4004a0 <register_tm_clones>
+  40050d:	0f 1f 00             	nopl   (%rax)
+  400510:	b8 00 00 00 00       	mov    $0x0,%eax
+  400515:	48 85 c0             	test   %rax,%rax
+  400518:	74 f1                	je     40050b <frame_dummy+0xb>
+  40051a:	55                   	push   %rbp
+  40051b:	48 89 e5             	mov    %rsp,%rbp
+  40051e:	ff d0                	callq  *%rax
+  400520:	5d                   	pop    %rbp
+  400521:	e9 7a ff ff ff       	jmpq   4004a0 <register_tm_clones>
+
+0000000000400526 <main>:
+  400526:	55                   	push   %rbp
+  400527:	48 89 e5             	mov    %rsp,%rbp
+  40052a:	8b 15 08 0b 20 00    	mov    0x200b08(%rip),%edx        # 601038 <i>
+  400530:	48 8b 05 09 0b 20 00 	mov    0x200b09(%rip),%rax        # 601040 <formato>
+  400537:	89 d6                	mov    %edx,%esi
+  400539:	48 89 c7             	mov    %rax,%rdi
+  40053c:	b8 00 00 00 00       	mov    $0x0,%eax
+  400541:	e8 ba fe ff ff       	callq  400400 <printf@plt>
+  400546:	b8 00 00 00 00       	mov    $0x0,%eax
+  40054b:	5d                   	pop    %rbp
+  40054c:	c3                   	retq   
+  40054d:	0f 1f 00             	nopl   (%rax)
+
+0000000000400550 <__libc_csu_init>:
+  400550:	41 57                	push   %r15
+  400552:	41 56                	push   %r14
+  400554:	41 89 ff             	mov    %edi,%r15d
+  400557:	41 55                	push   %r13
+  400559:	41 54                	push   %r12
+  40055b:	4c 8d 25 ae 08 20 00 	lea    0x2008ae(%rip),%r12        # 600e10 <__frame_dummy_init_array_entry>
+  400562:	55                   	push   %rbp
+  400563:	48 8d 2d ae 08 20 00 	lea    0x2008ae(%rip),%rbp        # 600e18 <__init_array_end>
+  40056a:	53                   	push   %rbx
+  40056b:	49 89 f6             	mov    %rsi,%r14
+  40056e:	49 89 d5             	mov    %rdx,%r13
+  400571:	4c 29 e5             	sub    %r12,%rbp
+  400574:	48 83 ec 08          	sub    $0x8,%rsp
+  400578:	48 c1 fd 03          	sar    $0x3,%rbp
+  40057c:	e8 47 fe ff ff       	callq  4003c8 <_init>
+  400581:	48 85 ed             	test   %rbp,%rbp
+  400584:	74 20                	je     4005a6 <__libc_csu_init+0x56>
+  400586:	31 db                	xor    %ebx,%ebx
+  400588:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  40058f:	00 
+  400590:	4c 89 ea             	mov    %r13,%rdx
+  400593:	4c 89 f6             	mov    %r14,%rsi
+  400596:	44 89 ff             	mov    %r15d,%edi
+  400599:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  40059d:	48 83 c3 01          	add    $0x1,%rbx
+  4005a1:	48 39 eb             	cmp    %rbp,%rbx
+  4005a4:	75 ea                	jne    400590 <__libc_csu_init+0x40>
+  4005a6:	48 83 c4 08          	add    $0x8,%rsp
+  4005aa:	5b                   	pop    %rbx
+  4005ab:	5d                   	pop    %rbp
+  4005ac:	41 5c                	pop    %r12
+  4005ae:	41 5d                	pop    %r13
+  4005b0:	41 5e                	pop    %r14
+  4005b2:	41 5f                	pop    %r15
+  4005b4:	c3                   	retq   
+  4005b5:	90                   	nop
+  4005b6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  4005bd:	00 00 00 
+
+00000000004005c0 <__libc_csu_fini>:
+  4005c0:	f3 c3                	repz retq 
+
+Desensamblado de la sección .fini:
+
+00000000004005c4 <_fini>:
+  4005c4:	48 83 ec 08          	sub    $0x8,%rsp
+  4005c8:	48 83 c4 08          	add    $0x8,%rsp
+  4005cc:	c3                   	retq   
+josele@josele-VB:~/Escritorio/Practica 1 - EC-/pccito/1$ 
+

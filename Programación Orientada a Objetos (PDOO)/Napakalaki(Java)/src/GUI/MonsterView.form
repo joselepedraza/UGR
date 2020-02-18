@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlbEtiqNivelVSectario" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbEtiqNivelCombate" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlbCombatLevel" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jlbCombatLevelAgainstCultistPlayer" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
+                              <Component id="prizeView1" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jlbName" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbEtiqCartaM" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlbEtiqNombre" min="-2" max="-2" attributes="0"/>
+                          <Component id="badConsequenceView1" min="-2" pref="359" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlbEtiqCartaM" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlbEtiqNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlbName" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlbEtiqNivelCombate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlbCombatLevel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jlbEtiqNivelVSectario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbCombatLevelAgainstCultistPlayer" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="badConsequenceView1" min="-2" pref="69" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="prizeView1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jlbEtiqCartaM">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Carta Monstruo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbEtiqNombre">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nombre:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbEtiqNivelCombate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nivel de combate:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="devorador"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbCombatLevel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbCombatLevelAgainstCultistPlayer">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbEtiqNivelVSectario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nivel contra sectario:"/>
+      </Properties>
+    </Component>
+    <Component class="GUI.BadConsequenceView" name="badConsequenceView1">
+    </Component>
+    <Component class="GUI.PrizeView" name="prizeView1">
+    </Component>
+  </SubComponents>
+</Form>

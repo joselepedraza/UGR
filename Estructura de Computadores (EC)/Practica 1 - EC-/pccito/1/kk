@@ -1,0 +1,9 @@
+__libc_start_main(0x400846, 1, 0x7ffcfa4d5378, 0x4008c0 <unfinished ...>
+_ZNSt8ios_base4InitC1Ev(0x601171, 0xffff, 0x7ffcfa4d5388, 160) = 0
+__cxa_atexit(0x400700, 0x601171, 0x601058, 0x7ffcfa4d5150)    = 0
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0x601060, 0x400945, 0x7ffcfa4d5388, 192) = 0x601060
+_ZNSolsEPFRSoS_E(0x601060, 0x400730, 0x7f9db73d3988, 0xfbad2a84 <unfinished ...>
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_(0x601060, 0x400730, 0x7f9db73d3988, 0xfbad2a84) = 0x601060
+<... _ZNSolsEPFRSoS_E resumed> )                              = 0x601060
+_ZNSt8ios_base4InitD1Ev(0x601171, 0, 0x400700, 0x7f9db7055d10) = 0x7f9db73d8880
++++ exited (status 0) +++
