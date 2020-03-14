@@ -1,0 +1,73 @@
+0,HOLA *,*,*,Hola#Comma que tal?,primero.aiml
+0,^ QUE TAL TU,*,*,Estoy genial!!!,primero.aiml
+0,^ ME LLAMO *,*,*,<set name="nombre"><star index="2"/></set>#Newline    <get name="nombre"/> es un bonito nombre.,primero.aiml
+0,HOLA,*,*,Hola de nuevo#Comma que tal?,primero.aiml
+0,CUAL ES TU EDAD,*,*,Tengo <bot name="age"/> anios,primero.aiml
+0,CUAL ES MI NOMBRE,*,*,<condition name="nombre">#Newline        <li value="unknown">Aun no me has dicho tu nombre</li>#Newline        <li>Tu nombre es <get name="nombre"/></li>#Newline    </condition>,primero.aiml
+0,MI COLOR FAVORITO ES EL *,*,*,<think><set var="color"><star/></set></think>#Newline    El <get var="color"/> es un color que no me gusta.,primero.aiml
+0,* MI NOMBRE,*,*,<srai>CUAL ES MI NOMBRE</srai>,primero.aiml
+0,^ COMO ME LLAMO,*,*,<srai>CUAL ES MI NOMBRE</srai>,primero.aiml
+0,ES <SET>COLOR</SET> UN COLOR,*,*,Si#Comma <star/> es un color.,primero.aiml
+0,ES * UN COLOR,*,*,No#Comma <star/> no es un color.,primero.aiml
+0,CUAL ES LA CAPITAL DE <SET>PAIS</SET>,*,*,La capital de <star/> es <map name="capital"><star/></map>.,primero.aiml
+0,CUAL ES LA CAPITAL DE *,*,*,No lo se,primero.aiml
+0,^ CAFE ^,*,*,Te gusta el cafe.,primero.aiml
+0,SI,TE GUSTA EL CAFE,*,Lo prefieres solo o con leche.,primero.aiml
+0,CUENTA HASTA <SET>NUMBER</SET>,*,*,<think>#Newline       <set var="contador">1</set>#Newline       <set var="salida">1</set>#Newline   </think>#Newline   <condition var="contador">#Newline       <li><value><star/></value><get var="salida"/></li>#Newline       <li>#Newline           <think>#Newline           <set var="contador">#Newline              <map name="successor"><get var="contador"/></map>#Newline           </set>#Newline           <set var="salida"><get var="salida"/> <get var="contador"/></set>#Newline           </think>#Newline           <loop/>#Newline       </li>#Newline   </condition>,primero.aiml
+0,LA CAPITAL DE * ES *,*,*,<think>#Newline    <set var="cap"><srai>CUAL ES LA CAPITAL DE <star/></srai></set>#Newline    </think>#Newline    <condition var="cap">#Newline        <li value="NO LO SE">#Newline        <learn>#Newline            <category>#Newline            <pattern>#Newline                CUAL ES LA CAPITAL DE <eval><star/></eval>#Newline            </pattern>#Newline            <template>#Newline                La capital de <eval><star/></eval> es <eval><star index="2"/></eval>#Newline            </template>#Newline            </category>#Newline        </learn>#Newline        Recordare que la capital de <star/> es <star index="2"/>.#Newline        </li>#Newline        <li>#Newline        Ya lo sabia.#Newline        </li>#Newline    </condition>,primero.aiml
+0,^ GRACIAS ^,*,*,de nada amigo#Comma para eso estamos!,primero.aiml
+0,^ TU,*,*,Como siempre! esperando que me preguntes algo interesante,primero.aiml
+0,* APRUEBO IA,*,*,La evaluacion de la asignatura sera continua y#Newlinese distribuira en parte teorica y parte practica y otras actividades.,primero.aiml
+0,* APROBAR LA TEORIA ^,*,*,Se realizara un examen final que se valorara sobre 10.#NewlineTambien se realizarán durante el curso3 pruebas que conjuntamente#Newlinepodrian sumar un maximo de 2 puntos sobre el examen final#Newline(valoracion 0.5#Comma1#Comma0.5 respectivamente). La nota final de teoria será el minimo#Newlineentre 10 y la suma de la nota del examen con la nota obtenida en las pruebas parciales.,primero.aiml
+0,* SUPERAR ^ PRACTICA,*,*,Asistencia y participación en las clases (10%);#NewlineCalificación de varias prácticas/pruebas (90%)#NewlineSaca tus propias conclusiones de lo que tienes que hacer,primero.aiml
+0,* APROBAR ^ PRACTICAS,*,*,<srai>* SUPERAR ^ PRACTICA</srai>,primero.aiml
+0,* SUPERO ^ PRACTICAS,*,*,<srai>* SUPERAR ^ PRACTICA</srai>,primero.aiml
+0,* EVALUA * JUNIO,*,*,La parte teorica vale 50%#Comma al igual que la parte practica de la asignatura.Para la parte de TEORIA se realizará un examen final que se valorará sobre 10#Comma y se lesumara a esa nota#Comma la correspondiente a las 3 pruebas hechas durante el curso.Para la parte de PRACTICAS la asistencia y participacion en clases (10%) y la calificacionde varias practicas/pruebas(90%).,primero.aiml
+0,* CONVOCATORIA DE SEPTIEMBRE,*,*,En la convocatoria de Septiembre habra un examen escrito unico y no habra entrega ni examen de practicas en esta convocatoria,primero.aiml
+0,^ NO PUEDO ASISTIR A CLASE ^,*,*,Debera solicitar la evaluacion unica final al director del departamento en las dos primeras semanas de imparticion de la asignatura#Comma para realizar una prueba unica final.,primero.aiml
+0,^ NOTA MINIMA PARA APROBAR,*,*,La minima nota para aprobar sera un 5,primero.aiml
+0,LAS PRACTICAS SON OBLIGATORIAS,*,*,No#Comma dado que si tienes un 10 en todas las calificaciones de toeria#Comma seria suficiente para llegar al 5#Comma ya que cada parte es un 50% de la nota final.(deberias ser muy bueno),primero.aiml
+0,* PRACTICA ^ NOTA FINAL ^,*,*,Todas valen por igual#Comma tanto la practica1#Comma como la 2#Comma y no va a ser menos la 3. Su puntuacion es de 1#Comma25 puntos de la nota final.,primero.aiml
+0,* PARTICIPACION ^ NOTA FINAL ^,*,*,La asistencia y participacion en clases vale un total de 0.5 puntos de la nota final.,primero.aiml
+0,* PUNTOS POR PARTICIPACION ^,*,*,Te tendras que hacer notar en las clases#Comma respondiendo correctamente a las preguntas que formule el profesor. (muestra interes!),primero.aiml
+0,^ MINIMO ^ PARA APROBAR ^,*,*,<srai>^ NOTA MINIMA PARA APROBAR</srai>,primero.aiml
+0,^ TRABAJOS ^ INDIVIDUALES ^,*,*,Los trabajos deben realizarse individualmente,primero.aiml
+0,* TRABAJOS EN GRUPO ^,*,*,<srai>^ TRABAJOS ^ INDIVIDUALES ^</srai>,primero.aiml
+0,* ENTREGAR ^ EJERCICIOS ^ RELACIONES DE PROBLEMAS ^,*,*,Normalmente no#Comma pero segun lo indique el profesor.,primero.aiml
+0,CUANTO VALE EL PRIMER EXAMEN DE TEORIA,*,*,<srai>* APROBAR LA TEORIA ^</srai>,primero.aiml
+0,POR QUE ^ QUE ESTUDIAR,*,*,Hombre#Comma porque has querido#Comma y si quieres aprobar#Comma debes estudiar!,primero.aiml
+0,* NOTA MAYOR A UN 10,*,*,Si se tuviera la maxima nota en todo#Comma como mucho aspirariamos a un 10. (para que mas?),primero.aiml
+0,^ RECUPERAR *,*,*,Deberias avisar y hablar antes con el profesor y tener bien justificada dicha falta de asistencia para asi poder recuperarla.,primero.aiml
+0,^ COPIO DE OTRO ^,*,*,Serias suspendido automaticamente#Comma y deberas realizar el examen de septiembre sin posibilidad de otro.,primero.aiml
+0,^ ME DEJO COPIAR DE OTRO ^,*,*,<srai>^ COPIO DE OTRO ^</srai>,primero.aiml
+0,^ SUSPENDO * JUNIO,*,*,No te preocupes#Comma siempre te quedara la convocatoria de septiembre y un interesante verano de estudio.,primero.aiml
+0,CUANTO VALE ^ PRACTICA ^ TEORIA,*,*,<srai>* EVALUA * JUNIO</srai>,primero.aiml
+0,^ TUTORIA ^ PROFESOR DE PRACTICAS,*,*,Oficialmente el horario es el siguiente#Comma pero con cita previa podras quedar con el cuando estime oportuno: Martes y Miercoles de (8:30-9:30)(11:30-13:30) en el Despacho40,primero.aiml
+0,* CORREO ELECTRONICO ^ PROFESOR DE TEORIA,*,*,El correo de Antonio es: A.Gonzalez@decsai.ugr.es,primero.aiml
+0,* APROBAR ^ PRACTICA ^ SI NO PRESENTO UNA PRACTICA,*,*,Si#Comma siempre y cuando las demas esten lo suficientemente correctas,primero.aiml
+0,^ NOTA MINIMA ^ PARA HACER MEDIA,*,*,<srai>* EVALUA * JUNIO</srai> Mientras que la suma de la parte teorica y la parte practica sea mayor que un 5 no habría nota minima.,primero.aiml
+0,* PRACTICA 1 * NIVEL 3 Y NO *,*,*,Obtendras una calificacion de un 5#Comma inferior a la calificacion que superar el nivel 2.,primero.aiml
+0,* PRACTICA 1 SIN HACER ^ NIVEL 0,*,*,La tarea relativa al nivel 0 es obligatoria para todas las entregas,primero.aiml
+0,* NO PUEDO * HACER LA DEFENSA ^,*,*,Debes avisar al profesor#Comma hablarlo con el justificandole la falta#Comma y en caso de obtener una respuesta afirmativa por su parte#Comma presentarlo en otro día de la misma semana de defensas.,primero.aiml
+0,^ PRUEBAS TEORICAS TENDRE ^,*,*,<srai>* APROBAR LA TEORIA ^</srai>,primero.aiml
+0,^ VALE * EXAMEN DE TEORIA,*,*,<srai>* APROBAR LA TEORIA ^</srai>,primero.aiml
+0,^ EN LA PARTE TEORICA ^ ASISTENCIA,*,*,Oficialmente no se pasa lista#Comma pero el profesor verá el interes si asistes y entregas los posibles ejercicios que ponga en clase,primero.aiml
+0,* TEORIA ^ ASISTENCIA,*,*,<srai>^ EN LA PARTE TEORICA ^ ASISTENCIA</srai>,primero.aiml
+0,* EXAMEN DE EJERCICIOS ^,*,*,No se de que exámen de ejercicios me estas hablando la verdad#Comma que yo sepa no hay ninguno en esta asignatura,primero.aiml
+0,^ NO ^ DEFENDER UNA PRACTICA,*,*,Directamente tu nota será un 0 en dicha practica,primero.aiml
+0,^ SUPERAR EL NIVEL 3 DE LA PRACTICA 1,*,*,Si no estas seguro deberias asegurar el 6 del nivel 2 de la practica 1#Comma ya que si no superas el nivel 3 tu nota sera un 5. Si estás seguro#Comma adelante!,primero.aiml
+0,CUANTAS PRACTICAS ^ TIENE LA ASIGNATURA ^,*,*,Creo recordar que eran 4 practicas,primero.aiml
+0,CUANTAS PRACTICAS ^ HAY ^,*,*,<srai>CUANTAS PRACTICAS ^ TIENE LA ASIGNATURA ^</srai>,primero.aiml
+0,^ HACER LAS PRACTICAS EN ^ LENGUAJE,*,*,Las practicas se harán en el lenguaje que sea especificado o sea más acorde con lo pedido.,primero.aiml
+0,* PRACTICAS ^ LENGUAJE,*,*,<srai>^ HACER LAS PRACTICAS EN ^ LENGUAJE</srai>,primero.aiml
+0,^ LENGUAJE * PRACTICAS,*,*,<srai>^ HACER LAS PRACTICAS EN ^ LENGUAJE</srai>,primero.aiml
+0,^ OFICINA DEL PROFESOR DE PRACTICAS ^,*,*,Es el despacho numero 40 de nuestra facultad#Comma y también me sé sus horarios#Comma si lo quieres saber#Comma preguntamelo,primero.aiml
+0,* DESPACHO *,*,*,<srai>^ OFICINA DEL PROFESOR DE PRACTICAS</srai>,primero.aiml
+0,SUMO 15 PUNTOS EN LAS PRACTICAS QUE YA HE HECHO, ESO ME ASEGURA APROBAR LAS PRACTICAS,*,*,<template/>,primero.aiml
+0,SUMO 20 PUNTOS EN LAS PRACTICAS QUE YA HE HECHO, ESO ME ASEGURA APROBAR LA ASIGNATURA,*,*,<template/>,primero.aiml
+0,ME INCORPORE TARDE A LA ASIGNATURA Y NO PUDE HACER LA PRACTICA 1, PUEDO RECUPERAR ESA PRACTICA,*,*,<template/>,primero.aiml
+0,^ NO * PRACTICA 1, ^ APROBAR ^ PRACTICA,*,*,Claro! No te preocupes#Comma aun puedes recuperarlo con el 75% de las practicas restantes. Animo!,primero.aiml
+0,* USAR AGENTES CONVERSACIONALES * DEFENSA DE PRACTICAS,*,*,Si estás realmente seguro de ello#Comma adelante!,primero.aiml
+0,^ SIGUIENTES PRACTICAS ^ PROGRAMAR,*,*,Por supuesto!,primero.aiml
+0,^ PRACTICAS ^ SIGUIENTES ^ PROGRAMAR,*,*,<srai>^ SIGUIENTES PRACTICAS ^ PROGRAMAR</srai>,primero.aiml
+0,^ PRACTICA ^ SE COMPLICA ^,*,*,Pues tiene pinta de que si amigo#Comma asi que ponte las pilas!,primero.aiml

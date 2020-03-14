@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<!-- regla 1 -->
+<category>
+<pattern>Hola *</pattern>
+<template>Hola, que tal?</template>
+</category>
+
+<!-- regla 2 -->
+<category>
+<pattern>^ que tal tu</pattern>
+<template>Estoy genial!!!</template>
+</category>
+
+<!-- regla 3 -->
+<category>
+<pattern> ^ me llamo *</pattern>
+<template>
+    <set name="nombre"><star index="2"/></set>
+    <get name="nombre"/> es un bonito nombre.
+</template>
+</category>
+
+<!-- regla 4 -->
+<category>
+<pattern>Hola</pattern>
+<template>Hola de nuevo, que tal?</template>
+</category>
+
+<!-- regla 5 -->
+<category>
+<pattern>Cual es tu edad</pattern>
+<template>Tengo <bot name="age"/> anios</template>
+</category>
+
+<!-- regla 6 -->
+<category>
+<pattern>Cual es mi nombre</pattern>
+<template>
+    <condition name="nombre">
+        <li value="unknown">Aun no me has dicho tu nombre</li>
+        <li>Tu nombre es <get name="nombre"/></li>
+    </condition>
+</template>
+</category>
+
+<!-- regla 7 -->
+<category>
+<pattern>mi color favorito es el *</pattern>
+<template>
+    <think><set var="color"><star/></set></think>
+    El <get var="color"/> es un color que no me gusta.
+</template>
+</category>
+
+<!-- regla 8 -->
+<category>
+<pattern>* mi nombre</pattern>
+<template><srai>CUAL ES MI NOMBRE</srai></template>
+</category>
+
+<!-- regla 9 -->
+<category>
+<pattern>^ como me llamo</pattern>
+<template><srai>CUAL ES MI NOMBRE</srai></template>
+</category>
+
+<!-- regla 10 -->
+<category>
+<pattern>es <set>color</set> un color</pattern>
+<template>Si, <star/> es un color.</template>
+</category>
+
+<!-- regla 11 -->
+<category>
+<pattern>es * un color</pattern>
+<template>No, <star/> no es un color.</template>
+</category>
+
+<!-- regla 12 -->
+<category>
+<pattern>Cual es la capital de <set>pais</set></pattern>
+<template>La capital de <star/> es <map name="capital"><star/></map>.</template>
+</category>
+
+<!-- regla 13 -->
+<category>
+<pattern>Cual es la capital de *</pattern>
+<template>No lo se</template>
+</category>
+
+<!-- regla 14 -->
+<category>
+<pattern>^ cafe ^</pattern>
+<template>Te gusta el cafe.</template>
+</category>
+
+<!-- regla 15 -->
+<category>
+<pattern>Si</pattern>
+<that>TE GUSTA EL CAFE</that>
+<template>Lo prefieres solo o con leche.</template>
+</category>
+
+
+<!-- regla 16 -->
+<category>
+<pattern>Cuenta hasta <set>number</set></pattern>
+<template>
+   <think>
+       <set var="contador">1</set>
+       <set var="salida">1</set>
+   </think>
+   <condition var="contador">
+       <li><value><star/></value><get var="salida"/></li>
+       <li>
+           <think>
+           <set var="contador">
+              <map name="successor"><get var="contador"/></map>
+           </set>
+           <set var="salida"><get var="salida"/> <get var="contador"/></set>
+           </think>
+           <loop/>
+       </li>
+   </condition>
+</template>
+</category>
+
+
+<!-- regla 17 -->
+<category>
+<pattern>la capital de * es *</pattern>
+<template>
+    <think>
+    <set var="cap"><srai>CUAL ES LA CAPITAL DE <star/></srai></set>
+    </think>
+    <condition var="cap">
+        <li value="NO LO SE">
+        <learn>
+            <category>
+            <pattern>
+                CUAL ES LA CAPITAL DE <eval><star/></eval>
+            </pattern>
+            <template>
+                La capital de <eval><star/></eval> es <eval><star index="2"/></eval>
+            </template>
+            </category>
+        </learn>
+        Recordare que la capital de <star/> es <star index="2"/>.
+        </li>
+        <li>
+        Ya lo sabia.
+        </li>
+    </condition>
+</template>
+</category>
+
+<!--regla 18-->
+<category>
+<pattern> ^ gracias ^</pattern>
+<template>de nada amigo, para eso estamos!</template>
+</category>
+
+<!--regla 19-->
+<category>
+<pattern> ^ tu</pattern>
+<template>Como siempre! esperando que me preguntes algo interesante</template>
+</category>
+
+
+<!--PreguntasIA1-->
+<category>
+<pattern>* apruebo IA</pattern>
+<template>La evaluacion de la asignatura sera continua y
+se distribuira en parte teorica y parte practica y otras actividades.</template>
+</category>
+
+<!--PreguntasIA2-->
+<category>
+<pattern>* aprobar la teoria ^</pattern>
+<template>Se realizara un examen final que se valorara sobre 10.
+Tambien se realizarán durante el curso3 pruebas que conjuntamente
+podrian sumar un maximo de 2 puntos sobre el examen final
+(valoracion 0.5,1,0.5 respectivamente). La nota final de teoria será el minimo
+entre 10 y la suma de la nota del examen con la nota obtenida en las pruebas parciales.</template>
+</category>
+
+<!--PreguntasIA3-->
+<category>
+<pattern> * superar ^ practica</pattern>
+<template>Asistencia y participación en las clases (10%);
+Calificación de varias prácticas/pruebas (90%)
+Saca tus propias conclusiones de lo que tienes que hacer</template>
+</category>
+
+<category>
+<pattern>* aprobar ^ practicas</pattern>
+<template><srai>* SUPERAR ^ PRACTICA</srai></template>
+</category>
+
+<category>
+<pattern>* supero ^ practicas</pattern>
+<template><srai>* SUPERAR ^ PRACTICA</srai></template>
+</category>
+
+<!--PreguntasIA4-->
+<category>
+<pattern>* evalua * junio</pattern>
+<template>La parte teorica vale 50%, al igual que la parte practica de la asignatura.Para la parte de TEORIA se realizará un examen final que se valorará sobre 10, y se lesumara a esa nota, la correspondiente a las 3 pruebas hechas durante el curso.Para la parte de PRACTICAS la asistencia y participacion en clases (10%) y la calificacionde varias practicas/pruebas(90%).</template>
+</category>
+
+<!--PreguntasIA5-preguntasIA6-->
+<category>
+<pattern>* convocatoria de septiembre</pattern>
+<template>En la convocatoria de Septiembre habra un examen escrito unico y no habra entrega ni examen de practicas en esta convocatoria</template>
+</category>
+
+<!--PreguntasIA7-->
+<category>
+<pattern>^ no puedo asistir a clase ^ </pattern>
+<template>Debera solicitar la evaluacion unica final al director del departamento en las dos primeras semanas de imparticion de la asignatura, para realizar una prueba unica final.</template>
+</category>
+
+<!--PreguntasIA8-->
+<category>
+<pattern>^ nota minima para aprobar</pattern>
+<template>La minima nota para aprobar sera un 5</template>
+</category>
+
+<!--PreguntasIA9-->
+<category>
+<pattern>las practicas son obligatorias</pattern>
+<template>No, dado que si tienes un 10 en todas las calificaciones de toeria, seria suficiente para llegar al 5, ya que cada parte es un 50% de la nota final.(deberias ser muy bueno)</template>
+</category>
+
+<!--PreguntaIA10-preguntaIA12-->
+<category>
+<pattern> * practica ^ nota final ^</pattern>
+<template>Todas valen por igual, tanto la practica1, como la 2, y no va a ser menos la 3. Su puntuacion es de 1,25 puntos de la nota final.</template>
+</category>
+
+<!--PreguntaIA11-->
+<category>
+<pattern>* participacion ^ nota final ^</pattern>
+<template>La asistencia y participacion en clases vale un total de 0.5 puntos de la nota final.</template>
+</category>
+
+<!--PreguntaIA13-->
+<category>
+<pattern> * puntos por participacion ^</pattern>
+<template>Te tendras que hacer notar en las clases, respondiendo correctamente a las preguntas que formule el profesor. (muestra interes!)</template>
+</category>
+
+<!--PreguntaIA14-->
+<category>
+<pattern>^ minimo ^ para aprobar ^</pattern>
+<template><srai>^ NOTA MINIMA PARA APROBAR</srai></template>
+</category>
+
+<!--PreguntaIA15-->
+<category>
+<pattern>^ trabajos ^ individuales ^</pattern>
+<template>Los trabajos deben realizarse individualmente</template>
+</category>
+
+<!--PreguntaIA16-->
+<category>
+<pattern>* trabajos en grupo ^</pattern>
+<template><srai>^ TRABAJOS ^ INDIVIDUALES ^</srai></template>
+</category>
+
+<!--PreguntaIA17-->
+<category>
+<pattern>* entregar ^ ejercicios ^ relaciones de problemas ^</pattern>
+<template>Normalmente no, pero segun lo indique el profesor.</template>
+</category>
+
+<!--PreguntaIA19-->
+<category>
+<pattern>Cuanto vale el primer examen de teoria</pattern>
+<template><srai>* APROBAR LA TEORIA ^</srai></template>
+</category>
+
+<!--PreguntaIA18-->
+<category>
+<pattern>Por que ^ que estudiar</pattern>
+<template>Hombre, porque has querido, y si quieres aprobar, debes estudiar!</template>
+</category>
+
+<!--PreguntaIA20-->
+<category>
+<pattern>* nota mayor a un 10</pattern>
+<template>Si se tuviera la maxima nota en todo, como mucho aspirariamos a un 10. (para que mas?)</template>
+</category>
+
+<!--PreguntaIA21-->
+<category>
+<pattern>^ recuperar *</pattern>
+<template>Deberias avisar y hablar antes con el profesor y tener bien justificada dicha falta de asistencia para asi poder recuperarla.</template>
+</category>
+
+<!--PreguntaIA22-->
+<category>
+<pattern>^ copio de otro ^</pattern>
+<template>Serias suspendido automaticamente, y deberas realizar el examen de septiembre sin posibilidad de otro.</template>
+</category>
+
+<!--PreguntaIA23-->
+<category>
+<pattern>^ me dejo copiar de otro ^</pattern>
+<template><srai>^ COPIO DE OTRO ^</srai></template>
+</category>
+
+<!--PreguntaIA24-->
+<category>
+<pattern>^ suspendo * junio</pattern>
+<template>No te preocupes, siempre te quedara la convocatoria de septiembre y un interesante verano de estudio.</template>
+</category>
+
+<!--PreguntaIA25-->
+<category>
+<pattern>Cuanto vale ^ practica ^ teoria</pattern>
+<template><srai>* EVALUA * JUNIO</srai></template>
+</category>
+
+<!--PreguntaIA26-->
+<category>
+<pattern>^ tutoria ^ profesor de practicas</pattern>
+<template>Oficialmente el horario es el siguiente, pero con cita previa podras quedar con el cuando estime oportuno: Martes y Miercoles de (8:30-9:30)(11:30-13:30) en el Despacho40</template>
+</category>
+
+<!--PreguntaIA27-->
+<category>
+<pattern>* correo electronico ^ profesor de teoria </pattern>
+<template>El correo de Antonio es: A.Gonzalez@decsai.ugr.es </template>
+</category>
+
+<!--PreguntaIA28-->
+<category>
+<pattern>* aprobar ^ practica ^ si no presento una practica</pattern>
+<template>Si, siempre y cuando las demas esten lo suficientemente correctas</template>
+</category>
+
+<!--PreguntaIA29-->
+<category>
+<pattern>^ nota minima ^ para hacer media</pattern>
+<template><srai>* EVALUA * JUNIO</srai> Mientras que la suma de la parte teorica y la parte practica sea mayor que un 5 no habría nota minima.</template>
+</category>
+
+<!--PreguntaIA30-->
+<category>
+<pattern>* practica 1 * nivel 3 y no *</pattern>
+<template>Obtendras una calificacion de un 5, inferior a la calificacion que superar el nivel 2.</template>
+</category>
+
+<!--PreguntaIA31-->
+<category>
+<pattern>* practica 1 sin hacer ^ nivel 0</pattern>
+<template>La tarea relativa al nivel 0 es obligatoria para todas las entregas</template>
+</category>
+
+<!--PreguntaIA32-->
+<category>
+<pattern>* no puedo * hacer la defensa ^</pattern>
+<template>Debes avisar al profesor, hablarlo con el justificandole la falta, y en caso de obtener una respuesta afirmativa por su parte, presentarlo en otro día de la misma semana de defensas.</template>
+</category>
+
+<!--PreguntaIA33-->
+<category>
+<pattern>^ pruebas teoricas tendre ^</pattern>
+<template><srai>* APROBAR LA TEORIA ^</srai></template>
+</category>
+
+<!--PreguntaIA34-->
+<category>
+<pattern>^ vale * examen de teoria</pattern>
+<template><srai>* APROBAR LA TEORIA ^</srai></template>
+</category>
+
+<!--PreguntaIA35-->
+<category>
+<pattern>^ En la parte teorica ^ asistencia</pattern>
+<template>Oficialmente no se pasa lista, pero el profesor verá el interes si asistes y entregas los posibles ejercicios que ponga en clase</template>
+</category>
+
+<category>
+<pattern>* Teoria ^ asistencia</pattern>
+<template><srai>^ EN LA PARTE TEORICA ^ ASISTENCIA</srai></template>
+</category>
+
+<!--PreguntaIA36-->
+<category>
+<pattern>* examen de ejercicios ^</pattern>
+<template>No se de que exámen de ejercicios me estas hablando la verdad, que yo sepa no hay ninguno en esta asignatura</template>
+</category>
+
+<!--PreguntaIA37-->
+<category>
+<pattern>^ no ^ defender una practica</pattern>
+<template>Directamente tu nota será un 0 en dicha practica</template>
+</category>
+
+<!--PreguntaIA38-->
+<category>
+<pattern>^ superar el nivel 3 de la practica 1</pattern>
+<template>Si no estas seguro deberias asegurar el 6 del nivel 2 de la practica 1, ya que si no superas el nivel 3 tu nota sera un 5. Si estás seguro, adelante!</template>
+</category>
+
+<!--PreguntaIA39-->
+<category>
+<pattern>Cuantas practicas ^ tiene la asignatura ^</pattern>
+<template>Creo recordar que eran 4 practicas</template>
+</category>
+
+<category>
+<pattern>cuantas practicas ^ hay ^</pattern>
+<template><srai>CUANTAS PRACTICAS ^ TIENE LA ASIGNATURA ^</srai></template>
+</category>
+
+<!--PreguntaIA40-->
+<category>
+<pattern>^ hacer las practicas en ^ lenguaje</pattern>
+<template>Las practicas se harán en el lenguaje que sea especificado o sea más acorde con lo pedido.</template>
+</category>
+
+<!--PreguntaIA41-->
+<category>
+<pattern>* practicas ^ lenguaje</pattern>
+<template><srai>^ HACER LAS PRACTICAS EN ^ LENGUAJE</srai></template>
+</category>
+
+<category>
+<pattern>^ lenguaje * practicas</pattern>
+<template><srai>^ HACER LAS PRACTICAS EN ^ LENGUAJE</srai></template>
+</category>
+
+<!--PreguntaIA42-->
+<category>
+<pattern>^ oficina del profesor de practicas ^</pattern>
+<template>Es el despacho numero 40 de nuestra facultad, y también me sé sus horarios, si lo quieres saber, preguntamelo</template>
+</category>
+
+<!--PreguntaIA43-->
+<category>
+<pattern>* despacho *</pattern>
+<template><srai>^ OFICINA DEL PROFESOR DE PRACTICAS</srai></template>
+</category>
+
+<!--PreguntaIA44-->
+<category>
+<pattern>Sumo 15 puntos en las practicas que ya he hecho, eso me asegura aprobar las practicas</pattern>
+<template></template>
+</category>
+
+<!--PreguntaIA45-->
+<category>
+<pattern>sumo 20 puntos en las practicas que ya he hecho, eso me asegura aprobar la asignatura</pattern>
+<template></template>
+</category>
+
+<!--PreguntaIA46-->
+<category>
+<pattern>Me incorpore tarde a la asignatura y no pude hacer la practica 1, puedo recuperar esa practica</pattern>
+<template></template>
+</category>
+
+<!--PreguntaIA47-->
+<category>
+<pattern>^ no * practica 1, ^ aprobar ^ practica</pattern>
+<template>Claro! No te preocupes, aun puedes recuperarlo con el 75% de las practicas restantes. Animo!</template>
+</category>
+
+<!--PreguntaIA48-->
+<category>
+<pattern>* usar agentes conversacionales * defensa de practicas</pattern>
+<template>Si estás realmente seguro de ello, adelante!</template>
+</category>
+
+<!--PreguntaIA49-->
+<category>
+<pattern>^ siguientes practicas ^ programar</pattern>
+<template>Por supuesto!</template>
+</category>
+
+<category>
+<pattern>^ practicas ^ siguientes ^ programar</pattern>
+<template><srai>^ SIGUIENTES PRACTICAS ^ PROGRAMAR</srai></template>
+</category>
+
+<!--PreguntaIA50-->
+<category>
+<pattern>^ practica ^ se complica ^</pattern>
+<template>Pues tiene pinta de que si amigo, asi que ponte las pilas!</template>
+</category>
+
+
+
+</aiml>

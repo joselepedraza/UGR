@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<!-- regla 1 -->
+<category>
+<pattern>Hola *</pattern>
+<template>Hola, que tal?</template>
+</category>
+
+<!-- regla 2 -->
+<category>
+<pattern>^ que tal tu</pattern>
+<template>Estoy genial!!!</template>
+</category>
+
+<!-- regla 3 -->
+<category>
+<pattern> ^ me llamo *</pattern>
+<template>
+    <set name="nombre"><star index="2"/></set>
+    <get name="nombre"/> es un bonito nombre.
+</template>
+</category>
+
+<!-- regla 4 -->
+<category>
+<pattern>Hola</pattern>
+<template>Hola de nuevo, que tal?</template>
+</category>
+
+<!-- regla 5 -->
+<category>
+<pattern>Cual es tu edad</pattern>
+<template>Tengo <bot name="age"/> anios</template>
+</category>
+
+<!-- regla 6 -->
+<category>
+<pattern>Cual es mi nombre</pattern>
+<template>
+    <condition name="nombre">
+        <li value="unknown">Aun no me has dicho tu nombre</li>
+        <li>Tu nombre es <get name="nombre"/></li>
+    </condition>
+</template>
+</category>
+
+<!-- regla 7 -->
+<category>
+<pattern>mi color favorito es el *</pattern>
+<template>
+    <think><set var="color"><star/></set></think>
+    El <get var="color"/> es un color que no me gusta.
+</template>
+</category>
+
+<!-- regla 8 -->
+<category>
+<pattern>* mi nombre</pattern>
+<template><srai>CUAL ES MI NOMBRE</srai></template>
+</category>
+
+<!-- regla 9 -->
+<category>
+<pattern>^ como me llamo</pattern>
+<template><srai>CUAL ES MI NOMBRE</srai></template>
+</category>
+
+<!-- regla 10 -->
+<category>
+<pattern>es <set>color</set> un color</pattern>
+<template>Si, <star/> es un color.</template>
+</category>
+
+<!-- regla 11 -->
+<category>
+<pattern>es * un color</pattern>
+<template>No, <star/> no es un color.</template>
+</category>
+
+<!-- regla 12 -->
+<category>
+<pattern>Cual es la capital de <set>pais</set></pattern>
+<template>La capital de <star/> es <map name="capital"><star/></map>.</template>
+</category>
+
+<!-- regla 13 -->
+<category>
+<pattern>Cual es la capital de *</pattern>
+<template>No lo se</template>
+</category>
+
+<!-- regla 14 -->
+<category>
+<pattern>^ cafe ^</pattern>
+<template>Te gusta el cafe.</template>
+</category>
+
+<!-- regla 15 -->
+<category>
+<pattern>Si</pattern>
+<that>TE GUSTA EL CAFE</that>
+<template>Lo prefieres solo o con leche.</template>
+</category>
+
+
+<!-- regla 16 -->
+<category>
+<pattern>Cuenta hasta <set>number</set></pattern>
+<template>
+   <think>
+       <set var="contador">1</set>
+       <set var="salida">1</set>
+   </think>
+   <condition var="contador">
+       <li><value><star/></value><get var="salida"/></li>
+       <li>
+           <think>
+           <set var="contador">
+              <map name="successor"><get var="contador"/></map>
+           </set>
+           <set var="salida"><get var="salida"/> <get var="contador"/></set>
+           </think>
+           <loop/>
+       </li>
+   </condition>
+</template>
+</category>
+
+
+<!-- regla 17 -->
+<category>
+<pattern>la capital de * es *</pattern>
+<template>
+    <think>
+    <set var="cap"><srai>CUAL ES LA CAPITAL DE <star/></srai></set>
+    </think>
+    <condition var="cap">
+        <li value="NO LO SE">
+        <learn>
+            <category>
+            <pattern>
+                CUAL ES LA CAPITAL DE <eval><star/></eval>
+            </pattern>
+            <template>
+                La capital de <eval><star/></eval> es <eval><star index="2"/></eval>
+            </template>
+            </category>
+        </learn>
+        Recordare que la capital de <star/> es <star index="2"/>.
+        </li>
+        <li>
+        Ya lo sabia.
+        </li>
+    </condition>
+</template>
+</category>
+
+<!-- PREGUNTAS SOBRE LA ASIGNATURA -->
+<!-- Pregunta 1-->
+<category>
+<pattern> Como apruebo IA </pattern>
+<template> La evaluación de la asignatura sera continua, y se distribuira en
+parte teorica, parte practica y otras actividades</template>
+</category>
+
+<!-- Pregunta 2-->
+<category>
+<pattern> Como hago para aprobar la teoria </pattern>
+<template> Para la parte de teoria se realizara un examen final que se valorara sobre 10.
+Durante el curso se realizaran tres pruebas que conjuntamente podrían dar un
+maximo de 2 puntos sobre el examen final (valoracion 0.5, 1 y 0.5
+respec-vamente).
+La nota final de teoria seria el minimo entre 10 y la suma de la nota del examen
+con la nota obtenida en las pruebas parciales.</template>
+</category>
+
+<!-- Pregunta 3-->
+<category>
+<patern> Como consigo superar la parte práctica </patern>
+<template> Asistencia y participación en las clases (10%); Calificación de varias prácticas/pruebas (90%)</template>
+</category>
+
+<!-- Pregunta 4-->
+<category>
+<patern> Como se evalua en la convocatoria de junio</patern>
+<template> La parte torica vale un 50%, al igual que la parte practica de la asignatura. Para la parte de TEORIA se realizará un examen final que se valorará sobre 10.
+Durante el curso se realizarán tres pruebas que conjuntamente podrían dar un máximo de 2 puntos sobre el examen final (valoración 0.5, 1 y 0.5 respectivamente).
+La nota final de teoría sería el mínimo entre 10 y la suma de la nota del examen con la nota obtenida en las pruebas parciales.
+Para la parte de PRACTICAS la asistencia y participación en las clases (10%) y la calificación de varias prácticas/pruebas (90%) </template>
+</category>
+
+<!-- Pregunta 5-->
+<category>
+<patern> Que pasa si tengo que presentarme a la convocatoria de septiembre </patern>
+<template> En la convocatoria de septiembre habra un examen escrito único y no habra entrega de practicas en esta
+convocatoria. </template>
+</category>
+
+<!--Pregunta 6-->
+<category>
+<patern> Hay examen de practicas en la convocatoria de septiembre </patern>
+<template> No hay exámen de practicas en esta convocatoria </template>
+</category>
+
+<!--Pregunta 7-->
+<category>
+<patern> Que pasa si no puedo asistir a clase regularmente </patern>
+<template> Deberá solicitar la evaluacion unica final al director del departamento en las dos primeras semanas de imparticion de la asignatura, para realizar una prueba final única </template>
+</category>
+
+<!--Pregunta 8-->
+<category>
+<patern> Hay nota minima para aprobar </patern>
+<template> Si, la minima nota para aprobar será un 5 </template>
+</category>
+
+<!--Pregunta 9-->
+<category>
+<patern> Las practicas son obligatorias </patern>
+<template> No, dado que si tienes un 10 en todas las calificaciones de teoria, seia suficiente para llegar al 5, ya que cada parte es un 505 de la nota final</template>
+</category>
+
+<!--Pregunta 10-->
+<category>
+<patern> Cuanto vale cada practica respecto a la nota final </patern>
+<template> Cada practica vale un total de 1,25 puntos de la nota final, y 1,25 el examen de problemas </template>
+</category>
+
+<!--Pregunta 11-->
+<category>
+<patern> Cuanto vale la participacion con respecto a la nota final </patern>
+<template> La asistencia y participacion en clases vale un total de 0.5 puntos de la nota final</template>
+</category>
+
+<!--Pregunta 12-->
+<category>
+<patern> Cuanto vale cada guion de practicas respecto a la nota final</patern>
+<template> Todas valen por igual, tanto la practica1, como la 2, como la 3, valen 1,25 puntos de la nota final </template>
+</category>
+
+<!--Pregunta 13-->
+<category>
+<patern> Como se consiguen puntos por participacion </patern>
+<template> Te tendrás que hacer notar en las clases, respondiendo correctamente a las preguntas que formule de manera aleatoria el profesor </template>
+</category>
+
+<!--Pregunta 14-->
+<category>
+<patern> Que es lo minimo que necesito para aprobar la asignatura </patern>
+<template> Lo minimo necesario para aprobarla sería un 5 </template>
+</category>
+
+<!--Pregunta 15-->
+<category>
+<patern> Los trabajos son individuales </patern>
+<template> Si, los trabajos deben realizarse indiviadualmente</template>
+</category>
+
+<!--Pregunta 16-->
+<category>
+<patern> Se pueden hacer los trabajos en grupo </patern>
+<template> No, los trabajos deben realizarse individualmente </template>
+</category>
+
+<!--Pregunta 17-->
+<category>
+<patern> Hay que entregar los ejercicios de las relaciones de problemas </patern>
+<template> Normalmente no, pero según indique el profesor </template>
+</category>
+
+<!--Pregunta 18-->
+<category>
+<patern> Por que tengo que estudiar </patern>
+<template> Hombre, lo primero, porque has querido, lo segundo, debes estudiar para intentar aprobar </template>
+</category>
+
+<!--Pregunta 19-->
+<category>
+<patern> Cuanto vale el primer examen de teoria </patern>
+<template> El primer y unico examen de teoria que se realizara sera puntuado sobre 10</template>
+</category>
+
+<!--Pregunta 20-->
+<category>
+<patern> Puedo tener una nota mayor a un 10</patern>
+<template> Si se tuviera la maxima nota en todo, como mucho aspirariamos a un 10 </template>
+</category>
+
+<!--Pregunta 21-->
+<category>
+<patern> Puedo recuperar una practica o examen </patern>
+<template> Deberías avisar y hablar antes con el profesor, y tener bien justificada dicha falta de asistencia para poder recuperarlo </template>
+</category>
+
+<!--Pregunta 22-->
+<category>
+<patern> Que pasa si me copio de otro estudiante </patern>
+<template> Serias suspendido automaticamente, y deberás realizar el examen de septiembre sin posibilidad de otros</template>
+</category>
+
+<!--Pregunta 23-->
+<category>
+<patern> Que pasa si me dejo copiar de otro estudiante </patern>
+<template> Lo mismo que si te copiaras tu, suspenso, directo al examen de septiembre </template>
+</category>
+
+<!--Pregunta 24-->
+<category>
+<patern> Y si suspendo en la convocatoria de junio </patern>
+<template> No te preocupes, siempre te quedara la convocatoria de septiembre </template>
+</category>
+
+<!--Pregunta 25-->
+<category>
+<patern> Cuanto vale la practica y la teoria </patern>
+<template> Valen las dos por igual, 50% y 50% </template>
+</category>
+
+<!--Pregunta 26-->
+<category>
+<patern> Cual es el horario de tutoria del profesor de practicas </patern>
+<template> Oficialmente es el siguiente, pero con cita previa podras quedar con el cuando estime oportuno:
+Martes de 08:30 a 09:30 en D40 (ETSIIT)
+Martes de 11:30 a 13:30 en D40 (ETSIIT)
+Miércoles de 08:30 a 09:30 en D40 (ETSIIT)
+Miércoles de 11:30 a 13:30 en D40 (ETSIIT)</template>
+</category>
+
+<!--Pregunta 27-->
+<category>
+<patern> Cual es el correo electronico del profesor de teoria </patern>
+<template> El correo de Antonio es: A.Gonzalez@decsai.ugr.es </template>
+</category>
+
+<!--Pregunta 28-->
+<category>
+<patern> Se puede aprobar la parte practica de la asignatura si no presento una practica </patern>
+<template> Si, mientras que las demas sean correctas </template>
+</category>
+
+<!--Pregunta 29-->
+<category>
+<patern> Cual es la nota minima que tengo que obtener en cada parte para hacer media </patern>
+<template> NSNC </template>
+</category
+
+<!--Pregunta 30-->
+<category>
+<patern> Que puntuacion obtengo en la practica 1 si opto por defender el nivel 3 y no lo supero </patern>
+<template> NSNC </template>
+</category>
+</aiml>

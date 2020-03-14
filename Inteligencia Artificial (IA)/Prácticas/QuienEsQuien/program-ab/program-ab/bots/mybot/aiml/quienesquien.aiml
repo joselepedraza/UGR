@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!--Regla para pensar personaje-->
+<category>
+<pattern>Piensa un personaje ^</pattern>
+<template>
+    <think>
+        <set name = "personaje"><random>
+            <li>alejandro</li>
+            <li>alfonso</li>
+            <li>antonio</li>
+            <li>cristina</li>
+            <li>gabriela</li>
+            <li>ivan</li>
+            <li>javier</li>
+            <li>juan</li>
+            <li>laura</li>
+            <li>luis</li>
+            <li>marco</li>
+            <li>maria</li>
+            <li>paco</li>
+            <li>pepe</li>
+            <li>sofia</li>
+            <li>sonia</li>
+        </random></set>
+    </think>
+    Ya he pensado un personaje, ahora preguntame para averiguarlo jejje
+</template>
+</category>
+
+<!--Regla para devolver si has acertado el personaje o no-->
+<category>
+<pattern>el personaje es *</pattern>
+<template>
+    <think>
+        <set name="intro"><star/></set>
+    </think>
+    <condition name="intro">
+        <li><value><get name="personaje"/></value> Has acertado, muy bien!. </li>
+        <li>No estaba pensando en ese personaje, sigue preguntando.</li>
+    </condition>
+</template>
+</category>
+
+<!-- Regla para preguntar el color de pelo-->
+<category>
+<pattern>Tiene el pelo *</pattern>
+<template>
+    <think>
+        <set var="intro"><star/></set>
+        <set var="cpelopersonaje">
+            <map name="cpelo"><get name="personaje"/></map>
+        </set>
+    </think>
+    <condition var="cpelopersonaje">
+        <li><value><get var="intro"/></value>Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+<!-- Regla para preguntar el color de ojos-->
+<category>
+<pattern>Tiene los ojos *</pattern>
+<template>
+    <think>
+        <set var="intro"><star/></set>
+        <set var="cojospersonaje">
+            <map name="cojos"><get name="personaje"/></map>
+        </set>
+    </think>
+    <condition var="cojospersonaje">
+        <li><value><get var="intro"/></value>Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+<!-- Regla para preguntar el color de piel-->
+<category>
+<pattern>Tiene la piel *</pattern>
+<template>
+    <think>
+        <set var="intro"><star/></set>
+        <set var="cpielpersonaje">
+            <map name="cpiel"><get name="personaje"/></map>
+        </set>
+    </think>
+    <condition var="cpielpersonaje">
+        <li><value><get var="intro"/></value>Si.</li>
+        <li>No.</li>
+    </condition>
+</template>
+</category>
+
+<!-- Regla para preguntar el genero del personaje-->
+<category>
+<pattern>Es *</pattern>
+<template>
+    <think>
+        <set var="intro"><star/></set>
+        <set var="generopersonaje">
+            <map name="genero"><get name="personaje"/></map>
+        </set>
+    </think>
+    <condition var="generopersonaje">
+        <li><value><get var="intro"/></value>Si lo es.</li>
+        <li>Que va.</li>
+    </condition>
+</template>
+</category>
+
+<!-- Regla para preguntar si tiene gafas-->
+<category>
+<pattern>Tiene gafas</pattern>
+<template>
+        <set var="gafaspersonaje">
+            <map name="gafas"><get name="personaje"/></map>
+        </set>
+</template>
+</category>
+
+<!-- Regla para preguntar si tiene bigote-->
+<category>
+<pattern>Tiene bigote</pattern>
+<template>
+        <set var="bigotepersonaje">
+            <map name="bigote"><get name="personaje"/></map>
+        </set>
+</template>
+</category>
+
+<!-- Regla para preguntar si tiene barba-->
+<category>
+<pattern>Tiene barba</pattern>
+<template>
+        <set var="barbapersonaje">
+            <map name="barba"><get name="personaje"/></map>
+        </set>
+</template>
+</category>
+
+<!-- Regla para preguntar que personaje es el pensado-->
+<category>
+<pattern>^ el personaje ^ </pattern>
+<template>
+        <get name="personaje"/> era el personaje que estaba pensando, eres realmente malo!
+</template>
+</category>
+
+</aiml>
