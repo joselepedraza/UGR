@@ -1,0 +1,23 @@
+Id. usuario del trabajo: a2estudiante18
+Id. del trabajo: 29982
+Nombre del trabajo especificado por usuario: SumaVectores_parallel_sections
+Directorio de trabajo (en el que se ejecuta el script):
+/home/a2estudiante18/bp1/ejer10/ejec_suma_parallel_sections
+Cola: ac
+Nodo que ejecuta este trabajo:atcgrid
+No de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 12
+ 16384	 0.000151256	
+ 32768	 0.000313343	
+ 65536	 0.000510037	
+ 131072	 0.000965107	
+ 262144	 0.001996884	
+ 524288	 0.003155904	
+ 1048576	 0.005594173	
+ 2097152	 0.010458514	
+ 4194304	 0.018487521	
+ 8388608	 0.037385233	
+ 16777216	 0.066860136	
+ 33554432	 0.130467681	
+ 67108864	 0.262991346	

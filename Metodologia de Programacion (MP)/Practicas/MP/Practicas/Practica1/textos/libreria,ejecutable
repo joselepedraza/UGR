@@ -1,7 +1,0 @@
-g++ obj/Demo2.o -lprueba -o bin/test -Llib 
-(crear ejecutable a traves de libreria)
-
-ar rvs lib/libprueba.a obj/Punto.o obj/Circulo.o
-(crear libreria)
-
-

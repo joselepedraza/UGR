@@ -1,0 +1,1 @@
+insert into ventas select * from opc.ventas;

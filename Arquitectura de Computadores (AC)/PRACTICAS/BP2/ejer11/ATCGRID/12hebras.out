@@ -1,0 +1,12 @@
+Id. usuario del trabajo: a2estudiante18
+Id. del trabajo: 39267
+Nombre del trabajo especificado por usuario: pmv-OpenMP-a
+Directorio de trabajo (en el que se ejecuta el script):
+/home/a2estudiante18/bp2/ejer11
+Cola: ac
+Nodo que ejecuta este trabajo:atcgrid
+No de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid3
+CPUs por nodo: 24
+10000 	0.023874660
+50000 	0.509043195

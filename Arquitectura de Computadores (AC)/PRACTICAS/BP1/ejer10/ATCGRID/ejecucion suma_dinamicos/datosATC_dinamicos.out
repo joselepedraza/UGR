@@ -1,0 +1,23 @@
+Id. usuario del trabajo: a2estudiante18
+Id. del trabajo: 29963
+Nombre del trabajo especificado por usuario: SumaVectores_dinamicos
+Directorio de trabajo (en el que se ejecuta el script):
+/home/a2estudiante18/bp1/ejer10/ejec_suma_dinamicos
+Cola: ac
+Nodo que ejecuta este trabajo:atcgrid
+No de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 12
+ 16384	 0.000117315	
+ 32768	 0.000237032	
+ 65536	 0.000476262	
+ 131072	 0.000933258	
+ 262144	 0.001878188	
+ 524288	 0.002947555	
+ 1048576	 0.005500491	
+ 2097152	 0.010214040	
+ 4194304	 0.018346566	
+ 8388608	 0.034937369	
+ 16777216	 0.064980680	
+ 33554432	 0.127338278	
+ 67108864	 0.253301830	

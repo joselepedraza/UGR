@@ -1,0 +1,55 @@
+set ylabel "Tiempo (seg)"
+gnuplot> set xlabel "Dimension problema"
+gnuplot> replot
+gnuplot> set title 'Algoritmos O(n^2),O(nlog(n)),O(n^3),O(2^n)'                 
+gnuplot> plot 'salidaseleccion-media.dat' title 'Seleccion' with lines,'salidainsercion-media.dat' title 'Insercion' with lines,'salidaburbuja-media.dat' title 'Burbuja' with lines, 'salidaheapsort-media.dat' title 'Heapsort' with lines,'salidamergesort-media.dat' title 'Mergesort' with lines,'salidaquicksort-media.dat' title 'Quicksort' with lines, 'salidafloyd-media.dat' title 'Floyd' with points, 'salidahanoi-media.dat' title 'Hanoi' with points
+
+
+
+AJUSTE O(N²):
+f(x) = a0*x*x+a1*x+a2
+gnuplot> fit f(x) 'salidaseleccion-media.dat' via a0,a1,a2
+set title 'Algoritmos Seleccion O(n^2) ajustado'
+gnuplot> set xlabel "Dimension problema"
+gnuplot> set ylabel 'Tiempo (seg)'
+gnuplot> plot f(x) title 'Curva ajustada' with lines,'salidaseleccion-media.dat' title 'Seleccion' with points
+
+AJUSTE O(nlog(n)):
+f(x) =  a0*x*log(x) ---------> ó x*log(a0*x)
+fit f(x) 'salidamergesort-media.dat' via a0
+set title 'Algoritmos Mergesort O(nlog(n)) ajustado'
+set xlabel "Dimension problema"
+set ylabel 'Tiempo (seg)'
+plot f(x) title 'Curva ajustada' with lines,'salidamergesort-media.dat' title 'Mergesort' with points
+
+AJUSTE O(N³):
+f(x) = a0*x*x*x+a1*x*x+a2*x+a3
+fit f(x) 'salidafloyd-media.dat' via a0,a1,a2,a3
+set title 'Algoritmos Floid O(n^3) ajustado'
+set xlabel "Dimension problema"
+set ylabel 'Tiempo (seg)'
+plot f(x) title 'Curva ajustada' with lines,'salidafloyd-media.dat' title 'Floyd' with points
+
+AJUSTE O(2^n):
+f(x) = a0*exp(x)
+fit f(x) 'salidahanoi-media.dat' via a0
+set title 'Algoritmos Hanoi O(2^n) ajustado'
+set xlabel "Dimension problema"
+set ylabel 'Tiempo (seg)'
+plot f(x) title 'Curva ajustada' with lines,'salidahanoi-media.dat' title 'Hanoi' with points
+
+OPTIMIZACIONES
+set title 'Optimizacion Algoritmo Burbuja'
+set ylabel "Tiempo (seg)"
+set xlabel "Dimension problema"
+set xrange [0:70000]
+set yrange [0:12]
+plot 'salidaburbuja-media.dat' title 'Burbuja' with points, 'salidaburbuja-media-O2.dat' title '-O2' with lines, 'salidaburbuja-media-O3.dat' title '-O3' with lines
+
+
+plot 'salidaheapsort-media.dat' title 'Heapsort' with points, 'salidaheapsort-media-O2.dat' title '-O2' with lines, 'salidaheapsort-media-O3.dat' title '-O3' with lines
+set xrange [0:26000000]
+set yrange [0:12]
+
+plot 'salidaburbuja-media.dat' title 'Burbuja' with points, 'salidaburbuja-media-O2.dat' title 'burbuja-O2' with lines, 'salidaburbuja-media-O3.dat' title 'burbuja-O3' with lines, 'salidainsercion-media.dat' title 'Insercion' with points, 'salidainsercion-media-O2.dat' title 'insercion-O2' with lines, 'salidainsercion-media-O3.dat' title 'insercion-O3' with lines, 'salidaseleccion-media.dat' title 'Seleccion' with points, 'salidaseleccion-media-O2.dat' title 'seleccion-O2' with lines, 'salidainseleccion-media-O3.dat' title 'seleccion-O3' with lines, 'salidaheapsort-media.dat' title 'Heapsort' with points, 'salidaheapsort-media-O2.dat' title 'heapsort-O2' with lines, 'salidaheapsort-media-O3.dat' title 'heapsort-O3' with lines, 'salidamergesort-media.dat' title 'Mergesort' with points, 'salidamergesort-media-O2.dat' title 'mergesort-O2' with lines, 'salidamergesort-media-O3.dat' title 'mergesort-O3' with lines, 'salidaquicksort-media.dat' title 'Quicksort' with points, 'salidaquicksort-media-O2.dat' title 'quicksort-O2' with lines, 'salidaquicksort-media-O3.dat' title 'quicksort-O3' with lines
+

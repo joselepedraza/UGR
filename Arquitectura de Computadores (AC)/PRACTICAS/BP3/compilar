@@ -1,0 +1,2 @@
+$gcc -O2 -fopenmp -o pmtv-OpenMP pmtv-OpenMP.c -lrt
+

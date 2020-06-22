@@ -1,0 +1,20 @@
+
+
+l.- Select ventas.cantidad from ventas
+    minus
+    select ven.cantidad from ventas, ventas ven where ven.cantidad>ventas.cantidad
+
+Version alternativa con operadores SQL
+
+ Select ventas.cantidad from ventas where cantidad <=all(select ven.cantidad from ventas ven)
+
+m.- Select codpj from proyecto
+    minus
+    select codpj from ventas, pieza, proveedor
+    where ventas.codpro=proveedor.codpro and ventas.codp=pieza.codpie 
+    and pieza.color='Roja' and proveedor.ciudad='Londres'
+
+n.- Select codpj from proyecto
+    minus
+    select codpj from ventas
+    where ventas.codpro<>'S1'

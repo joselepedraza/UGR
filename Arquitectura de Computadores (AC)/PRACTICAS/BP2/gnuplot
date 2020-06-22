@@ -1,0 +1,6 @@
+set ylabel "Tiempo (seg)"
+gnuplot> set xlabel "Dimension problema"
+gnuplot> replot
+gnuplot> set title 'Comparativa Numero de Hebras pmv-a'                 
+gnuplot> plot '1hebra.dat' title '1-hebra' with lp,'4hebras.dat' title '4-hebras' with lp,'8hebras.dat' title '8-hebras' with lp, '12hebras.dat' title '12-hebras' with lp
+

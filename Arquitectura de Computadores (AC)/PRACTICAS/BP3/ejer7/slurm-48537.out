@@ -1,0 +1,57 @@
+Id. usuario del trabajo: a2estudiante18
+Id. del trabajo: 48537
+Nombre del trabajo especificado por usuario: pmv-OpenMP-a
+Directorio de trabajo (en el que se ejecuta el script):
+/home/a2estudiante18/bp3/ejer7
+Cola: ac
+Nodo que ejecuta este trabajo:atcgrid
+No de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 12
+STATIC,default
+Tiempo: 0.041590462
+v2[0]: 1, v2[n-1]: 1132726784
+Tiempo: 0.042784082
+v2[0]: 1, v2[n-1]: 1132726784
+STATIC,1
+Tiempo: 0.029249676
+v2[0]: 1, v2[n-1]: 1132726784
+Tiempo: 0.033732811
+v2[0]: 1, v2[n-1]: 1132726784
+STATIC,64
+Tiempo: 0.031779824
+v2[0]: 1, v2[n-1]: 1132726784
+Tiempo: 0.035454419
+v2[0]: 1, v2[n-1]: 1132726784
+--------------------------
+DYNAMIC,default
+Tiempo: 0.036157070
+v2[0]: 1, v2[n-1]: 1132726784
+Tiempo: 0.033533905
+v2[0]: 1, v2[n-1]: 1132726784
+DYNAMIC,1
+Tiempo: 0.033697883
+v2[0]: 1, v2[n-1]: 1132726784
+Tiempo: 0.032542282
+v2[0]: 1, v2[n-1]: 1132726784
+DYNAMIC,64
+Tiempo: 0.029268046
+v2[0]: 1, v2[n-1]: 1132726784
+Tiempo: 0.029916512
+v2[0]: 1, v2[n-1]: 1132726784
+--------------------------
+GUIDED,default
+Tiempo: 0.032198212
+v2[0]: 1, v2[n-1]: 1132726784
+Tiempo: 0.029106553
+v2[0]: 1, v2[n-1]: 1132726784
+GUIDED,1
+Tiempo: 0.028828295
+v2[0]: 1, v2[n-1]: 1132726784
+Tiempo: 0.031143165
+v2[0]: 1, v2[n-1]: 1132726784
+GUIDED,64
+Tiempo: 0.033740976
+v2[0]: 1, v2[n-1]: 1132726784
+Tiempo: 0.030451957
+v2[0]: 1, v2[n-1]: 1132726784

@@ -1,0 +1,72 @@
+-->Cuidado con el acceso a variables compartidas (paradigma de var compartidas/mem compartida) 
+- Realmente no es un estandar (no hay norma que los defina), biblioteca en continua evolucion
+- OpenMP tiene 3 elementos que forman parte de la api: Directivas para el compilador (el preprocesador sustituye por el codigo que se indique con la directiva, tiempo de compilacion), funciones de biblioteca (tiempo de ejecucion) y variables de entorno (no aparecen en el codigo fuente, podemos ajustar/modificar parametros de comportamiento de los programas que ejecutemos en nuestro terminal, por ejemplo, omp num threads, escribir en terminal. La supervivencia de las variables de entorno acaban cuando se cierra el terminal).
+
+-fopenmp (para usar OpenMP) -- USAR SIEMPRE COMPILACION CONDICIONAL
+
+DIRECTIVAS:
+toda directiva debe estar aislada en una sola linea de codigo
+
+-la sobrecarga de los tiempos para esa sincronizacion no son despreciables al igual que el de la creacion de hebras (para medir, deberemos de mirarlo antes de crear las hebras, y despues, una vez que se hayan destruido las hebras)
+
+*parallel:
+    -directiva básica
+    -todas y cada una de las hebras ejecutan todo el bloque estructurado (no hay reparto de tareas), cuando acaban todas se sincronizan al final (barrera implicita) y al final se destruyen todas menos la master (la que ejecuta el codigo secuencial y crea las demas hebras).
+    -Unica directiva que crea y destruye hebras de OpenMP
+    -No tenemos condicion de carrera si usamos la cláusula "private(var), asi cada hebra tendrá su propia variable privada.
+    -Hebra master = 0
+    -Si no indico nada, se crearan el numero de hebras = numero de cores de la maquina
+    -SIEMPRE USAR VAR DE ENTORNO: export OMP_DYNAMIC=FALSE
+
+*worksharing: exclusiva de fortran
+
+*for: 
+    -para bucles
+    -antes de empezar a ejecutarse necesitamos saber cuantas iteraciones tendrá
+    -variable iteradora = int
+    -solo para un unico bucle for(no poner llaves, no compila)
+    -Es responsabilidad del programador paralelizar lo que sea paralelizable, Cuidado con la dependencia de Datos!!
+    -barrera implicita (normalmente la del for y la del parallel, por lo tanto 2 barreras implicitas)
+    
+
+*sections: 
+    -para tareas (para distribuir trozos de codigo independientes entre las hebras, normalmente funciones)
+    -barrera implicita al final
+    -cada section en singular constituye una tarea asignada a una hebra (las tareas deben ser paralelizables)
+    -no se puede tener control sobre que tarea se le asigna a qué hebra
+    -si tengo el mismo numero de hebras que de tareas: asignacion equitativa
+    -si tengo el mas hebras que tareas pues habrá hebras que ejecuten una tarea y otra que ninguna, se iran directamente a la barrera implicita.   
+    -si tengo menos hebras que tareas, habrá hebras que repitan
+    
+*single: 
+    -solo una ejecuta y hay barerra implicita al final
+    -ejecucion de un trozo secuencial de codigo por una hebra
+    -no se puede controlar a que hebra se asigna una tarea
+    -
+
+
+COMBINAR PARALLEL CON DIRECTIVAS DE TRABAJO COMPARTIDO para evitar las paradas repetitivas en las barreras implicitas del final ( en vez de 2 tendrá una unica barrera al final)
+   --pragma omp parallel sections
+   --pragma omp parallel for
+
+
+DIRECTIVAS BASICAS PARA COMUNICACION Y SINCRONICACION
+*barrier: 
+    -crea barrera explicita (punto de sincronizacion que deben alcanzar todas las hebras para continuar)
+    -
+*critical:
+    -define que su bloque estructurado es una seccion critica (para que se ejecute en exclusión mutua)
+    -cuando exista condicion de carrera (cuando haya varias hebras leyendo y modificando esas variables compartidas)
+    -secuancializa el trabajo de las hebras para una seccion critica
+*atomic:
+    -alternativa a critical más eficiente (solo admite los operadores: x ++, ++x, x-- o -- x; +,*,-,/,&,^,|,<<,>>)
+*master:
+    -hace lo mismo que single, con la diferencia de que sabemos que hebra la ejecuta, la master, y al contrario de single, master no tiene barrera implicita al final.
+    -normalmente es estrictamente necesaria una barrera explicita con barrier ( o implicita si hubiera otra directiva) antes de master. Debemos asegurarnos de que todas las demas hebras hayan calculado lo que les corresponte.
+
+
+RESPECTO AL CUADERNO:
+    -variables dinamicas siempre
+    -Ejercicio6: debemos generar el ensamblador, ubicar el trozo de codigo que ejecuta la suma, entre dos llamadas a clock_gettime, que es un bucle, que habra salto condicional y las del bucle multiplicar por el tamaño del vector. y para coma flotante, solo debemos contar las instrucciones que contenga %xmm
+    -NUNCA GENERAR MAS HEBRAS QUE CORES FISICOS TENGA EL EQUIPO (12 atcgrid y 4 mipc)
+    -

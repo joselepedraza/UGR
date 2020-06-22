@@ -1,0 +1,30 @@
+
+
+*******************************************************************************
+Mon Mar  9 13:03:06 2020
+
+
+FIT:    data read from 'salidaheapsort-media.dat'
+        format = z
+        #datapoints = 25
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) =  a0*x*log(x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a0           
+   0 1.5452729302e+18   0.00e+00  2.49e+08    1.000000e+00
+   5 1.0629150022e+00  -2.09e-11  2.49e+03    2.111758e-08
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.06292
+rel. change during last iteration : -2.08902e-16
+
+degrees of freedom    (FIT_NDF)                        : 24
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.210447
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0442881
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a0              = 2.11176e-08      +/- 1.693e-10    (0.8017%)

@@ -1,0 +1,4 @@
+IMPORTANTE HACER LAS MEDICIONES CON NINGUN PROCESO MAS ABIERTOS
+
+
+Ejecutar 3 veces cada ejecutable (una vez por script segun el tipo de compilacion -O2,-O3...) para obtener 3 ficheros de datos, a los cuales se les hace la media para graficarlos con gnu-plot.

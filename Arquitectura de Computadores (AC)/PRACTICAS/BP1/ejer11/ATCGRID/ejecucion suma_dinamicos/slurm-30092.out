@@ -1,0 +1,75 @@
+Id. usuario del trabajo: a2estudiante18
+Id. del trabajo: 30092
+Nombre del trabajo especificado por usuario: SumaVectores_dinamicos
+Directorio de trabajo (en el que se ejecuta el script):
+/home/a2estudiante18/bp1/ejer11/ATCGRID/ejecucion suma_dinamicos
+Cola: ac
+Nodo que ejecuta este trabajo:atcgrid
+No de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 12
+ 16384	 0.000117257	
+
+real	0m0.099s
+user	0m0.008s
+sys	0m0.011s
+ 32768	 0.000227400	
+
+real	0m0.100s
+user	0m0.012s
+sys	0m0.006s
+ 65536	 0.000456486	
+
+real	0m0.090s
+user	0m0.008s
+sys	0m0.010s
+ 131072	 0.000932826	
+
+real	0m0.090s
+user	0m0.009s
+sys	0m0.009s
+ 262144	 0.001739624	
+
+real	0m0.092s
+user	0m0.009s
+sys	0m0.009s
+ 524288	 0.002950208	
+
+real	0m0.085s
+user	0m0.009s
+sys	0m0.010s
+ 1048576	 0.005595380	
+
+real	0m0.105s
+user	0m0.010s
+sys	0m0.008s
+ 2097152	 0.009567506	
+
+real	0m0.112s
+user	0m0.013s
+sys	0m0.005s
+ 4194304	 0.017397214	
+
+real	0m0.110s
+user	0m0.008s
+sys	0m0.010s
+ 8388608	 0.032701549	
+
+real	0m0.168s
+user	0m0.008s
+sys	0m0.011s
+ 16777216	 0.064627458	
+
+real	0m0.246s
+user	0m0.012s
+sys	0m0.007s
+ 33554432	 0.126875604	
+
+real	0m0.415s
+user	0m0.007s
+sys	0m0.012s
+ 67108864	 0.254169357	
+
+real	0m0.689s
+user	0m0.008s
+sys	0m0.010s

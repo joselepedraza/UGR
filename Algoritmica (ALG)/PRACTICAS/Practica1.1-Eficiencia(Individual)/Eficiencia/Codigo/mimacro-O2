@@ -1,0 +1,9 @@
+#!/bin/bash -vx
+#echo "" >> seleccion-O2.dat
+let i=1000
+while (($i <= 50000))
+do
+./seleccion-O2 $i >> seleccion-O2.dat
+let i+=2000
+done
+

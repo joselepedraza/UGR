@@ -1,0 +1,38 @@
+
+
+*******************************************************************************
+Sun Mar  8 22:59:10 2020
+
+
+FIT:    data read from 'salidaseleccion-media.dat'
+        format = z
+        #datapoints = 25
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a0*x*x+a1*x+a2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a0            a1            a2           
+   0 7.4682744487e+19   0.00e+00  9.98e+08    1.000000e+00   1.000000e+00   1.000000e+00
+  13 8.6234511381e-03  -3.08e-08  9.98e-05    1.066556e-09   2.846348e-08  -6.846185e-05
+
+After 13 iterations the fit converged.
+final sum of squares of residuals : 0.00862345
+rel. change during last iteration : -3.07579e-13
+
+degrees of freedom    (FIT_NDF)                        : 22
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0197984
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000391975
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a0              = 1.06656e-09      +/- 1.365e-11    (1.28%)
+a1              = 2.84635e-08      +/- 8.746e-07    (3073%)
+a2              = -6.84619e-05     +/- 0.01172      (1.713e+04%)
+
+correlation matrix of the fit parameters:
+                a0     a1     a2     
+a0              1.000 
+a1             -0.968  1.000 
+a2              0.741 -0.863  1.000 

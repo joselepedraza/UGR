@@ -1,0 +1,40 @@
+
+
+*******************************************************************************
+Mon Mar  9 13:14:02 2020
+
+
+FIT:    data read from 'salidafloyd-media.dat'
+        format = z
+        #datapoints = 24
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a0*x*x*x+a1*x*x+a2*x+a3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a0            a1            a2            a3           
+   0 2.2554348287e+21   0.00e+00  4.85e+09    1.000000e+00   1.000000e+00   1.000000e+00   1.000000e+00
+  13 1.2978567359e+01  -1.83e-04  4.85e-04    3.941279e-09   2.462767e-06  -2.699991e-03   5.976879e-01
+
+After 13 iterations the fit converged.
+final sum of squares of residuals : 12.9786
+rel. change during last iteration : -1.82638e-09
+
+degrees of freedom    (FIT_NDF)                        : 20
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.805561
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.648928
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a0              = 3.94128e-09      +/- 3.687e-10    (9.356%)
+a1              = 2.46277e-06      +/- 1.681e-06    (68.24%)
+a2              = -0.00269999      +/- 0.002193     (81.23%)
+a3              = 0.597688         +/- 0.7755       (129.8%)
+
+correlation matrix of the fit parameters:
+                a0     a1     a2     a3     
+a0              1.000 
+a1             -0.987  1.000 
+a2              0.926 -0.973  1.000 
+a3             -0.721  0.797 -0.899  1.000 

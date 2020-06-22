@@ -1,0 +1,9 @@
+(para atcgrid ejecutar con: sbatch -p ac -n1 --exclusive --hint=nomultithread "./ATCGRIDSumaVectores_parallel_sections.sh")
+
+set xlabel "N vector"
+set ylabel "tiempo"
+set title 'SumaVectores PC'
+
+plot 'datosPC_globales.dat' title 'globales_PC' with lines,'datosPC_dinamicos.dat' title 'dinamicos_PC' with lines,'datosPC_parallel_for.dat' title 'parallelFor_PC' with lines,'datosPC_parallel_sections.dat' title 'parallelSections_PC' with lines
+
+plot 'datosATC_globales.out' title 'globales_ATC' with lines,'datosATC_dinamicos.out' title 'dinamicos_ATC' with lines,'datosATC_parallel_for.out' title 'parallelFor_ATC' with lines,'datosATC_parallel_sections.out' title 'parallelSections_ATC' with lines

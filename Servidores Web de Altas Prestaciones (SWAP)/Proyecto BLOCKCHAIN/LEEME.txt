@@ -1,0 +1,31 @@
+/*******************************************************************************************/
+
+Blockchain: Uso de Blockchain para gestionar y servir información
+
+López Justicia, Iván
+Martínez Ramírez, Pablo Jesús
+Pedraza Román, José Luis
+
+/*******************************************************************************************/
+
+En este archivo comprimido están contenidos 3 archivos:
+
+	- El documento completo del trabajo: 
+	  T23-LopezI-MartinezP-PedrazaJ-tra.pdf
+
+	- Una copia en pdf de la presentación: 
+	  T23-LopezI-MartinezP-PedrazaJ-exp.pdf
+
+	- Un archivo ejecutable para la reproducción de la presentación de forma dinámica: 
+	  T23-LopezI-MartinezP-PedrazaJ-pre.exe
+
+La presentación ha sido realizada en prezi.com, es por ello que necesita de dicho ejecutable.
+
+Debo también realizar varias aclaraciones:
+	
+	- Hemos encontrado muchos problemas para realizar la grabación, tanto por problemas con 
+	  plataformas como por el internet de uno de nuestros compañeros.
+
+	- También hemos tenido bastantes problemas con Latex, pero debido a que empezaron a 
+	  aparecer a raíz de la mitad del desarrollo, nos pareció contraproducente traspasarlo
+	  y rehacer todo en otra plataforma debido a la carga general de trabajo y la proximidad a la entrega.
