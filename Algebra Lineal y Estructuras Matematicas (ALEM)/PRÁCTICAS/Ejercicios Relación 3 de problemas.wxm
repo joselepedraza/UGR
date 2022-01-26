@@ -1,0 +1,123 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: comment start ]
+siendo p un numero primo
+cuantos numeros enteros mayores que 0 dividen a p^3
+
+-1,p,p^2,p^3. Hay cuatro numeros
+
+Todos divisor mayor de p^3 es la forma pî con 0<=0<î<=3
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: comment start ]
+p, q primos distintos
+cuantos numeros enteros mayores que 0 dividen a p^3*q^6
+
+Todo divisor mayor a 0 de p^3*q^6 es de la forma p^i*q^i 
+con 0 <=i<=3, 0<=j<=6
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+divisors (2^3 * 11^6);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cardinality(%);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+p1,p2,---,pn son primos distintos y e1,e2,---,en pertenecientes a Naturale
+(nonecesariamente distintos). el numero de los divisores positivos de P^1e1*P2^e2*---*Pn^en
+es (e1+1)*(e2+1)----(en+1)
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+factor(1234567);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+factor(87654321);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Ejercicio 7 relación 3:
+el conjunto de los numeros primos es infinito (demuestralo).
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: comment start ]
+Ejercicio 8 relación 3:
+Si un numero entero a>1 no es primo
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+primep (101);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+factor (101);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sqrt (101);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sqrt (101),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Ejercicio 11 relación 3:
+x*y-5x+y=18; x,y perteneciente a Z*Z (Encontrar soluciones 
+de la ecuacion diofántica).
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: comment start ]
+(x+1)*(y-5)=xy-5x+y-5=18
+(x+1)*(y-5)=13
+
+x+1     y-5     x      y
+1       13      0      18
+13      1       12     6
+-1      -13     -2     -8
+-13     -1      -14    4
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: comment start ]
+Ejercicio 36 relación 3:
+Un comerciante compró 5 camiones de naranjas, todos ellos con la misma cantidad.
+Al embasar el primero en sacos de 49 Kg, sobraron 26 Kg,
+al embasar el segundo en sacos de 27 Kg, faltaron 3 Kg para completar
+el ultimo saco, al embasar el tercero en sacos de 25 Kg, sobraron 10 Kg,
+al embasar el cuarto en sacos de 11 Kg, sobraron 2 Kg, y al embasar el quinto
+en sacos de 7 Kg, sobraron 5 Kg. ¿Cu´al es la menor cantidad de Kg
+que podía tener cada cami´on, sabiendo que hab´ýa m´as de 6000 Kg en cada uno?
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: comment start ]
+(congruencias) 
+                
+x= 26 mod 49            x= 0 mod 27 --> x= -3 mod 27 --> x= 24 mod 27
+x= 24 mod 27
+x= 10 mod 25
+x= 2 mod 11
+x= 5 mod 7
+
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: comment start ]
+Ejercicio 38 relación 3:
+Para cualquier n´umero entero x, razone que ni x2 + 1 ni x3 + 2 es multiplo de 7.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: comment start ]
+(En congruencia): x^2+1 = 0 mod 7 (no tiene solución)
+0,1,2,3,4,5,6 (comprobar que ninguno de estos números 
+cumple la ecuación en congruencia) Si ninguno de estos numeros es una solución
+entonces ningún otro numero entero es solución, porque esos numeros son los
+restos posibles al dividir entre 7. (TODO NUMERO ENTERO ES CONGRUENTE MOD 7 CON 
+ALGUNO DE LOS ANTERIORES NUMEROS 1...6).
+   [wxMaxima: comment end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

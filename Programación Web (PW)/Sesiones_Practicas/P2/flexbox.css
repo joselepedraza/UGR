@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: lightblue;
+  width: 100%;
+}
+
+#header_form_container {
+  padding: 10px;
+  background-color: lightgreen;
+}

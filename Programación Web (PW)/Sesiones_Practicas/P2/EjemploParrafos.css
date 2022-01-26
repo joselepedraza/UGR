@@ -1,0 +1,34 @@
+p{
+	background-color: lightblue;
+	color: blue;
+}
+
+#whatis{
+	background-color: black;
+	color: white;
+}
+/*
+#tablapruebas{
+	margin-top: 100px;
+	border-color: red;
+}
+#tablaprueba thead,th{
+	padding: 100px;
+	margin: 150px;
+	border-color: blueviolet;
+	
+	
+}*/
+
+section{
+	
+	width: 33%;
+	margin-left: 10px;
+	border-style: double solid groove ridge;
+	float:right;
+	
+}
+footer{
+	width: 100%;
+	height: 200%;
+}

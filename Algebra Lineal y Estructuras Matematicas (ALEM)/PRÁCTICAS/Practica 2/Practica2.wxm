@@ -1,0 +1,302 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.7 ] */
+
+/* [wxMaxima: input   start ] */
+A:setify(makelist(k,k,1,1000))$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):=is(mod(x,5)=0) or is(mod(x,7)=0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cardinality(subset(A,f));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+binomial(7,2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+binomial(7,10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+binomial(7,0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+makelist(binomial(10,k),k,0,10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+binomial(n,3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sum(binomial(n,k),k,0,n);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sum(binomial(n,k),k,0,n), simpsum;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sum(binomial(n,2*k),k,0,n), simpsum;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sum(binomial(n,2*k+1),k,0,n), simpsum;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+powerset({a,b,c,d,e},1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+powerset({a,b,c,d,e},2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+powerset({a,b,c,d,e},3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+powerset({a,b,c,d,e},0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+powerset({a,b,c,d,e},8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+combi(X,k):=subset(powerset(X),lambda([A],is(cardinality(A)=k)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+combi({a,b,c,d,e},1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+combi({a,b,c,d,e},2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+combi({a,b,c,d,e},3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+combi({a,b,c,d,e},0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+combi({a,b,c,d,e},8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand((x+y)^8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sum(binomial(8,k)*x^k*y^(8-k),k,0,8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+CR(n,k):=binomial(n+k-1,n-1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+CR(2,10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+A:setify(makelist(k,k,0,20))$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+X:cartesian_product(A,A,A)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(li):=is((li[1]+li[2]+li[3])=20) and is(li[1] < 7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cardinality(subset(X,f));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+binomial(22,2)-binomial(15,2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+permutations({a,b});
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+permutations({a,b,c});
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+permutations({a,b,c,d});
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+permutations([a,b,c,d]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+permutations([R,E,L,E,E,R]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+cardinality(%);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+multinomial_coeff(3, 2, 1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+multinomial_coeff(1, 2, 1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+multinomial_coeff(3, 0, 1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+CR(3, 4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+random_permutation({1,2,3,4});
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+random_permutation({1,2,3,4});
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+makelist(random_permutation({1,2,3,4}),i,1,10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+makelist(random_permutation({1,2,3,4}),i,1,10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+variordi(X,k):=apply(union,makelist(permutations(li),li,listify(powerset(X,k))));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+variordi({1,2,3,4,5},2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+variordi({1,2,3,4,5},3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+variordi({1,2,3,4,5},5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+variordi({1,2,3,4,5},1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+variordi({1,2,3,4,5},8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+p(n,k):=prod(i,i,n-k+1,n);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+p(5,2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+p(5,0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+p(5,0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+p(5,1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+p(5,5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+p(5,8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+desordenes(n):=block([ini:makelist(i,i,1,n)],subset(permutations(ini),lambda([d],not equal(apply("*",d-ini),0))));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+desordenes(1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+desordenes(2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+desordenes(3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+desordenes(4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+desordenes(5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integer_partitions(1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integer_partitions(2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integer_partitions(5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+stirling2(5,1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+stirling2(5,2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+stirling2(5,6);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+stirling2(5,7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+makelist(stirling2(n+1,n),n,1,8);
+/* [wxMaxima: input   end   ] */
+
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

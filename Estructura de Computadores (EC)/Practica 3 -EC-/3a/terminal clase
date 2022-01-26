@@ -1,0 +1,579 @@
+josele@josele-VB:~$ cd Escritorio/Practica*3*EC*
+josele@josele-VB:~/Escritorio/Practica 3 -EC-$ ls 
+3a  3b
+josele@josele-VB:~/Escritorio/Practica 3 -EC-$ cd 3a
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a$ ls 
+3a  3a.txz  Practica 3a Tutorial.pdf
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a$ cd 3a/
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ ls 
+makefile             suma_03_SC_c.c  suma_04_SC_s.s  suma_07_Casm.c  suma.gdb
+suma_01_S_cdecl.gdb  suma_03_SC.gdb  suma_05_C.c     suma_08_Casm.c  suma.s
+suma_01_S_cdecl.s    suma_03_SC_s.s  suma_06_CS_c.c  suma_09_Casm.c
+suma_02_S_libC.s     suma_04_SC_c.c  suma_06_CS_s.s  suma_09.cc
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ as --32 suma
+suma_01_S_cdecl.gdb  suma_04_SC_c.c       suma_08_Casm.c
+suma_01_S_cdecl.s    suma_04_SC_s.s       suma_09_Casm.c
+suma_02_S_libC.s     suma_05_C.c          suma_09.cc
+suma_03_SC_c.c       suma_06_CS_c.c       suma.gdb
+suma_03_SC.gdb       suma_06_CS_s.s       suma.s
+suma_03_SC_s.s       suma_07_Casm.c       
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ as --32 suma_01_S_cdecl.s -o suma01Scedecl.o
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ ld -m elf_i386 suma_0
+suma_01_S_cdecl.gdb  suma_03_SC_s.s       suma_06_CS_s.s
+suma_01_S_cdecl.s    suma_04_SC_c.c       suma_07_Casm.c
+suma_02_S_libC.s     suma_04_SC_s.s       suma_08_Casm.c
+suma_03_SC_c.c       suma_05_C.c          suma_09_Casm.c
+suma_03_SC.gdb       suma_06_CS_c.c       suma_09.cc
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ ld -m elf_i386 suma01Scedecl.o  -o suma01Scedecl
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ ./suma01Scedecl 
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ objdump -d suma
+suma_01_S_cdecl.gdb  suma_03_SC_s.s       suma_08_Casm.c
+suma_01_S_cdecl.s    suma_04_SC_c.c       suma_09_Casm.c
+suma01Scedecl        suma_04_SC_s.s       suma_09.cc
+suma01Scedecl.o      suma_05_C.c          suma.gdb
+suma_02_S_libC.s     suma_06_CS_c.c       suma.s
+suma_03_SC_c.c       suma_06_CS_s.s       
+suma_03_SC.gdb       suma_07_Casm.c       
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ objdump -d suma
+suma_01_S_cdecl.gdb  suma_03_SC_s.s       suma_08_Casm.c
+suma_01_S_cdecl.s    suma_04_SC_c.c       suma_09_Casm.c
+suma01Scedecl        suma_04_SC_s.s       suma_09.cc
+suma01Scedecl.o      suma_05_C.c          suma.gdb
+suma_02_S_libC.s     suma_06_CS_c.c       suma.s
+suma_03_SC_c.c       suma_06_CS_s.s       
+suma_03_SC.gdb       suma_07_Casm.c       
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ objdump -d suma01Scedecl
+
+suma01Scedecl:     formato del fichero elf32-i386
+
+
+Desensamblado de la sección .text:
+
+08048074 <_start>:
+ 8048074:	ff 35 db 90 04 08    	pushl  0x80490db
+ 804807a:	68 b7 90 04 08       	push   $0x80490b7
+ 804807f:	e8 14 00 00 00       	call   8048098 <suma>
+ 8048084:	83 c4 08             	add    $0x8,%esp
+ 8048087:	a3 df 90 04 08       	mov    %eax,0x80490df
+ 804808c:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8048091:	bb 00 00 00 00       	mov    $0x0,%ebx
+ 8048096:	cd 80                	int    $0x80
+
+08048098 <suma>:
+ 8048098:	55                   	push   %ebp
+ 8048099:	89 e5                	mov    %esp,%ebp
+ 804809b:	53                   	push   %ebx
+ 804809c:	8b 5d 08             	mov    0x8(%ebp),%ebx
+ 804809f:	8b 4d 0c             	mov    0xc(%ebp),%ecx
+ 80480a2:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80480a7:	ba 00 00 00 00       	mov    $0x0,%edx
+
+080480ac <bucle>:
+ 80480ac:	03 04 93             	add    (%ebx,%edx,4),%eax
+ 80480af:	42                   	inc    %edx
+ 80480b0:	39 d1                	cmp    %edx,%ecx
+ 80480b2:	75 f8                	jne    80480ac <bucle>
+ 80480b4:	5b                   	pop    %ebx
+ 80480b5:	5d                   	pop    %ebp
+ 80480b6:	c3                   	ret    
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ gdb s
+Display all 173 possibilities? (y or n)
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ gdb suma01Scedecl
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+Para las instrucciones de informe de errores, vea:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Leyendo símbolos desde suma01Scedecl...(no se encontraron símbolos de depuración)hecho.
+(gdb) list
+No hay tabla de símbolos cargada. Use la orden «file».
+(gdb) file
+No hay una archivo ejecutable ahora.
+No symbol file now.
+(gdb) q
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ gdb s
+Display all 173 possibilities? (y or n)
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ gdb suma01Scedecl 
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+Para las instrucciones de informe de errores, vea:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Leyendo símbolos desde suma01Scedecl...(no se encontraron símbolos de depuración)hecho.
+(gdb) list 
+No hay tabla de símbolos cargada. Use la orden «file».
+(gdb) disas _start
+Dump of assembler code for function _start:
+   0x08048074 <+0>:	pushl  0x80490db
+   0x0804807a <+6>:	push   $0x80490b7
+   0x0804807f <+11>:	call   0x8048098 <suma>
+   0x08048084 <+16>:	add    $0x8,%esp
+   0x08048087 <+19>:	mov    %eax,0x80490df
+   0x0804808c <+24>:	mov    $0x1,%eax
+   0x08048091 <+29>:	mov    $0x0,%ebx
+   0x08048096 <+34>:	int    $0x80
+End of assembler dump.
+(gdb) break suma 
+Punto de interrupción 1 at 0x804809c
+(gdb) run 
+Starting program: /home/josele/Escritorio/Practica 3 -EC-/3a/3a/suma01Scedecl 
+
+Breakpoint 1, 0x0804809c in suma ()
+(gdb) x/3wx 
+Se requiere un argumento (starting display address).
+(gdb) x/3wx $esp
+0xffffd08c:	0x00000000	0x00000000	0x08048084
+(gdb) run 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/josele/Escritorio/Practica 3 -EC-/3a/3a/suma01Scedecl 
+
+Breakpoint 1, 0x0804809c in suma ()
+(gdb) next 
+Single stepping until exit from function suma,
+which has no line number information.
+0x080480ac in bucle ()
+(gdb) next
+Single stepping until exit from function bucle,
+which has no line number information.
+0x08048084 in _start ()
+(gdb)  next
+Single stepping until exit from function _start,
+which has no line number information.
+[Inferior 1 (process 3605) exited normally]
+(gdb)  next 
+Este programa no está corriendo.
+(gdb) n 
+Este programa no está corriendo.
+(gdb) n
+Este programa no está corriendo.
+(gdb) display/3wx $esp
+1: x/3xw $esp
+<error: No hay registros.>
+(gdb) display/3wx $esp
+2: x/3xw $esp
+<error: No hay registros.>
+(gdb) q
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ nm suma_02_S_libC.s 
+nm: suma_02_S_libC.s: No se reconoce el formato del fichero
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ nm suma_02_S_libC
+nm: 'suma_02_S_libC': No hay tal fichero
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ as --3
+            
+^Z
+[1]+  Detenido                as --3
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma_02_S_libC
+as --32 -g suma_02_S_libC.s -o suma_02_S_libC.o
+ld -L/usr/lib -melf_i386 --no-as-needed -dynamic-linker /lib/ld-linux.so.2 -lc suma_02_S_libC.o -o suma_02_S_libC
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ ./suma01Scedecl 
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ echo $?
+0
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ ./suma_02_S_libC 
+resultado = 37 = 0x25
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ echo $?
+0
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ gdb suma_02_S_libC 
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+Para las instrucciones de informe de errores, vea:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Leyendo símbolos desde suma_02_S_libC...hecho.
+(gdb) break suma
+Punto de interrupción 1 at 0x80481ee: file suma_02_S_libC.s, line 35.
+(gdb) run 
+Starting program: /home/josele/Escritorio/Practica 3 -EC-/3a/3a/suma_02_S_libC 
+
+Breakpoint 1, suma () at suma_02_S_libC.s:35
+35		push %ebp           # Ajuste marco pila
+(gdb) dissas suma 
+orden indefinida: «dissas». Intente con «help»
+(gdb) dissasem suma 
+orden indefinida: «dissasem». Intente con «help»
+(gdb) diss suma 
+orden indefinida: «diss». Intente con «help»
+(gdb) q
+Una sesión de depuración está activa.
+
+	Inferior 1 [process 3711] will be killed.
+
+¿Salir de cualquier modo? (y or n) n
+No confirmado.
+(gdb) next
+36		mov  %esp, %ebp     # antes, en el original, conservar todo
+(gdb) next 
+suma () at suma_02_S_libC.s:37
+37		push %ebx           # push %edx
+(gdb) n
+38		mov  8(%ebp), %ebx  # ahora %ebx es callee-save en cdecl
+(gdb) n
+39		mov 12(%ebp), %ecx  # %ecx,%edx no (caller-save)
+(gdb) n
+41		mov $0, %eax
+(gdb) n
+42		mov $0, %edx
+(gdb) n
+bucle () at suma_02_S_libC.s:44
+44		add (%ebx,%edx,4), %eax
+(gdb) n
+45		inc       %edx
+(gdb) n
+46		cmp  %edx,%ecx
+(gdb) n
+47		jne bucle
+(gdb) n
+44		add (%ebx,%edx,4), %eax
+(gdb) n
+45		inc       %edx
+(gdb) n
+46		cmp  %edx,%ecx
+(gdb) n
+47		jne bucle
+(gdb) n
+44		add (%ebx,%edx,4), %eax
+(gdb) n
+45		inc       %edx
+(gdb) n
+46		cmp  %edx,%ecx
+(gdb) n
+47		jne bucle
+(gdb) n
+44		add (%ebx,%edx,4), %eax
+(gdb) n
+45		inc       %edx
+(gdb) n
+46		cmp  %edx,%ecx
+(gdb) n
+47		jne bucle
+(gdb) n
+44		add (%ebx,%edx,4), %eax
+(gdb) n
+45		inc       %edx
+(gdb) nn
+orden indefinida: «nn». Intente con «help»
+(gdb) n
+46		cmp  %edx,%ecx
+(gdb) n
+47		jne bucle
+(gdb) n
+44		add (%ebx,%edx,4), %eax
+(gdb) n
+45		inc       %edx
+(gdb) n
+46		cmp  %edx,%ecx
+(gdb) n
+47		jne bucle
+(gdb) n
+44		add (%ebx,%edx,4), %eax
+(gdb) n
+45		inc       %edx
+(gdb) n
+46		cmp  %edx,%ecx
+(gdb) n
+47		jne bucle
+(gdb) n
+44		add (%ebx,%edx,4), %eax
+(gdb) n
+45		inc       %edx
+(gdb) n
+46		cmp  %edx,%ecx
+(gdb) n
+47		jne bucle
+(gdb) n
+44		add (%ebx,%edx,4), %eax
+(gdb) n
+45		inc       %edx
+(gdb) n
+46		cmp  %edx,%ecx
+(gdb) n
+47		jne bucle
+(gdb) n
+49		pop %ebx            # Recuperar callee-save
+(gdb) n
+bucle () at suma_02_S_libC.s:50
+50		pop %ebp            # Deshacer marco pila
+(gdb) n
+bucle () at suma_02_S_libC.s:51
+51		ret
+(gdb) n
+_start () at suma_02_S_libC.s:21
+21		add $8, %esp        # quitar args
+(gdb) n
+22		mov %eax, resultado # resultado = suma(&lista, longlista)
+(gdb) n
+24		push %eax           # versión libC de syscall __NR_write
+(gdb) n
+25		push %eax           # ventaja: printf() con formato "%d" / "%x"
+(gdb) n
+26		push $formato       # traduce resultado a ASCII decimal/hex
+(gdb) n
+27		call printf         # printf(formato, resultado, resultado)
+(gdb) n
+0x080481a0 in printf@plt ()
+(gdb) n
+Single stepping until exit from function printf@plt,
+which has no line number information.
+0x08048190 in ?? ()
+(gdb) n
+No se pueden encontrar límites en la función actual
+(gdb) n
+No se pueden encontrar límites en la función actual
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) n
+Programa no reiniciado.
+(gdb) disas suma 
+Dump of assembler code for function suma:
+   0x080481ee <+0>:	push   %ebp
+   0x080481ef <+1>:	mov    %esp,%ebp
+   0x080481f1 <+3>:	push   %ebx
+   0x080481f2 <+4>:	mov    0x8(%ebp),%ebx
+   0x080481f5 <+7>:	mov    0xc(%ebp),%ecx
+   0x080481f8 <+10>:	mov    $0x0,%eax
+   0x080481fd <+15>:	mov    $0x0,%edx
+End of assembler dump.
+(gdb) q
+Una sesión de depuración está activa.
+
+	Inferior 1 [process 3711] will be killed.
+
+¿Salir de cualquier modo? (y or n) y
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma_03_SC.o
+make: *** No hay ninguna regla para construir el objetivo 'suma_03_SC.o'.  Alto.
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma_03_SC
+cc -fno-omit-frame-pointer -g -m32 -O1 -c suma_03_SC_c.c -o suma_03_SC_c.o
+as --32 -g suma_03_SC_s.s -o suma_03_SC_s.o
+ld -L/usr/lib -melf_i386 --no-as-needed -dynamic-linker /lib/ld-linux.so.2 -lc suma_03_SC_c.o suma_03_SC_s.o -o suma_03_SC
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ objdump -d suma_03_SC
+suma_03_SC      suma_03_SC_c.o  suma_03_SC_s.o  
+suma_03_SC_c.c  suma_03_SC.gdb  suma_03_SC_s.s  
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ objdump -d suma_03_SC
+suma_03_SC      suma_03_SC_c.o  suma_03_SC_s.o  
+suma_03_SC_c.c  suma_03_SC.gdb  suma_03_SC_s.s  
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ objdump -d suma_03_SC.o
+objdump: 'suma_03_SC.o': No hay tal fichero
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ objdump -d suma_03_SC
+
+suma_03_SC:     formato del fichero elf32-i386
+
+
+Desensamblado de la sección .plt:
+
+080481b0 <printf@plt-0x10>:
+ 80481b0:	ff 35 38 93 04 08    	pushl  0x8049338
+ 80481b6:	ff 25 3c 93 04 08    	jmp    *0x804933c
+ 80481bc:	00 00                	add    %al,(%eax)
+	...
+
+080481c0 <printf@plt>:
+ 80481c0:	ff 25 40 93 04 08    	jmp    *0x8049340
+ 80481c6:	68 00 00 00 00       	push   $0x0
+ 80481cb:	e9 e0 ff ff ff       	jmp    80481b0 <printf@plt-0x10>
+
+080481d0 <exit@plt>:
+ 80481d0:	ff 25 44 93 04 08    	jmp    *0x8049344
+ 80481d6:	68 08 00 00 00       	push   $0x8
+ 80481db:	e9 d0 ff ff ff       	jmp    80481b0 <printf@plt-0x10>
+
+Desensamblado de la sección .text:
+
+080481e0 <suma>:
+ 80481e0:	55                   	push   %ebp
+ 80481e1:	89 e5                	mov    %esp,%ebp
+ 80481e3:	8b 4d 08             	mov    0x8(%ebp),%ecx
+ 80481e6:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80481e9:	85 c0                	test   %eax,%eax
+ 80481eb:	7e 15                	jle    8048202 <suma+0x22>
+ 80481ed:	89 ca                	mov    %ecx,%edx
+ 80481ef:	8d 0c 81             	lea    (%ecx,%eax,4),%ecx
+ 80481f2:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80481f7:	03 02                	add    (%edx),%eax
+ 80481f9:	83 c2 04             	add    $0x4,%edx
+ 80481fc:	39 ca                	cmp    %ecx,%edx
+ 80481fe:	75 f7                	jne    80481f7 <suma+0x17>
+ 8048200:	eb 05                	jmp    8048207 <suma+0x27>
+ 8048202:	b8 00 00 00 00       	mov    $0x0,%eax
+ 8048207:	5d                   	pop    %ebp
+ 8048208:	c3                   	ret    
+
+08048209 <_start>:
+ 8048209:	ff 35 6c 93 04 08    	pushl  0x804936c
+ 804820f:	68 48 93 04 08       	push   $0x8049348
+ 8048214:	e8 c7 ff ff ff       	call   80481e0 <suma>
+ 8048219:	83 c4 08             	add    $0x8,%esp
+ 804821c:	a3 70 93 04 08       	mov    %eax,0x8049370
+ 8048221:	50                   	push   %eax
+ 8048222:	50                   	push   %eax
+ 8048223:	68 74 93 04 08       	push   $0x8049374
+ 8048228:	e8 93 ff ff ff       	call   80481c0 <printf@plt>
+ 804822d:	83 c4 0c             	add    $0xc,%esp
+ 8048230:	6a 00                	push   $0x0
+ 8048232:	e8 99 ff ff ff       	call   80481d0 <exit@plt>
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ cat suma_03_SC
+suma_03_SC      suma_03_SC_c.o  suma_03_SC_s.o  
+suma_03_SC_c.c  suma_03_SC.gdb  suma_03_SC_s.s  
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ cat suma_03_SC
+suma_03_SC      suma_03_SC_c.o  suma_03_SC_s.o  
+suma_03_SC_c.c  suma_03_SC.gdb  suma_03_SC_s.s  
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ cat suma_03_SC
+suma_03_SC      suma_03_SC_c.o  suma_03_SC_s.o  
+suma_03_SC_c.c  suma_03_SC.gdb  suma_03_SC_s.s  
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ cat suma_03_SC
+ELF	�4 
+                   4 (44�4��������������������������Q�td/lib/ld-linux.so.2
+@�D��58��%<��%@�h������%D������U����EitGLIBC_2.0ii
+                                         ��~�ʍ
+                                               ����9�u���]��5l�hH��������p�PPht��������
+          j�����zR
+                       � X���F
+                                  J
+e�                                 tx?;*2$"@d���)�B
+  �P� �
+!
+ 4������ox����o���or���Ɓց
+	����resultado = %i = 0x%x
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.5) 5.4.0 20160609��)�	�.�9
+                                                                       ���)4y��)�y�leny+iyVresyvintyaqI	�7�suma_03_SC_s.s/home/josele/Escritorio/Practica 3 -EC-/3a/3aGNU AS 2.26.1�%
+                                                  .?:
+                                                                 ;
+                                                                  'I@�B:
+    ;
+     I:
+           ;
+            I4:
+                  ;
+                   I$
+
+                         >
+                          
+
+suma_03_SC_s.s���gYY=Z!!YY>/array/home/josele/Escritorio/Practica 3 -EC-/3a/3asumaGNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -g -O1 -fno-omit-frame-pointer -fstack-protector-strongsuma_03_SC_c.c"�"'Q')�"�"'P')�	0�"'0�	0�"P"'0���� �P�r�x�������	8�
+��
+   4�
+��;������#H�
+       D4�
+suma_03_SC_c.csuma_03_SC_s.olonglistaresultadoformato_DYNAMIC_GLOBAL_OFFSET_TABLE_printf@@GLIBC_2.0_edatasumaexit@@GLIBC_2.0_end__bss_start.symtab.strtab.shstrtab.interp.hash.dynsym.dynstr.gnu.version.gnu.version_r.rel.plt.text.eh_frame.dynamic.got.plt.data.comment.debug_aranges.debug_info.debug_abbrev.debug_line.debug_str.debug_loc���#)
+                              � 01P�P!9���or�rF���ox�x U	B���
+      Y���0^���Wd8�8\n����w4�4�H�HD�0�4��������q��0����E
+�\P	�	�josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ cat suma_03_SC_c.
+suma_03_SC_c.c  suma_03_SC_c.o  
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ cat suma_03_SC_c.c
+int suma(int* array, int len)
+{
+	int i, res=0;
+	for (i=0; i<len; i++)
+		res += array[i];
+	return res;
+}
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ ./suma_03_SC 
+resultado = 37 = 0x25
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ ./suma_04
+bash: ./suma_04: No existe el archivo o el directorio
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma_04_SC
+suma_04_SC      suma_04_SC_c.o  
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma_04_SC
+suma_04_SC      suma_04_SC_c.o  
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma_04_SC
+cc -m32 -O1 -c suma_04_SC_c.c -o suma_04_SC_c.o
+as --32 -g suma_04_SC_s.s -o suma_04_SC_s.o
+ld -L/usr/lib -melf_i386 --no-as-needed -dynamic-linker /lib/ld-linux.so.2 -lc suma_04_SC_c.o suma_04_SC_s.o -o suma_04_SC
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ ./suma_04_SC 
+resultado = 37 = 0x25
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ objdump -d suma_04_SC
+
+suma_04_SC:     formato del fichero elf32-i386
+
+
+Desensamblado de la sección .plt:
+
+080481d0 <exit@plt-0x10>:
+ 80481d0:	ff 35 54 93 04 08    	pushl  0x8049354
+ 80481d6:	ff 25 58 93 04 08    	jmp    *0x8049358
+ 80481dc:	00 00                	add    %al,(%eax)
+	...
+
+080481e0 <exit@plt>:
+ 80481e0:	ff 25 5c 93 04 08    	jmp    *0x804935c
+ 80481e6:	68 00 00 00 00       	push   $0x0
+ 80481eb:	e9 e0 ff ff ff       	jmp    80481d0 <exit@plt-0x10>
+
+080481f0 <__printf_chk@plt>:
+ 80481f0:	ff 25 60 93 04 08    	jmp    *0x8049360
+ 80481f6:	68 08 00 00 00       	push   $0x8
+ 80481fb:	e9 d0 ff ff ff       	jmp    80481d0 <exit@plt-0x10>
+
+Desensamblado de la sección .text:
+
+08048200 <suma>:
+ 8048200:	83 ec 0c             	sub    $0xc,%esp
+ 8048203:	8b 0d 88 93 04 08    	mov    0x8049388,%ecx
+ 8048209:	85 c9                	test   %ecx,%ecx
+ 804820b:	7e 1a                	jle    8048227 <suma+0x27>
+ 804820d:	ba 00 00 00 00       	mov    $0x0,%edx
+ 8048212:	b8 00 00 00 00       	mov    $0x0,%eax
+ 8048217:	03 14 85 64 93 04 08 	add    0x8049364(,%eax,4),%edx
+ 804821e:	83 c0 01             	add    $0x1,%eax
+ 8048221:	39 c8                	cmp    %ecx,%eax
+ 8048223:	75 f2                	jne    8048217 <suma+0x17>
+ 8048225:	eb 05                	jmp    804822c <suma+0x2c>
+ 8048227:	ba 00 00 00 00       	mov    $0x0,%edx
+ 804822c:	89 15 8c 93 04 08    	mov    %edx,0x804938c
+ 8048232:	52                   	push   %edx
+ 8048233:	52                   	push   %edx
+ 8048234:	68 90 93 04 08       	push   $0x8049390
+ 8048239:	6a 01                	push   $0x1
+ 804823b:	e8 b0 ff ff ff       	call   80481f0 <__printf_chk@plt>
+ 8048240:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 8048247:	e8 94 ff ff ff       	call   80481e0 <exit@plt>
+
+0804824c <_start>:
+ 804824c:	e9 af ff ff ff       	jmp    8048200 <suma>
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma_0
+suma_01_S_cdecl  suma_03_SC_c.o   suma_06_CS       
+suma_02_S_libC   suma_04_SC       suma_07_Casm     
+suma_03_SC       suma_04_SC_c.o   suma_09          
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma_0
+suma_01_S_cdecl  suma_03_SC_c.o   suma_06_CS       
+suma_02_S_libC   suma_04_SC       suma_07_Casm     
+suma_03_SC       suma_04_SC_c.o   suma_09          
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma
+suma             suma_03_SC       suma_04_SC_c.o   suma_09
+suma_01_S_cdecl  suma_03_SC_c.o   suma_06_CS       
+suma_02_S_libC   suma_04_SC       suma_07_Casm     
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma
+suma             suma_03_SC       suma_04_SC_c.o   suma_09
+suma_01_S_cdecl  suma_03_SC_c.o   suma_06_CS       
+suma_02_S_libC   suma_04_SC       suma_07_Casm     
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ make suma
+suma             suma_03_SC       suma_04_SC_c.o   suma_09
+suma_01_S_cdecl  suma_03_SC_c.o   suma_06_CS       
+suma_02_S_libC   suma_04_SC       suma_07_Casm     
+josele@josele-VB:~/Escritorio/Practica 3 -EC-/3a/3a$ 
+

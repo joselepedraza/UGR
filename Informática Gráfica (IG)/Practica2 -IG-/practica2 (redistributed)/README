@@ -1,0 +1,24 @@
+IG - PRÁCTICA 1 Y 2 - JOSE LUIS PEDRAZA ROMÁN - 2020/2021 - Extras incluidos
+
+MAPEADO DE ACCIONES:
+-Objetos:
+    '1'   PIRAMIDE
+    '2'   CUBO
+    '3'   CUBO_0    (centrado en origen)
+    '4'   DIAMANTE
+    '5'   OBJETO_PLY (por defecto, bethoven.ply)
+    '6'   PERFIL_PLY (por defecto, peon.ply)
+    '7'   ESFERA
+    '8'   CONO
+    '9'   CILINDRO
+-Modos:
+    'P' PUNTOS
+    'L' LINEAS
+    'S' SOLIDO
+    'A' SOLIDO AJEDREZ  (por defecto)
+    'M' MULTICOLOR AJEDREZ  (estático)
+    'F' MULTICOLOR AJEDREZ (dinámico)
+-Tipo de giro:
+    'X' ejeX (válido para Cono y Cilindro)
+    'Y' ejeY (por defecto)
+    'Z' ejeZ (válido para Cono y Cilindro)

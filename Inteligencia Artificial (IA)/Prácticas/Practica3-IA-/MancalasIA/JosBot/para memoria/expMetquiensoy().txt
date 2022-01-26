@@ -1,0 +1,8 @@
+Metodo desarrollado para establecer los roles de la partida actual(saber si estamos jugando como jugador1 o como jugador2):
+Utiliza la funcion getPlayer llamada desde el estado actual.
+Entendemos como "yo" a nuestro bot, que juega en el lugar de J1 o J2 dependiendo de la partida y como "contrincante" a
+nuestro oponente (independientemente que sea J1oJ2).
+Debemos saberlo para el correcto desarrollo del algoritmo de Poda Alfa-Beta, el cual deberá saber en cada llamada si es el
+jugador1 o el jugador2 para actuar como MIN o como MAX según el estado del juego.
+Este metodo es utilizado justo al principio del metodo que devuelve el siguiente movimiento (nextMove) después de ser
+calculado por Alfa-Beta.

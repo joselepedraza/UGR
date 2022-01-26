@@ -1,0 +1,100 @@
+josele@josele-VB:~/Escritorio/Practica2 -SCD-/barberia V2$ make 
+./barberiaSU
+-------------------------------------------------------------------------------
+Problema de la barberia (1 barbero/n clientes, Monitor SU 
+-------------------------------------------------------------------------------
+El cliente 0 entra en la peluquería.
+El Cliente 0 se sienta en la silla.
+Barbero despierta y se pone a cortar el pelo.
+El cliente 1 entra en la peluquería.
+Silla de Corte ocupada, el cliente 1 espera en la sala
+...Cortando pelo durante 134 milisegundos. 
+El cliente 2 entra en la peluquería.
+Silla de Corte ocupada, el cliente 2 espera en la sala
+El cliente 3 entra en la peluquería.
+Silla de Corte ocupada, el cliente 3 espera en la sala
+El cliente 4 entra en la peluquería.
+Silla de Corte ocupada, el cliente 4 espera en la sala
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente 0 a que crezca pelo...  (durante: 66 milisegundos.) 
+Barbero despierta y se pone a cortar el pelo.
+El Cliente 1 se sienta en la silla.
+...Cortando pelo durante 108 milisegundos. 
+El cliente 0 entra en la peluquería.
+Silla de Corte ocupada, el cliente 0 espera en la sala
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente 1 a que crezca pelo...  (durante: 39 milisegundos.) 
+Barbero despierta y se pone a cortar el pelo.
+El Cliente 2 se sienta en la silla.
+...Cortando pelo durante 24 milisegundos. 
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente 2 a que crezca pelo...  (durante: 154 milisegundos.) 
+Barbero despierta y se pone a cortar el pelo.
+El Cliente 3 se sienta en la silla.
+...Cortando pelo durante 156 milisegundos. 
+El cliente 1 entra en la peluquería.
+Silla de Corte ocupada, el cliente 1 espera en la sala
+El cliente 2 entra en la peluquería.
+Silla de Corte ocupada, el cliente 2 espera en la sala
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente 3 a que crezca pelo...  (durante: 38 milisegundos.) 
+Barbero despierta y se pone a cortar el pelo.
+El Cliente 4 se sienta en la silla.
+...Cortando pelo durante 52 milisegundos. 
+El cliente 3 entra en la peluquería.
+Silla de Corte ocupada, el cliente 3 espera en la sala
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente Barbero despierta y se pone a cortar el pelo.
+El Cliente 0 se sienta en la silla.
+4 a que crezca pelo...  (durante: 36 milisegundos.) 
+...Cortando pelo durante 74 milisegundos. 
+El cliente 4 entra en la peluquería.
+Silla de Corte ocupada, el cliente 4 espera en la sala
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente 0 a que crezca pelo...  (durante: 141 milisegundos.) 
+Barbero despierta y se pone a cortar el pelo.
+El Cliente 1 se sienta en la silla.
+...Cortando pelo durante 60 milisegundos. 
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente 1 a que crezca pelo...  (durante: 117 milisegundos.) 
+Barbero despierta y se pone a cortar el pelo.
+El Cliente 2 se sienta en la silla.
+...Cortando pelo durante 105 milisegundos. 
+El cliente 0 entra en la peluquería.
+Silla de Corte ocupada, el cliente 0 espera en la sala
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente 2 a que crezca pelo...  (durante: 53 milisegundos.) 
+Barbero despierta y se pone a cortar el pelo.
+El Cliente 3 se sienta en la silla.
+...Cortando pelo durante 183 milisegundos. 
+El cliente 1 entra en la peluquería.
+Silla de Corte ocupada, el cliente 1 espera en la sala
+El cliente 2 entra en la peluquería.
+Silla de Corte ocupada, el cliente 2 espera en la sala
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente 3 a que crezca pelo...  (durante: 120 milisegundos.) 
+Barbero despierta y se pone a cortar el pelo.
+El Cliente 4 se sienta en la silla.
+...Cortando pelo durante 106 milisegundos. 
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente 4 a que crezca pelo...  (durante: 118 milisegundos.) 
+Barbero despierta y se pone a cortar el pelo.
+El Cliente 0 se sienta en la silla.
+...Cortando pelo durante 41 milisegundos. 
+El cliente 3 entra en la peluquería.
+Silla de Corte ocupada, el cliente 3 espera en la sala
+El Cliente ya tiene cortado el pelo, se levanta de la silla de corte y espera a que le vuelva a crecer.
+Barbero termina con el cliente actual. 
+	...Esperando el cliente 0 a que crezca pelo...  (durante: 179 milisegundos.) 
+Barbero despierta y se pone a cortar el pelo.
+

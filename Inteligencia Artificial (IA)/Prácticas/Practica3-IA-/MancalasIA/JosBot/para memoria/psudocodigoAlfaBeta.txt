@@ -1,0 +1,19 @@
+//ESTA ES LA FUNCIÓN ENCARGADA DE LLAMAR A LA FUNCIÓN RECURSIVA PODA ALFA-BETA
+
+Move AlfaBeta(const GameState & state, int profundidad_maxima) {
+  inicializamos alfa=-inf
+  inicializamos beta=+inf
+  inicializamos puntostotal=-inf
+  inicializamos acc_act = M_NONE
+
+  para cada casilla i{
+    Si hay semillas entonces{
+      Genero el hijo simulando el movimiento i
+      valorhijo = AlfaBeta(hijo, contrincante, 0, profundidad_maxima, alfa, beta) //profundidad 0(primera jugada)
+      Si valorhijo > puntostotal entonces
+        accionactual = i
+        puntostotal = valorhijo
+    }
+  }
+  return accionactual
+}

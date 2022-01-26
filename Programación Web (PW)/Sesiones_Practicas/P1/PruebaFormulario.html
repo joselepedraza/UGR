@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title> Ejercicio </title>
+	</head>
+	<body>
+		<header>
+			<h1> Primera edición congreso ciberseguridad <h1>
+			<h2> 23/03/2021 <h2>
+		</header>
+		
+		<section>
+			<aside>
+				<a href="mailto:micorreo@correo.ugr.es"> Contacto </a>
+			</aside>
+		</section>
+		<main>
+			<section>
+				<h1> Tarifas del congreso </h1>
+				<article>
+					<table border="1" summary="tarifas">
+						<caption> Precios </caption>
+						<thead>
+							<tr>
+								<th rowspan="2">  </th>
+								<th colspan="4"> Registro </th>
+							</tr>
+							<tr>
+								<th> Temprano </th>
+								<th> Tardío </th>
+								<th> Durante congreso </th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<td colspan="5"> Cualquier duda sobre los precios, contacte con nosotros al contacto anterior </td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<th> Menores 18 años </th>
+								<td> Gratis </td>
+								<td> Gratis </td>
+								<td> 5€</td>
+							</tr>
+							<tr>
+								<th> Entre 18-25 años </th>
+								<td> Gratis </td>
+								<td> 10€</td>
+								<td> 12'5€</td>
+							</tr>
+							<tr>
+								<th> Entre 25-65 años  </th>
+								<td> Gratis </td>
+								<td> 12'5€</td>
+								<td> 15€</td>
+							</tr>
+							<tr>
+								<th> Mayores de 65 años  </th>
+								<td> Gratis </td>
+								<td> Gratis€</td>
+								<td> 5€</td>
+							</tr>
+						</tbody>
+					</table>
+					
+				</article>
+				<br>
+			</section>
+		
+			<section>
+				<h1> Inscripción: </h1>
+				<form action="inscribir.php" name="form1" id="inscripcion" method="post" autocomplete"on">
+					<p> Nombre: <br><input type="text" name="Name" id="Name"/> </p>
+					<p> Apellidos: <br><input type="text" name="Surname" id="Surname"/> </p>
+					<p> Email:<br><input type="email" name="email" id="email"/> </p>
+					<p> Teléfono: <br><input type="tel" name="tel" id="tel"/> </p>
+					<p> Número de acompañantes: <br><input type="number" name="quantity" min="0" max="4"> </p>
+					<p> ¿Primera asistencia a congreso? <br>
+						<input type="radio" name="asistencia" value="si"/> Si<br>
+						<input type="radio" name="asistencia" value="no" checked /> No
+					</p>
+					<p>
+					<datalist id="conociste">
+						<option value="Email">
+						<option value="Web">
+						<option value="Un amigo">
+						<option value="Universidad">
+						<option value="Otro">
+					</datalist>
+					<label for="txtConociste"> ¿Cómo conociste el evento? </p>
+					<input type="text" id="txtConociste" list="conociste">
+					
+					<p> Comentario: <br>
+						<textarea id="text_2" name="message" cols="40" rows="10"> Observaciones/comentario </textarea> <br>
+					</p>
+					
+					<input type="submit" id="btn1" value="Enviar"> 
+					<input type="reset" id="btn2" value="Resetear"> 
+				</form>
+			<section>	
+			<br>
+		</main>
+		
+		<footer>
+			<details>
+				<summary> <strong> <em> Organizadores del congreso </strong> </em> </summary>
+				<p> Departamento de ciencias de la Computación e Inteligencia Artificial </p>
+				<p> Cisco </p>
+				<p> Google </p>
+			</details>
+		</footer>
+		
+	</body>
+</html>

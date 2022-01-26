@@ -1,0 +1,49 @@
+int AlfaBeta (const GameState & state, Player jos, int profundidad, int profundidad_maxima, double alfa, double beta) {
+
+    Si state es terminal ó profundidad=profundidad_maxima entonces{
+        Si yo==ganador entonces
+          devuelvo +inf
+        Si contrintante ==ganador entonces
+          devuelvo -inf
+        Si ganador=0 entonces
+          devuelvo 0
+        Si no estoy en un nodo final entonces profundidad==profundidad_maxima
+          devuelvo la puntuacion del nodo (heuristicaa)
+    }
+    Si no{  //recorremos los hijos
+      Si yo==MAX entonces{
+        puntosmax=-inf
+        para cada hijo del nodo actual{
+          Si hay semillas en el hijo entonces{
+            Genero el siguiente hijo simulando el moviemiento
+            puntoshijomax=AlfaBeta(hijo, contrincante, profundidad+1, profundidad_maxima, alfa, beta)
+            Si puntoshijomax > puntosmax entonces
+              actualizamos puntosmax=puntoshijomax
+            Si puntosmax > alfa entonces
+              actualizamos alfa=puntosmax
+            Si beta <= alfa entonces
+              PODAMOS
+          }
+        }
+      }
+      devuelvo puntosmax
+    }
+    Si no yo==MIN entonces{
+      puntos_min=+inf
+      para cada hijo del nodo actual{
+        Si hay semillas en el hijo entonces{
+          Genero el siguiente hijo simulando el moviemiento
+          puntoshijomin=AlfaBeta(hijo, yo, profundidad+1, profundidad_maxima, alfa, beta)
+          Si puntoshijomin < puntosmin entonces
+            actualizamos puntosmin=puntoshijomin
+          Si puntosmin < beta entonces
+            actualizamos beta=puntosmin
+          Si beta <= alfa entonces
+            PODAMOS
+        }
+      }
+    }
+    devuelvo puntosmin
+  }
+
+}

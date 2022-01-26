@@ -1,0 +1,52 @@
+IG - PRÁCTICA 1,2 y 3 - JOSE LUIS PEDRAZA ROMÁN - 2020/2021 - Extras incluidos
+
+MAPEADO DE ACCIONES:
+-Objetos:
+    '1'   PIRAMIDE
+    '2'   CILINDRO
+    '3'   CUBO_0    (centrado en origen)
+    '4'   DIAMANTE
+    '5'   OBJETO_PLY (por defecto, bethoven.ply)
+    '6'   PERFIL_PLY (por defecto, peon.ply)
+    '7'   ESFERA
+    '8'   CONO
+    '9'   FLEXO
+    '0'   TANQUE
+-Modos:
+    'P' PUNTOS
+    'L' LINEAS
+    'S' SOLIDO
+    'A' SOLIDO AJEDREZ  (por defecto)
+    'M' MULTICOLOR AJEDREZ  (estático)
+    'F' MULTICOLOR AJEDREZ (dinámico)
+-Tipo de giro:
+    'X' ejeX (válido para Cono y Cilindro)
+    'Y' ejeY (por defecto)
+    'Z' ejeZ (válido para Cono y Cilindro)
+-Movimientos figuras articuladas:
+    TANQUE:
+        'F1' gira tubo
+        'F2' gira tubo sentido contrario
+        'F3' gira torreta
+        'F4' gira torreta sentido contrario
+    FLEXO:
+        'F1' gira brazo1 en Y
+        'F2' gira brazo1 en Y en sentido contrario
+        'F3' gira brazo1 en Z 
+        'F4' gira brazo1 en Z en sentido contrario
+        'F5' gira brazo2 en Z
+        'F6' gira brazo2 en Z en sentido contrario
+        'F7' gira cabeza en X 
+        'F8' gira cabeza en X en sentido contrario
+        'F9' Comienzar animación
+        'F10' Parar animación
+
+-Control de Velocidad Animación Flexo:
+    'F11' incrementa velocidad del giro en Y del brazo1
+    'F12' decrementa velocidad del giro en Y del brazo1
+    'W' incrementa velocidad del giro en Z del brazo1
+    'E' decrementa velocidad del giro en Z del brazo1
+    'R' incrementa velocidad del giro en Z del brazo2
+    'T' decrementa velocidad del giro en Z del brazo2
+    'U' incrementa velocidad del giro en X de la cabeza
+    'I' decrementa velocidad del giro en X de la cabeza

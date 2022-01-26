@@ -1,0 +1,635 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+ol { padding-left: 1.4em; list-style: decimal; }
+ul { padding-left: 1.4em; list-style:square; }
+q:before, q:after { content:''; }
+/*FIN RESET*/
+
+/*Efecto nav*/
+@-webkit-keyframes navshadow{
+	50%{box-shadow:#000 10px 10px 10px;}
+}
+
+
+@-o-keyframes navshadow{
+	50%{box-shadow:#000 10px 10px 10px;}
+}
+
+@-moz-keyframes navshadow{
+	50%{box-shadow:#000 10px 10px 10px;}
+	
+}
+
+@-ms-keyframes navshadow{
+	50%{box-shadow:#000 10px 10px 10px;}
+	
+}
+
+/*Importar formatos*/
+@font-face{
+	font-family: "Freshman";
+	src:url(font/Freshman.ttf);
+}
+@font-face{
+	font-family: "Bohemian";
+	src:url url(font/Bohemian.ttf);
+}
+@font-face{
+	font-family: "Elegant";
+	src:url(font/ELEGANT.ttf);
+}
+@font-face{
+	font-family: "Polski";
+	src:url(font/Courier.ttf);
+}
+@font-face{
+	font-family: "Pencil";
+	src:url(font/Pencil.ttf);
+}
+
+/****************************************************************************************/
+
+body{
+	font: normal .875em "Elegant","Pencil", Geneva, sans-serif;
+	font-size: 100%;
+	
+	background-image:url(Imagenes/fondoblanco.png);
+
+	background-size:cover;
+	margin: 2%;
+	padding-bottom: 2%;
+	width: 95%;
+	
+}
+
+header{		
+	width: 100%;
+	height: 100%;
+	
+	opacity: 0.55;
+	border: 10px solid #000;
+	border-radius: 15%;
+	margin-bottom: 1%;
+	
+	display:flex;
+	justify-content: space-around;
+	align-items: center;
+	/*flex-flow: row wrap;*/
+}
+
+h1{
+	background-color: black; /*#999;*/
+	width: 50%;
+	font: normal 1.5em "Elegant","Pencil", Geneva, sans-serif;
+	color: #FFF;
+	text-decoration: overline;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	font-style: italic;
+	text-align: center;
+	border-radius: 50% 50%;
+}
+
+.tituloseccion{
+	display:flex;
+	justify-content: center;
+}
+
+#icono{
+	border-radius: 50% 50%;
+}
+
+/*NAV*/
+#bar{
+	max-width:100%;
+	font: bold 1.7em "Pencil", Geneva, sans-serif;
+	
+	list-style-type: none;
+
+	border-radius: 15%;
+	
+	display:flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding:0%;
+	
+}
+
+/*LISTA DEL NAV*/
+.lbar{
+	width: 19%;
+	heigth: 20%;
+	
+	display:flex;
+	text-align:center;
+	align-items: center; 
+
+	text-decoration: none;
+
+	background: #3C3B3F;
+	background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	border-bottom: 2px solid #666;
+	border-right: 2px solid #666;
+	border-radius: 15%;
+	box-shadow:#605C3C 15px 15px 80px;
+}
+
+.lbar:hover{
+
+	-webkit-transition:-webkit-transform 1.5s ease-in-out 1;
+	-o-transition:-o-transform 0.9s ease-in-out 0.8;
+	-moz-transition:-moz-transform 0.9s ease-in-out 0.8;
+	-ms-transition:-ms-transform 0.9s ease-in-out 0.8;
+
+	box-shadow:#605C3C 5px 5px 10px;
+	
+	-webkit-animation: navshadow 2s infinite;
+	-o-animation: navshadow 2s infinite;
+	-moz-animation: navshadow 2s infinite;
+	-ms-animation: navshadow 2s infinite;
+}
+
+.lbar:link {	
+	color: #CCC;
+}
+
+.lbar:visited {	
+  	color: #FC9;
+}
+
+.lbar:hover {
+  	color: #FFF;
+}
+
+.lbar:active {	
+ 	color: yellow;
+}
+
+.linksBar{
+	font-size: 120%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+
+} 
+
+footer{
+	font: normal .875em "Freshman", Geneva, sans-serif;
+	margin-top: 1%;
+	border-top: 1px dashed #666666;
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  	align-items: center;
+	clear:both;
+}
+
+footer figure{
+	border: 3px solid #000;
+	background-color: #FFF;
+}
+
+footer address{
+	display: inline;
+	clear:both;
+}
+/*HASTA AQUI COMÚN A TODAS LAS PAGINAS*/
+
+#sectHome{
+	display:flex;
+	flex-direction: rows;
+	justify-content: space-around;
+  	align-items: center;
+	clear:both;
+}
+
+#sectHome a:link, a:visited, a:active {
+	text-decoration:none;
+}
+
+#mainImgHome figure img{
+	width: 100%;
+	height: 100%;
+	border-radius: 15%;
+	box-shadow:#666 60px 20px 40px;
+	margin-top: 1%;
+	margin-left: 1%;
+	border-right: thick solid black;
+}
+
+/*LA MINIGALERIA*/
+.minigallery figure{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	font: normal 1.5em "Elegant","Pencil", Geneva, sans-serif;
+	color: black;
+}
+.minigallery img{
+	border-color: #605C3C;
+	border-style: dashed;
+  	border-width: medium;
+
+	background:#666;
+	border-radius:25%;
+
+	box-shadow:#605C3C 5px 5px 10px;
+}
+
+.minigallery img:hover{
+	-webkit-transform:scale(1.7);
+	-o-transform:scale(1.7);
+	-moz-transform:scale(1.7);
+	-ms-transform:scale(1.7);
+	
+	-webkit-transition:-webkit-transform 1.5s ease-in-out 1;
+	-o-transition:-o-transform 0.9s ease-in-out 0.8;
+	-moz-transition:-moz-transform 0.9s ease-in-out 0.8;
+	-ms-transition:-ms-transform 0.9s ease-in-out 0.8;
+
+	box-shadow:#605C3C 5px 5px 10px;
+	
+	-webkit-animation: navshadow 2s infinite;
+	-o-animation: navshadow 2s infinite;
+	-moz-animation: navshadow 2s infinite;
+	-ms-animation: navshadow 2s infinite;
+}
+
+.minigallery{	
+	font: bold 1.1em "Pencil", Geneva, sans-serif;
+
+	margin-top: 4%;
+	
+	width: 50%;
+	height: 500px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	overflow: scroll;
+	overflow-x: hidden;
+	border-left: thin dotted black;
+}
+
+/****************************************************************************/
+/*REGISTRO DE USUARIO*/
+h2{
+	font: normal 1.5em "Elegant","Pencil", Geneva, sans-serif;
+	color: #000;
+	text-decoration: underline;
+	
+	margin: 1.5%;
+}
+
+#formulario {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+/*USUARIO REGISTRADO*/
+.registrado{
+	width: 20%;
+	height: 100px;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/******************************************************************************/
+/*SEGUNDA MANO*/
+
+#segundamano{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+}
+
+#segundamano a:link, a:visited, a:active {
+	font: normal 1.5em "Elegant","Pencil", Geneva, sans-serif;
+	color: black;
+	text-decoration:none;	
+}
+
+.img_card{
+	margin-bottom: 0.5%;
+}
+
+.img_card table{
+	border-style:hidden;
+}
+
+.img_card th, .img_card td {
+    border: 1px solid blue;
+	border-color: #000;
+	border-style:hidden;
+	
+    width: 150px;
+    word-wrap: break-word;
+	padding-left: 4%;
+}
+
+.img_card img:hover{
+	-webkit-transform:scale(1.4);
+	-o-transform:scale(1.4);
+	-moz-transform:scale(1.4);
+	-ms-transform:scale(1.4);
+	
+	-webkit-transition:-webkit-transform 1.5s ease-in-out 1;
+	-o-transition:-o-transform 0.9s ease-in-out 0.8;
+	-moz-transition:-moz-transform 0.9s ease-in-out 0.8;
+	-ms-transition:-ms-transform 0.9s ease-in-out 0.8;
+
+	box-shadow:#605C3C 5px 5px 10px;
+	
+	-webkit-animation: navshadow 2s infinite;
+	-o-animation: navshadow 2s infinite;
+	-moz-animation: navshadow 2s infinite;
+	-ms-animation: navshadow 2s infinite;
+}
+
+.img_card img{
+	background:#605C3C;
+	border-radius:4%;
+	box-shadow:#605C3C 10px 20px 20px;
+}
+
+
+/*"paginación" estática de la galeria*/
+.paginacion {
+	margin:20px 0;
+}
+
+.paginacion ul {
+	list-style:none;
+	text-align: center;
+}
+
+.paginacion ul li {
+	display:inline-block;
+	margin-right:10px;
+}
+
+.paginacion ul li a {
+	display:block;
+	padding:10px 20px;
+	text-decoration: none;
+}
+
+.paginacion ul li #active {
+	background:#9E9116;
+	font-weight:bold;
+	text-decoration: underline;
+}
+
+
+/*******************************************************************************/
+/*ITEM1*/
+
+#sectItem{
+	width: 100%;
+	height: auto;
+	display:flex;
+	flex-direction: rows;
+	justify-content: center;
+  	align-items: center;
+	clear:both;
+}
+#mainImgItem{
+	width: 70%;
+	padding-left: 20%;	
+}
+#mainImgItem figure img{
+	width: 100%;
+	height: auto;
+	
+	border-radius: 15%;
+	box-shadow:#666 60px 20px 40px;
+	margin-top: 1%;
+	margin-left: 1%;
+	border-right: thick solid black;
+}
+
+#caracteristicas{
+	width: 100%;
+	height: auto;
+
+}
+
+#descripcion{
+	width: 100%;
+	text-align: justify;
+}
+
+#galeriaItem{
+	width: 95%;
+	heigth: auto;
+
+	padding: 3%;
+	display:flex;
+  	align-items: center;
+	overflow: scroll;
+	overflow-y: hidden;
+}
+
+#galeriaItem img:hover{
+	-webkit-transform:scale(1.8);
+	-o-transform:scale(1.8);
+	-moz-transform:scale(1.8);
+	-ms-transform:scale(1.8);
+	
+	-webkit-transition:-webkit-transform 1.5s ease-in-out 1;
+	-o-transition:-o-transform 0.9s ease-in-out 0.8;
+	-moz-transition:-moz-transform 0.9s ease-in-out 0.8;
+	-ms-transition:-ms-transform 0.9s ease-in-out 0.8;
+
+	box-shadow:#605C3C 5px 5px 10px;
+	
+	-webkit-animation: navshadow 2s infinite;
+	-o-animation: navshadow 2s infinite;
+	-moz-animation: navshadow 2s infinite;
+	-ms-animation: navshadow 2s infinite;
+}
+
+#galeriaItem img{
+	border-color: #605C3C;
+	border-style: dashed;
+  	border-width: medium;
+
+	background:#666;
+	border-radius:25%;
+
+	box-shadow:#605C3C 5px 5px 10px;
+}
+
+
+/*"paginación2" estática de los Items*/
+.paginacion2 {
+	margin:20px 0;
+}
+
+.paginacion2 ul {
+	list-style:none;
+	text-align: center;
+}
+
+.paginacion2 ul li {
+	display:inline-block;
+	margin-right:200px;
+	margin-left:220px;
+
+}
+
+.paginacion2 ul li a {
+	display:block;
+	padding:10px 85px;
+	text-decoration: none;
+}
+
+.paginacion2 ul li #ocultar {
+	visibility: hidden;
+}
+
+/*Ocultar botones menú desplegable de diseño responsive*/
+.menu{
+	height: 0;
+	overflow: hidden;
+}
+
+/*Media query smartphones (vertical)*/
+/*@media screen and (min-width: 320px) and (max-width: 480px) {*/
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	.menu{
+		height: auto;
+		overflow: visible;
+		
+		max-width:100%;
+		font: bold 1.7em "Pencil", Geneva, sans-serif;
+		
+		list-style-type: none;
+	
+		border-radius: 15%;
+		
+		display:flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		padding:0%;
+	}
+	
+	.lbar{
+		width: 70%;
+	
+		margin-bottom: 1%;
+	}
+	
+	#lbar{
+		width: 40%;
+		color: #CCC;
+		
+		margin-top:2%;
+		margin-bottom: 2%;
+		
+		text-align:center;
+
+		text-decoration: none;
+	
+		background: #3C3B3F;
+		background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+		border-bottom: 2px solid #666;
+		border-right: 2px solid #666;
+		border-radius: 15%;
+		box-shadow:#605C3C 15px 15px 80px;
+
+	}
+	
+	#bar{
+		height: 0;
+		overflow: hidden;	
+	}
+	
+	#navigation:target #bar{
+		height: 10%;
+	}
+	
+	.close{
+		display: none;	
+	}
+	
+	#navigation:target .open{
+		display:none;
+	}
+	
+	#navigation:target .close{
+		display:block;	
+	}
+	
+	header{		
+		width: 95%;
+		margin: auto;
+	
+		flex-direction: column;
+		flex-flow: row-wrap;
+	}
+	
+	h1{
+		width: 100%;
+		/*display: none;*/
+	}
+	
+	#icono{
+		width: auto;
+	}
+	
+	#mainImgHome{
+		display:none;
+	}
+	
+	.minigallery{	
+		width: 100%;
+		height: 850px;
+		padding: auto;
+		margin: auto;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		border-left: none;
+	}
+	
+	.minigallery h2{
+		display:none;	
+	}
+	
+	/*.minigallery img:hover{
+		display:none;
+	}
+	*/
+}
+
+
+
+
+}

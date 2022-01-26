@@ -1,0 +1,14 @@
+p{
+	background-color: lightblue;
+	color: blue;
+}
+
+#whatis{
+	background-color: black;
+	color: white;
+}
+
+.alternativo{
+	background-color: blue;
+	color:lightblue
+}

@@ -1,0 +1,4 @@
+ADVERTENCIA:
+Utilice la carpeta llamada "datos" ya que se han parseado los caracteres especiales ocultos de formato DOS, conviertiendolos compatibles para UNIX y la actual implementacion de esta practica y asi nos aseguramos de su correcto funcionamiento.
+
+EL CONTENIDO Y FORMATO DE LOS ARCHIVOS NO HA SIDO ALTERADO EN NINGUN MOMENTO.

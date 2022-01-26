@@ -1,0 +1,10 @@
+Este metodo es llamado por la función "heuristicaa()", y podemos ver dos subsecciones, una para "min" y otra para "max".
+He definido dos submetodos "roboMax()" y "roboMin()" los cuales se llaman para cada posible movimiento que pueda
+ocasionar un robo (según estemos en nodo min o en nodo max), comprobando con la condición si tenemos posibilidad de
+robar (tenemos alguna casilla vacia y la correspondiente de nuestro oponente no). Con esto último debemos tener cuidado, ya que hay que invertir
+la el valor de la posicion que esté vacía para nuestro agente y no vacía para su contrincante, para lo cual he definido
+otro metodo auxiliar para que calcule la posición que le corresponde mirar del contrincante "posContrincante()", implementada
+sencillamente con un switch(para saber qué posicion que tenemos enfrente en cualquier momento que podamos robar).
+Finalmente sumamos a la diferencia de semillas anteriormente calculada (totalSem12) el numero de semillas que le robaríamos
+a nuestro adversario(solo en caso de que se pueda robar) para así dar prioridad a los movimientos que mas semillas puedan
+robar.

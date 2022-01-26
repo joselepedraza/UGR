@@ -1,0 +1,20 @@
+
+TRABAJO REALIZADO POR JOSE LUIS PEDRAZA ROMÁN ALUMNO DEL GRUPO A3
+
+-PARA ENTRAR EN EL NIVEL 0:
+	dicirle al bot algo del estilo: tengo unas PREGUNTAS que hacerte sobre la asignatura	(establece topic nivel0)
+
+-PARA ENTRAR EN EL NIVEL 1:
+	decirle al bot algo del estilo: PIENSA UNA FRUTA cualquiera que quiero jugar
+(establece topic nivel1)
+	para saber que fruta está pensado simplemente: en que fruta estas pensando?
+
+-PARA ENTRAR EN EL NIVEL 3:
+	decirle al bot algo del estilo: ADIVINA LA FRUTA que estoy pensando
+	para responder cuando diga la que esta pensando que has pensado decirle al bot:
+		*si es	(si te acertó la fruta)
+		*no, es nombrefruta (para engañarlo) 
+
+
+*NOTA:también está implementada la funcionalidad de los ejemplos del seminario en primero.aiml
+*NOTA2: incluyo el fichero.sh corregido para el correcto funcionamiento (borrado de la carpeta aimlif en cada ejecucion)

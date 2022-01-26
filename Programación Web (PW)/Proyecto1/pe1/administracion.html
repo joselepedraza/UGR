@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Jose Luis Pedraza Román">
+		<title> ¡¡AutoShop!! </title>
+		<link  rel="icon" href="Imagenes/icono.jpg" type="image/jpg">
+		<link rel="stylesheet" type="text/css" href="style_index.css"/>
+	</head>
+	<body>
+		<header>
+        	
+			<a href="index.html">
+					<img id="icono" src="Imagenes/Logo-autoshop.jpg" alt="logo" width="275" height="125"/>
+			</a>
+            
+			<h1>&ensp;&ensp;¡¡Bienvenido a AutoShop!!&ensp;&ensp;</h1>
+			
+			<aside class="registrado">
+                <table border="2">
+                    <tr><th> <strong> José Luis </strong> </th>
+                    </tr>
+                </table>
+                
+                <a href="administracion.html"> Administración </a>
+
+			</aside>
+            
+		</header>
+		
+        <nav id="navigation">
+        
+        	<article class="menu">
+            	<a href="#navigation" class="open" id="lbar"> Menú </a>
+                <a href="#" class="close" > Cerrar </a>
+            </article>
+        
+            <ul id="bar">
+                <a class="lbar" href="Index.html"><li class="linksBar"> Home </li></a>
+                <a class="lbar" href="Seccion1.html"><li class="linksBar"> Segunda Mano </li></a>
+                <a class="lbar" href="Seccion1.html"><li class="linksBar"> Nuevos </li></a>
+                <a class="lbar" href="Seccion1.html"><li class="linksBar"> KM 0 </li></a>
+                <a class="lbar" href="Administracion.html"><li class="linksBar"> Vender mi coche </li></a>
+            </ul>
+		</nav>
+            
+		<hr>
+		<main>
+        	<h2 class="tituloseccion"> Administración </h2>
+			<hr>
+			<section id="formulario">
+				<form action="index.html" name="form_registro_item" id="reg_item" method="post" enctype="multipart/formdata" autocomplete"on">
+					<label for="name"> Marca: </label> <br> 
+					<input type="text" name="marca" id="marca" required /> 
+					<br>
+					<label for="surname"> Modelo: </label> <br> 
+					<input type="text" name="modelo" id="modelo" required />
+                    <br>
+					<label for="price"> Precio €: </label> <br> 
+					<input type="number" name="precio" id="price" required />
+                    <br>
+					<label for="km"> Kilometraje: </label> <br> 
+					<input type="number" name="km" id="km" required />
+                    <br>
+					<label for="potencia"> Potencia: </label> <br> 
+					<input type="text" name="potencia" id="potencia" required />
+                    <br>
+                    <label for="lugar"> ¿Dónde estoy? </label> <br> 
+					<input type="text" name="lugar" id="lugar" required />
+                    <br>
+					<br>
+					<label for="tipo"> Estado del vehículo: </label> <br> 
+					<input type="radio" name="tipo_venta" value="Nuevo" id="tipo"/> Nuevo <br>
+					<input type="radio" name="tipo_venta" value="Segunda_mano" id="tipo" checked /> Segunda mano <br>
+					<input type="radio" name="tipo_venta" value="KM_0" id="tipo"/> Km 0
+					<br><br>
+                    <label for="carburante"> Carburante: </label> <br> 
+					<input type="radio" name="carburante" value="Gasolina" id="carburante"/> Gasolina <br>
+					<input type="radio" name="carburante" value="Diesel" id="carburante" checked /> Diésel <br>
+					<input type="radio" name="carburante" value="Electrico" id="carburante"/> Electrico <br>
+                    <input type="radio" name="carburante" value="Gas" id="carburante"/> Gas <br>
+                    <input type="radio" name="carburante" value="Otro" id="carburante"/> Otro
+					<br><br>
+                    <label for="transmision"> Transmision: </label> <br> 
+					<input type="radio" name="transmision" value="Automático" id="transmision"/> Automático <br>
+					<input type="radio" name="transmision" value="Manual" id="transmision" checked /> Manual 
+                  
+					<br>
+					<datalist id="año">
+						<option value="1990">
+						<option value="1991">
+						<option value="1992">
+						<option value="1993">
+						<option value="1994">
+						<option value="1995">
+                        <option value="1996">
+						<option value="1997">
+						<option value="1998">
+						<option value="1999">
+						<option value="2000">
+						<option value="2001">
+                        <option value="2002">
+						<option value="2003">
+                        <option value="2004">
+						<option value="2005">
+                        <option value="2006">
+						<option value="2007">
+                        <option value="2008">
+                        <option value="2009">
+						<option value="2010">
+                        <option value="2011">
+						<option value="2012">
+                        <option value="2013">
+						<option value="2014">
+                        <option value="2015">
+                        <option value="2016">
+						<option value="2017">
+                        <option value="2018">
+						<option value="2019">
+                        <option value="2020">
+                        <option value="2021">
+					</datalist>
+                    <br>
+					<label for="año"> Año del vehículo: </p>
+					<input type="text" id="año" list="año">
+					<br><br>
+                    
+                    <label for="descripcion">Descripción:</label>
+					<br><br>
+                    <textarea id="descripcion" name="descripcion" rows="8" cols="10">Por ejemplo: 
+Espectacular¡¡¡Ibiza 2.0 tdi 140cv Copa,cambio manual 6 vel,llantas 16",tapiceria tela negro/gris con asientos deportivos,aire acondicionado,sistema radio cd/mp3 con conexion AUX,elevalunas electricos,espejos retrovisores electricos,faros antiniebla delanteros,volante deportivo cuero,control crucero velocidad,elevalunas electricos,minimo consumo...
+                    </textarea>
+                    <br><br>
+                    <input type="file" name="imagen1" />
+                    <br><br>
+					<input type="submit" id="btn1" value="Enviar"> 
+					<input type="reset" id="btn2" value="Resetear"> 
+				</form>
+			<section>	
+		</main>
+        
+		<footer>
+				<figure>
+					<img src="Imagenes/foto4.jpg" alt="logofooter" width="200" height="70">
+				</figure>
+		
+				<address>
+				
+				Avd/ Villanueva, 06005 Badajoz, Spain
+				</address>
+				
+				<p><a href="Contacto.html"> Contacto </a><p>
+				
+				<p><a href="warning.html"> AVISO LEGAL </a><p>
+		</footer>
+
+		
+	</body>
+</html>

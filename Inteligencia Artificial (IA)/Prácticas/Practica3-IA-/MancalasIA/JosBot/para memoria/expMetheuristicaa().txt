@@ -1,0 +1,11 @@
+Este metodo es llamado en el caso que estemos en la profundidad_maxima (y esta no sea un nodo hoja ó terminal), o sea, que
+no haya ganador ni perdedor ni se empata, para obtener una valoración acerca de qué movimiento
+ó qué camino es el mejor para nuestro agente.
+Como he comentado antes, la heurística que he aplicado es secilla pero eficaz, ya que he hecho pruebas con heuristicas más
+complejas pero todas obteniendo peores resultados.
+Simplemente se basa en contar las piezas de todas las posiciones de cada jugador ("yo" y mi "contrincante") en
+dos variables por separado, a estas le sumo la puntuación que suma el granero de cada uno respectivamente para
+así obetener los totales de semillas "totalSem1" y "totalSem2" para el movimiento en cuestión.
+Una vez tengo el numero de semillas de cada jugador, llamamos al metodo "puedorobar()" al cual le pasamos como argumento
+el estado actual, y el valor de la diferencia de la suma de las semillas de cada jugador (totalSem1-totalSem2), nuestra relacion,
+a mayor valor devuelto por "heuristicaa()" mejor es el movimiento  planteado.

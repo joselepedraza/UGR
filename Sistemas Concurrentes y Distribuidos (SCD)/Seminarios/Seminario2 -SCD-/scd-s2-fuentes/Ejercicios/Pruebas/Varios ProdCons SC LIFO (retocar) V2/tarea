@@ -1,0 +1,7 @@
+diseño SU Lifo (1 prod/cons)
+diseño SU Fifo (1 prod/cons)
+diseño SU Lifo (varios prod, n_producidos, varios cons, n_consumidos) ---- entregar
+diseño SU Fifo (varios prod, n_producidos, varios cons, n_consumidos) ---- entregar 
+
+
+Se implementará en C++11 usando la clase HoareMonitor el problema del Productor-Consumidor con buffer acotado y múltiples productores/consumidores. Se obtendrá un archivo con la implementación que use un objeto monitor basado en la estrategia LIFO y otro archivo para un monitor que siga la estrategia FIFO. Los archivos se entregarán junto con los archivos necesarios para su compilación-enlace y un Makefile en un único archivo comprimido.
